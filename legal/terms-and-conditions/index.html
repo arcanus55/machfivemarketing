@@ -296,12 +296,7 @@ href="#a11y-skipmain">Skip to Main Content</a>
         <div>
             <article style="min-height: 56px;text-align: center;padding: 16px 8px;">
                 
-                <br>
-                
                 <p style="color: white;">©2021 Mach Five Marketing, Chicago, IL, USA</p></a>
-                |
-                <a class="h-link" target="_blank" rel="noopener" href="/legal/privacy-policy/">Privacy Policy</a>
-                |
             </article>
             </div>
 </footer>
@@ -1048,9 +1043,59 @@ if( e3 ) {
     }; pfmfModal.init();
 </script>
 
-
-
-
+<script>
+    setTimeout(()=>{
+        let oSydTab = ((_d, _q)=>{
+            let oST = {}  
+            let nC = 0, nCmob = 0
+            setTimeout( ()=> {oSydTab.init()}, 6)
+            return {
+                "init": ()=>{
+                    [ ... _d.querySelectorAll( _q[0] )].forEach((st)=>{
+                        const sID = "st_" + nC++
+                        oST[sID] = st
+                        oST[sID].aBt = [ ... oST[sID].querySelectorAll( _q[1] )]  
+                        oST[sID].eSh = oST[sID].querySelector( _q[2] )  
+                        oST[sID].aTp = [ ... oST[sID].querySelectorAll( _q[3] )]  
+                        oST[sID].aBt.forEach((sydbtn)=>{
+                            sydbtn.addEventListener("click", (ev) => { oSydTab.doClick(ev, sID) });
+                            if( isMobile() ){
+                                let sMU = '<div class="cont__mobile cont__mobile--hidden">' + oST[sID].aTp[ nCmob++ ].innerHTML + '</div>'
+                                sydbtn.insertAdjacentHTML('afterend', sMU)
+                            }
+                        })
+                        if( isMobile() ){
+                            oST[sID].aBt[0].nextSibling.classList.remove("cont__mobile--hidden")
+                        }else{
+                            if( oST[sID].eSh ) oST[sID].eSh.innerHTML = oST[sID].aTp[0].innerHTML
+                        }
+                    })
+                    nC = nCmob = 0
+                },
+                "doClick": (ev, sID)=>{
+                    oST[sID].aBt.forEach((sydbtn)=>{
+                        sydbtn.dataset.sydtabState = "false"
+                    })
+                    ev.currentTarget.dataset.sydtabState = "true"
+                    oST[sID].aBt.map((btn)=>{
+                        if( btn.dataset.sydtabState === "true" ){
+                            if( isMobile() ){
+                                [ ... oST[sID].querySelectorAll(".cont__mobile") ].forEach((cnt_mob)=>{
+                                    cnt_mob.classList.add("cont__mobile--hidden")
+                                })
+                                btn.nextSibling.classList.remove("cont__mobile--hidden")
+                            }else{
+                                if( oST[sID].eSh ) oST[sID].eSh.innerHTML = oST[sID].aTp[ nC ].innerHTML
+                            }
+                        }
+                        nC++;
+                    })
+                    nC = 0
+                }
+            }
+        })(document, [".l-sydtab", "button", "[data-sydtab-show]", "[data-sydtab-content]"]);
+    }, 400)
+    </script>
 
     </body>
 </html>
