@@ -642,6 +642,7 @@ section.pfmf-grid > div > article.pfmf-grid__artc--hero {
   
     box-sizing: border-box;
     z-index: 64;
+    border-bottom: solid 1px var( --machfive-theme-danger );
 }
 .megamenu .mm__vect, .megamenu .scheme__vect{
     cursor: pointer;
@@ -651,6 +652,7 @@ section.pfmf-grid > div > article.pfmf-grid__artc--hero {
 }
 .megamenu .megamenu__grd--top > * {
     overflow: hidden;
+    
 }
 .megamenu .megamenu__grd--card {
     position: fixed; top: 55px;
@@ -752,8 +754,8 @@ section.pfmf-grid > div > article.pfmf-grid__artc--hero {
     width: 96px;
 }
 .mm-btn__login {
-    border: solid 1px var( --machfive-theme-danger );
-    background-color: #213042;
+    border: solid 0px rgba(12,12,12,0);
+    background-color: rgba(12,12,12,0);
     color: #fff;
 }
 .mm-btn__signup {
