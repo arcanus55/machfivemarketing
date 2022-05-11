@@ -245,6 +245,10 @@ div.caro-target__js:not(.h--select) {
         max-width: 176px;
         margin: 16px; padding: 16px;
     }
+    .lgo-grid__in-tab svg:hover, .cont__mobile svg:hover {
+        background-color: var( --machfive-theme-secondary-alt );
+        TODO_cursor: pointer;
+    }
 }
 /*  Logo Grid inside Syd Nav Tab end  */  
 
@@ -300,7 +304,7 @@ div.caro-target__js:not(.h--select) {
     background-color:  #Faf2e7;
   }
   .l-sydtab [data-sydtab-state='true'] {
-    background-color:  #213042;
+    background: repeating-linear-gradient(45deg, #213042, #1d2e40 24px,#213042 24px,#213042 48px);
   }
   .l-sydtab [data-sydtab-state='true'] h6 {
     color:  #DD4124;
