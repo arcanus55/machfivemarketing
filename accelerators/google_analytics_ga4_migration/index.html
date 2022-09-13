@@ -568,21 +568,36 @@ data-n55-marquee-size="small">
 
 <template id="js-pup-saas-crd-3" data-n55-sodapop-modal="false"  data-n55-sodapop-size="small">
     <article class="rev-artc">
-<section style="background-color: #242424;border-radius: 8px;">
-<h4 class="h-center readable__caption_white">Custom Solution</h4>
-<neodigm-marquee data-n55-marquee-text=" Universal Analytics Data Collection Ends on July 1st, 2022.  It's Time to Migrate to GA4 to Measure Year-over-Year Data.  "
-data-n55-marquee-size="small">
-<pre data-n55-theme="info"></pre>
-</neodigm-marquee>
-</section>
-        <ul class="readable__doc" style="border-top: solid #DD4326 1px;">
-            <p><span class="material-icons">done</span>ducks</p>
-            <p><span class="material-icons">done</span>ducks</p>
-            <p><span class="material-icons">done</span>ducks</p>
-            <p><span class="material-icons">done</span>ducks</p>
-            <p><span class="material-icons">done</span>ducks</p>
-            <p><span class="material-icons">done</span>ducks</p>
-        </ul>
+        <section style="background-color: #242424;border-radius: 8px;">
+        <h4 class="h-center readable__caption_white">Custom Solution</h4>
+        <neodigm-marquee data-n55-marquee-text=" Universal Analytics Data Collection Ends on July 1st, 2022.  It's Time to Migrate to GA4 to Measure Year-over-Year Data.  "
+        data-n55-marquee-size="small">
+        <pre data-n55-theme="info"></pre>
+        </neodigm-marquee>
+        </section>
+        <section class="readable__doc" style="border-top: solid #DD4326 1px;">
+            <form autocomplete="off" novalidate
+            onsubmit="return false">
+                <br>
+                <input id="ga4_saas_crd_3_email" name="email" class="m5m-input" type="email"
+                placeholder="Email Address">
+                <input id="ga4_saas_crd_3_domain" name="domain" class="m5m-input" type="text"
+                placeholder="www.YourPrimaryDomain.com">
+                <textarea id="ga4_saas_crd_3_message" name="message" class="m5m-input" type="text" rows="3"
+                placeholder="Message"></textarea>
+                <div class="h-center">
+                    <br>
+                    <a data-n55-enchanted-cta id="cta-btn-free-dla-id"
+                    tabindex="0" aria-haspopup="true"
+                    data-n55-enchanted-cta-size="large"
+                    data-n55-theme="danger"
+                    onclick="valForm('ga4_saas_crd_CUSTOM', this )"
+                    data-n55-enchanted-cta-ambient="radius">
+                        <span>Submit Info</span><span>Let's Get Started ...</span>
+                    </a>
+                </div>  
+            </form>
+        </section>
     </article>
 </template>  
             
@@ -736,6 +751,22 @@ let neodigmOptCustom = {
                     contextMsg = "Expect to see your report|in your inbox soon!";
                     if( eForm.domain.value.indexOf(".") === -1 ){
                         isVal = false; valMsg = "Website Domain is|invalid";
+                    }
+                    if( (eForm.email.value.indexOf("@") === -1) || (eForm.email.value.indexOf(".") === -1) ){
+                        isVal = false; valMsg = "Email Address is|invalid";
+                    }
+                    if( !eForm.domain.value ){
+                        isVal = false; valMsg = "Website Domain is|Required";
+                    }
+                    if( !eForm.email.value ){
+                        isVal = false; valMsg = "Email Address is|Required";
+                    }                    
+                    package = [eForm.email.value, eForm.domain.value];
+                    break;
+                case "ga4_saas_crd_CUSTOM":
+                    contextMsg = "Expect to see next steps|in your inbox soon!";
+                    if( eForm.domain.value.indexOf(".") === -1 ){
+                        isVal = false; valMsg = "Primary Website Domain is|invalid";
                     }
                     if( (eForm.email.value.indexOf("@") === -1) || (eForm.email.value.indexOf(".") === -1) ){
                         isVal = false; valMsg = "Email Address is|invalid";
