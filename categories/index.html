@@ -267,6 +267,7 @@ let neodigmOptCustom = {
                 if( DoForm( package[0], package[1], sToken ) ){
                     if( neodigmToast ){ neodigmToast.q("Information Received|Thank you"); }
                     if( neodigmToast ){ neodigmToast.q( contextMsg ); }
+                    if( sToken.indexOf("ga4") != -1 ) doCal();
                 }else{
                     if( neodigmToast ){ neodigmToast.q("Service is unavailable|Please try again later"); }
                 }

@@ -423,7 +423,7 @@ data-n55-sodapop-id="js-cheatsheet--id">
     }
 </script>
 
-<template id="js-pup-saas-crd-1" data-n55-sodapop-modal="false"  data-n55-sodapop-size="small">
+<template id="js-pup-saas-crd-1" data-n55-sodapop-modal="false" data-n55-sodapop-size="small">
     <article class="rev-artc">
         <section style="background-color: #242424;border-radius: 8px;">
             <h4 class="h-center readable__caption_white">Introduction Solution</h4>
@@ -460,7 +460,7 @@ tabindex="0">
     </article>
 </template>
 
-<template id="js-pup-saas-crd-2" data-n55-sodapop-modal="false"  data-n55-sodapop-size="small">
+<template id="js-pup-saas-crd-2" data-n55-sodapop-modal="false" data-n55-sodapop-size="small">
     <article class="rev-artc">
         <section style="background-color: #242424;border-radius: 8px;">
             <h4 class="h-center readable__caption_white">Enterprise Solution</h4>
@@ -497,7 +497,7 @@ tabindex="0">
     </article>
 </template>
 
-<template id="js-pup-saas-crd-3" data-n55-sodapop-modal="false"  data-n55-sodapop-size="small">
+<template id="js-pup-saas-crd-3" data-n55-sodapop-modal="false" data-n55-sodapop-size="small">
     <article class="rev-artc">
         <section style="background-color: #242424;border-radius: 8px;">
             <h4 class="h-center readable__caption_white">Custom Solution</h4>
@@ -530,6 +530,28 @@ tabindex="0">
                     </a>
                 </div>  
             </form>
+        </section>
+    </article>
+</template>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+<script>
+    function doCal(){
+        neodigmSodaPop.autoOpen("js-pup-cal")
+        setTimeout(function(){
+            Calendly.initInlineWidget({
+                url: 'https://calendly.com/machfive/machfive-ga4-intro?hide_gdpr_banner=1&hide_landing_page_details=1',
+                parentElement: document.getElementById('js-cal-target'),
+                prefill: {},
+                utm: {}
+            });
+        }, 2800)
+    }
+</script>
+<template id="js-pup-cal" data-n55-sodapop-modal="false" data-n55-sodapop-size="small">
+    <article class="rev-artc">
+
+        <section class="readable__doc">
+            <div id="js-cal-target" style="height: 76vh;"></div>
         </section>
     </article>
 </template>
@@ -837,6 +859,7 @@ let neodigmOptCustom = {
                 if( DoForm( package[0], package[1], sToken ) ){
                     if( neodigmToast ){ neodigmToast.q("Information Received|Thank you"); }
                     if( neodigmToast ){ neodigmToast.q( contextMsg ); }
+                    if( sToken.indexOf("ga4") != -1 ) doCal();
                 }else{
                     if( neodigmToast ){ neodigmToast.q("Service is unavailable|Please try again later"); }
                 }
