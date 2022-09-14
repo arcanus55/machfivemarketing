@@ -536,16 +536,18 @@ tabindex="0">
 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
 <script>
     function doCal(){
-        neodigmSodaPop.autoOpen("js-pup-cal")
         setTimeout(function(){
-            Calendly.initInlineWidget({
-                url: 'https://calendly.com/machfive/machfive-ga4-intro?hide_gdpr_banner=1&hide_landing_page_details=1',
-                parentElement: document.getElementById('js-cal-target'),
-                prefill: {},
-                utm: {}
-            });
-            if( neodigmToast ){ neodigmToast.q("Let's Schedule a|Quick Consultation"); }
-        }, 1200)
+            neodigmSodaPop.autoOpen("js-pup-cal")
+            setTimeout(function(){
+                Calendly.initInlineWidget({
+                    url: 'https://calendly.com/machfive/machfive-ga4-intro?hide_gdpr_banner=1&hide_landing_page_details=1',
+                    parentElement: document.getElementById('js-cal-target'),
+                    prefill: {},
+                    utm: {}
+                });
+                if( neodigmToast ){ neodigmToast.q("Let's Schedule a|Quick Consultation"); }
+            }, 600)
+        }, 600)
     }
 </script>
 <template id="js-pup-cal" data-n55-sodapop-modal="false" data-n55-sodapop-size="small">
