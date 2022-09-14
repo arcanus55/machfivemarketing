@@ -1274,7 +1274,7 @@ olark.identify('7233-815-10-7742');
         setTimeout(function(){
             if( neodigmSodaPop && neodigmMarquee && neodigmEnchantedCTA ){
                 neodigmSodaPop.setOnAfterOpen( function(){
-                    NeodigmClaire.doWaxOn("neodigm-sodapop", ["danger", "warning", "marcom"], "random", .7)
+                    NeodigmClaire.doWaxOn("neodigm-sodapop", ["danger", "warning", "primary"], "random", .7)
                         neodigmMetronome.init().pause( 2400 )
                             neodigmMarquee.init().pause( 2600 )
                                 neodigmEnchantedCTA.init()
@@ -1285,7 +1285,7 @@ olark.identify('7233-815-10-7742');
         setTimeout(function(){
             if( neodigmSodaPop && NeodigmClaire ){
                 neodigmSodaPop.setOnClose( function(){
-                    NeodigmClaire.doWaxOff("neodigm-sodapop", ["danger", "warning", "marcom"], "random", .7)
+                    NeodigmClaire.doWaxOff("neodigm-sodapop", ["danger", "warning", "primary"], "random", .7)
                 });
             }
         }, 4e3)
