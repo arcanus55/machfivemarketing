@@ -536,7 +536,6 @@ tabindex="0">
 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
 <script>
     function doCal(){
-        neodigmSodaPop.close()
         neodigmSodaPop.autoOpen("js-pup-cal")
         setTimeout(function(){
             Calendly.initInlineWidget({
@@ -546,13 +545,12 @@ tabindex="0">
                 utm: {}
             });
             if( neodigmToast ){ neodigmToast.q("Let's Schedule a|Quick Consultation"); }
-        }, 1600)
+        }, 1200)
     }
 </script>
 <template id="js-pup-cal" data-n55-sodapop-modal="false" data-n55-sodapop-size="small">
     <article class="rev-artc">
-
-        <section class="readable__doc">
+        <section class="readable__doc" style="padding: 0; margin: 0;">
             <div id="js-cal-target" style="height: 76vh;"></div>
         </section>
     </article>
@@ -859,13 +857,13 @@ let neodigmOptCustom = {
             }
             if( isVal ) {
                 if( DoForm( package[0], package[1], sToken ) ){
-                    if( neodigmToast ){ neodigmToast.q("Information Received|Thank you"); }
+                    if( neodigmToast ){ neodigmToast.q("Information Received|Thank You"); }
                     if( neodigmToast ){ neodigmToast.q( contextMsg ); }
-                    if( sToken.indexOf("ga4") != -1 ) doCal();
                 }else{
-                    if( neodigmToast ){ neodigmToast.q("Service is unavailable|Please try again later"); }
+                    if( neodigmToast ){ neodigmToast.q("Service is Unavailable|Please Try Again Later"); }
                 }
                 neodigmSodaPop.close();
+                if( sToken.indexOf("ga4") != -1 ) doCal();
             }else{
                 neodigmSodaPop.shake();
                 if( neodigmToast ){ neodigmToast.q( valMsg, "danger" ); }

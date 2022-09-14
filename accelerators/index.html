@@ -81,8 +81,6 @@ href="#a11y-skipmain">Skip to Main Content</a>
                     <article class="js-art__caro h-ds__none">
                         <section class="l-caro-design__cnt">
                         
-                            
-                        
                         </section>
                     </article>
             
@@ -267,13 +265,13 @@ let neodigmOptCustom = {
             }
             if( isVal ) {
                 if( DoForm( package[0], package[1], sToken ) ){
-                    if( neodigmToast ){ neodigmToast.q("Information Received|Thank you"); }
+                    if( neodigmToast ){ neodigmToast.q("Information Received|Thank You"); }
                     if( neodigmToast ){ neodigmToast.q( contextMsg ); }
-                    if( sToken.indexOf("ga4") != -1 ) doCal();
                 }else{
-                    if( neodigmToast ){ neodigmToast.q("Service is unavailable|Please try again later"); }
+                    if( neodigmToast ){ neodigmToast.q("Service is Unavailable|Please Try Again Later"); }
                 }
                 neodigmSodaPop.close();
+                if( sToken.indexOf("ga4") != -1 ) doCal();
             }else{
                 neodigmSodaPop.shake();
                 if( neodigmToast ){ neodigmToast.q( valMsg, "danger" ); }
@@ -738,6 +736,12 @@ olark.identify('7233-815-10-7742');
 "https://twitter.com/neodigm24",
 "https://hub.docker.com/u/neodigm",
 "https://www.w3.org/users/123844"]
+  }
+</script>
+
+    </body>
+</html>
+org/users/123844"]
   }
 </script>
 
