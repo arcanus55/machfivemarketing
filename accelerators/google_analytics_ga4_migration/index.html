@@ -536,6 +536,7 @@ tabindex="0">
 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
 <script>
     function doCal(){
+        neodigmSodaPop.close()
         neodigmSodaPop.autoOpen("js-pup-cal")
         setTimeout(function(){
             Calendly.initInlineWidget({
@@ -544,7 +545,8 @@ tabindex="0">
                 prefill: {},
                 utm: {}
             });
-        }, 2800)
+            if( neodigmToast ){ neodigmToast.q("Let's Schedule a|Quick Consultation"); }
+        }, 2200)
     }
 </script>
 <template id="js-pup-cal" data-n55-sodapop-modal="false" data-n55-sodapop-size="small">
