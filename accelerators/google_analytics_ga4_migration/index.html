@@ -229,7 +229,9 @@ href="#a11y-skipmain">Skip to Main Content</a>
 
 <section id="price-crds" class="pfmf-grid pfmf-grid__33_33_33 l-saas-crd">
     <article id="saas-crd-1" class="sm-crd-inver__night-alt h-pos__rel" data-pref-scheme="dark">
-        <br><div class="saas-crd__rib--side" data-pref-scheme="dark"><div class="h-center"><span class="banner-cap">$450</span></div></div>
+        <br><div class="saas-crd__rib--side" data-pref-scheme="dark"
+        onclick="NeodigmClaire.showCanv('#saas-crd-1 > main').initCanvOff('#saas-crd-1 > main').doConfetti('#saas-crd-1 > main')"
+        data-n55-flash-theme="primary"><div class="h-center"><span class="banner-cap">$450</span></div></div>
         <h2 class="hd2 h-center">Introduction</h2>
         <main>
         <p class="txt-readable prg">Qui aliquid fugiat ut consequatur optio et dicta officiis et atque aliquam</p>
@@ -254,7 +256,9 @@ href="#a11y-skipmain">Skip to Main Content</a>
     </article>
 
     <article id="saas-crd-2" class="sm-crd-inver__night-alt h-pos__rel" data-pref-scheme="dark">
-        <br><div class="saas-crd__rib--side" data-pref-scheme="dark"><div class="h-center"><span class="banner-cap">$1800</span></div></div>
+        <br><div class="saas-crd__rib--side" data-pref-scheme="dark"
+        onclick="NeodigmClaire.showCanv('#saas-crd-2 > main').initCanvOff('#saas-crd-2 > main').doConfetti('#saas-crd-2 > main')"
+        data-n55-flash-theme="primary"><div class="h-center"><span class="banner-cap">$1800</span></div></div>
         <h2 class="hd2 h-center">Enterprise</h2>
         <main>
         <p class="txt-readable prg">Qui aliquid fugiat ut consequatur optio et dicta officiis et atque aliquam</p>
@@ -282,7 +286,9 @@ href="#a11y-skipmain">Skip to Main Content</a>
     </article>
 
     <article id="saas-crd-3" class="sm-crd-inver__night-alt h-pos__rel" data-pref-scheme="dark">
-        <br><div class="saas-crd__rib--side" data-pref-scheme="dark"><div class="h-center"><span class="banner-cap">Hourly</span></div></div>
+        <br><div class="saas-crd__rib--side" data-pref-scheme="dark"
+        onclick="NeodigmClaire.showCanv('#saas-crd-3 > main').initCanvOff('#saas-crd-3 > main').doConfetti('#saas-crd-3 > main')"
+        data-n55-flash-theme="primary"><div class="h-center"><span class="banner-cap">Hourly</span></div></div>
         <h2 class="hd2 h-center">Custom Solution</h2>
         <main>
         <p class="txt-readable prg">Phase 0 <span class="h-smaller">Requirements discovery</span></p>
@@ -538,7 +544,7 @@ tabindex="0">
 <template id="js-pup-cal" data-n55-sodapop-modal="false" data-n55-sodapop-size="small" data-n55-sodapop-fullscreen="true">
     <article class="rev-artc">
         <section class="readable__doc" style="padding: 0; margin: 0;">
-            <div id="js-cal-target" style="height: 76vh;"></div>
+            <div id="js-cal-target" style="height: 80vh;"></div>
         </section>
     </article>
 </template>
@@ -849,7 +855,7 @@ let neodigmOptCustom = {
                 }else{
                     if( neodigmToast ){ neodigmToast.q("Service is Unavailable|Please Try Again Later"); }
                 }
-                if( sToken.indexOf("ga4") != -1 ){
+                if( (sToken.indexOf("ga4") != -1) && (Calendly) && (!Calendly.runonce) ){
                     neodigmSodaPop.close( true ) 
                     doCal()
                 }else{
@@ -874,6 +880,7 @@ let neodigmOptCustom = {
                     prefill: {},
                     utm: {}
                 });
+                Calendly.runonce = true
                 if( neodigmToast ){ neodigmToast.q("Let's Schedule a|Quick Consultation"); }
             }, 600)
         }, 600)

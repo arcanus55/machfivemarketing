@@ -270,7 +270,7 @@ let neodigmOptCustom = {
                 }else{
                     if( neodigmToast ){ neodigmToast.q("Service is Unavailable|Please Try Again Later"); }
                 }
-                if( sToken.indexOf("ga4") != -1 ){
+                if( (sToken.indexOf("ga4") != -1) && (Calendly) && (!Calendly.runonce) ){
                     neodigmSodaPop.close( true ) 
                     doCal()
                 }else{
@@ -295,6 +295,7 @@ let neodigmOptCustom = {
                     prefill: {},
                     utm: {}
                 });
+                Calendly.runonce = true
                 if( neodigmToast ){ neodigmToast.q("Let's Schedule a|Quick Consultation"); }
             }, 600)
         }, 600)
