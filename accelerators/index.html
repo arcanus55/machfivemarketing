@@ -81,8 +81,6 @@ href="#a11y-skipmain">Skip to Main Content</a>
                     <article class="js-art__caro h-ds__none">
                         <section class="l-caro-design__cnt">
                         
-                            
-                        
                         </section>
                     </article>
             
@@ -272,13 +270,34 @@ let neodigmOptCustom = {
                 }else{
                     if( neodigmToast ){ neodigmToast.q("Service is Unavailable|Please Try Again Later"); }
                 }
-                neodigmSodaPop.close();
-                if( sToken.indexOf("ga4") != -1 ) doCal();
+                if( sToken.indexOf("ga4") != -1 ){
+                    neodigmSodaPop.close( true ) 
+                    doCal()
+                }else{
+                    neodigmSodaPop.close()
+                }
             }else{
                 neodigmSodaPop.shake();
                 if( neodigmToast ){ neodigmToast.q( valMsg, "danger" ); }
             }
         }
+    }
+</script>
+
+<script>
+    function doCal(){  
+        setTimeout(function(){
+            neodigmSodaPop.autoOpen("js-pup-cal")
+            setTimeout(function(){
+                Calendly.initInlineWidget({
+                    url: 'https://calendly.com/machfive/machfive-ga4-intro?hide_gdpr_banner=1&hide_landing_page_details=1',
+                    parentElement: document.getElementById('js-cal-target'),
+                    prefill: {},
+                    utm: {}
+                });
+                if( neodigmToast ){ neodigmToast.q("Let's Schedule a|Quick Consultation"); }
+            }, 600)
+        }, 600)
     }
 </script>
 
