@@ -168,6 +168,7 @@ style="padding: 0">
                         <img src="https://neodigm.github.io/brand_logo_graphic_design/fantastic/discerning/30.webp" alt="UA to GA4 Infographic">
                     </div>
                 </div>
+                <br>
             </section>
             <script>
                 setTimeout(function(){
@@ -414,17 +415,6 @@ data-n55-sodapop-id="js-cheatsheet--id">
     </div>
 </section>
 
-    <article class="h-center" style="padding: 12px;">
-        <a class="h-txt-dec-unset" href="https://www.machfivemarketing.com/contact.vcf"
-        data-n55-wired4sound-click="5">
-            <img src="/img/contact_m5m.png" alt="M5M Contact Card"
-            style="max-width: 124px; height: auto">
-            <p class="readable__doc h-smaller"
-            style="margin: 1px;">Add to Contacts</p>
-        </a>
-    </article>
-
-
 <script type="text/javascript">
     const eIFCont = document.querySelector(".eIF__js")
     if( eIFCont ){
@@ -559,6 +549,26 @@ tabindex="0">
     </article>
 </template>
 
+<template id="js-pup-vcf" data-n55-sodapop-modal="false" data-n55-sodapop-size="small" data-n55-sodapop-fullscreen="false">
+    <article class="rev-artc h-center" style="padding: 12px;">
+        <div>
+            <section style="background-color: #242424;border-radius: 8px;">
+                <h4 class="h-center readable__caption_white">Create a Contact</h4>
+                <neodigm-marquee data-n55-marquee-text=" Thanks for reaching out.  Please add M5M to your contacts, so that our email will not get lost in your spam folder.  Click the QR code below!  "
+                data-n55-marquee-size="small">
+                <pre data-n55-theme="warning"></pre>
+                </neodigm-marquee>
+            </section>
+
+            <a class="h-txt-dec-unset" href="https://www.machfivemarketing.com/contact.vcf"
+            data-n55-wired4sound-click="5">
+                <img src="/img/contact_m5m.png" alt="M5M Contact Card"
+                style="max-width: 124px; height: auto">
+            </a>
+        </div>
+    </article>
+</template>
+
 <script type="application/ld+json">{"@context":"https://schema.org",
     "@graph":[{"@type":"Article",
     "@id":"https://www.machfivemarketing.com/accelerators/google_analytics_ga4_migration/#article",
@@ -654,7 +664,7 @@ let neodigmOptCustom = {
     neodigmToast: true,
     neodigmSodaPop: true,
     neodigmUtils: true,
-    neodigmWired4Sound: false,
+    .sound( 8 ): false,
     QQQQneodigmParallax: false,  
     QQQQPRLX_MOBILE: true,  
     neodigmMarquee: true}
@@ -860,6 +870,24 @@ let neodigmOptCustom = {
             }, 600)
         }, 600)
     }
+    function isCalendlyEvent(e) {
+        return e.origin === "https://calendly.com" && e.data.event && e.data.event.indexOf("calendly.") === 0;
+    };
+       
+    window.addEventListener("message", function(e) {
+    if(isCalendlyEvent(e)) {
+         
+        console.log("=== Event name:", e.data.event);
+        if( e.data.event == "calendly.event_scheduled"){
+            neodigmSodaPop.close( true )
+            neodigmWired4Sound.sound( 8 )
+            neodigmSodaPop.autoOpen("js-pup-vcf")
+        }
+        
+         
+        console.log("=== Event details:", e.data.payload);
+    }
+    });
 </script>
 
 <script>
