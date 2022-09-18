@@ -129,6 +129,7 @@ let neodigmOptCustom = {
         oW2L.last_name = package[3]
         oW2L.url = package[4]
         oW2L.description = JSON.stringify( package )
+        window.calContact = {"name": (package[2] + " " + package[3]), "email": package[1]}
         fw2l( oW2L );
         return true;
     }
@@ -235,7 +236,7 @@ let neodigmOptCustom = {
                 Calendly.initInlineWidget({
                     url: 'https://calendly.com/machfive/machfive-ga4-intro?hide_gdpr_banner=1&hide_landing_page_details=1',
                     parentElement: document.getElementById('js-cal-target'),
-                    prefill: {},
+                    prefill: {"name": window.calContact.name, "email": window.calContact.email },
                     utm: {}
                 });
                 Calendly.runonce = true
