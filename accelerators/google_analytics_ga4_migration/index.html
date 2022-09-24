@@ -84,18 +84,18 @@ href="#a11y-skipmain">Skip to Main Content</a>
         QQQQPRLX_MOBILE: true,  //  Show Parallax on Mobile
         neodigmMarquee: true}
     </script>
-<style>
+<template>
     /*  overrides */
     :root { --m5lc-theme-brand: #edba08; --m5lc-theme-brand-alt: #915E00; }
     *::-webkit-scrollbar-thumb { background: #000; }
     ::selection { color: #930; background:  #fff600; text-shadow: none; }
     [data-pref-scheme="light"] .hd1, [data-pref-scheme="light"] .hd2, [data-pref-scheme="light"] .hd3, [data-pref-scheme="light"] .hd4 { color: #DD4124; }
     [data-pref-scheme="dark"] .hd1, [data-pref-scheme="dark"] .hd2, [data-pref-scheme="dark"] .hd3, [data-pref-scheme="dark"] .hd4 { color: #fff; }
-    .vec-bullet { fill: #810000; height: 32px; width: 32px;}
-    .vec-bullet:hover { fill: #DD4124; }
+    .vec-bullet { fill: #DD4124; height: 32px; width: 32px; margin-bottom: -6px;}
+    .vec-bullet:hover { fill: #810000; }
 
     .mm-btn {visibility: hidden;}
-</style>
+</template>
 
 <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/2674_RC03/embed_loader.js"></script> 
 <br>
@@ -816,8 +816,8 @@ var neodigmOptCustom = {
     *::-webkit-scrollbar-thumb { background: #000; }
     ::selection { color: #930; background:  #fff600; text-shadow: none; }
     [data-pref-scheme] .hd1, [data-pref-scheme] .hd2, [data-pref-scheme] .hd3, [data-pref-scheme] .hd4 { color: #DD4124; }
-    .vec-bullet { fill: #810000; height: 32px; width: 32px;}
-    .vec-bullet:hover { fill: #DD4124; }
+    .vec-bullet { fill: #DD4124; height: 32px; width: 32px; margin-bottom: -6px; }
+    .vec-bullet:hover { fill: #810000; }
 </style>
 
 <script>
@@ -1413,7 +1413,7 @@ olark.identify('7233-815-10-7742');
                             neodigmMarquee.init().pause( 2600 )
                                 neodigmEnchantedCTA.init()
                     });
-                neodigmSodaPop.setOnBeforeUserExit( function(){ neodigmToast.q("Act Now! Time is Fleeting ...|Let's Chat Now", "danger"); neodigmWired4Sound.sound( 5 ); olark('api.box.expand'); } )
+                neodigmSodaPop.setOnBeforeUserExit( function(){ neodigmToast.q("Act Now! Time is Fleeting ...|Let's chat before its too late", "danger"); neodigmWired4Sound.sound( 5 ); olark('api.box.expand'); } )
             }
         }, 3e3)
         setTimeout(function(){
