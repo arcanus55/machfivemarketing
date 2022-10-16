@@ -1463,12 +1463,13 @@ tabindex="0">
 <script>
 /* PWA via SodaPop > CTA */
 let _beforeinstallprompt = null;  //  Event
+const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone)
 window.addEventListener('DOMContentLoaded', function(){
     window.addEventListener("beforeinstallprompt", function( ev ){ _beforeinstallprompt = ev })
 })
 let doPWA = function( pause = 0 ){
     setTimeout(function(){
-        if( _beforeinstallprompt && !neodigmSodaPop.isOpen() ) neodigmSodaPop.autoOpen("js-pup-pwa") // check standalone
+        if( _beforeinstallprompt && !neodigmSodaPop.isOpen() && !isInStandaloneMode() ) neodigmSodaPop.autoOpen("js-pup-pwa") // check standalone
     }, pause)
 }
 doPWA( 60 * 1000 * 4.6 )
