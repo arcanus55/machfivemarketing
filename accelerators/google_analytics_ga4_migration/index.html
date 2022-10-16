@@ -1417,7 +1417,7 @@ tabindex="0">
         <div>
             <section style="background-color: #242424;border-radius: 8px;">
                 <h4 class="h-center readable__caption_white">Install the M5M Web App</h4>
-                <neodigm-marquee data-n55-marquee-text=" Did you know that you can add this website to your desktop / home screen.  It's true and it's easy!  You can install it as a Web App.  That way it is easily accessible and will even work when you are disconnected from the Internet.  How Convenient! "
+                <neodigm-marquee data-n55-marquee-text=" Did you know that you can add this website to your desktop / home screen.  It's easy!  You can install it as a Web App.  That way it is easily accessible and will even work when you are disconnected from the Internet.  How Convenient! "
                 data-n55-marquee-size="medium">
                 <pre data-n55-theme="marcom"></pre>
                 </neodigm-marquee>
@@ -1447,7 +1447,7 @@ tabindex="0">
             data-n55-enchanted-cta
             onclick="neodigmSodaPop.close();"
             data-n55-enchanted-cta-ambient="emit"
-            data-n55-enchanted-cta-dont-touch="false"
+            data-n55-enchanted-cta-dont-touch="true"
             data-n55-enchanted-cta-shape-off="false"
             data-n55-enchanted-cta-size="medium"
             data-n55-flash-theme="marcom"
@@ -1462,18 +1462,16 @@ tabindex="0">
 </template>
 <script>
 /* PWA via SodaPop > CTA */
-
 let _beforeinstallprompt = null;  //  Event
-
 window.addEventListener('DOMContentLoaded', function(){
     window.addEventListener("beforeinstallprompt", function( ev ){ _beforeinstallprompt = ev })
 })
-
 let doPWA = function( pause = 0 ){
     setTimeout(function(){
-        if( _beforeinstallprompt ) neodigmSodaPop.autoOpen("js-pup-pwa") // check standalone
+        if( _beforeinstallprompt && !neodigmSodaPop.isOpen() ) neodigmSodaPop.autoOpen("js-pup-pwa") // check standalone
     }, pause)
 }
+doPWA( 60 * 1000 * 4.6 )
 </script>
 
 <script type='application/ld+json'>
