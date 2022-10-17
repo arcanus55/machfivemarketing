@@ -1412,11 +1412,11 @@ tabindex="0">
     </article>
 </template>
 
-<template id="js-pup-pwa" data-n55-sodapop-modal="true" data-n55-sodapop-size="small" data-n55-sodapop-fullscreen="false">
+<template id="js-pup-n55-pwa" data-n55-sodapop-modal="true" data-n55-sodapop-size="small" data-n55-sodapop-fullscreen="false">
     <article class="rev-artc h-center" style="padding: 12px;">
         <div>
             <section style="background-color: #242424;border-radius: 8px;">
-                <h4 class="h-center readable__caption_white">Install the M5M Web App</h4>
+                <h4 class="h-center readable__caption_white">Install the Web App</h4>
                 <neodigm-marquee data-n55-marquee-text=" Did you know that you can add this website to your desktop / home screen.  It's easy!  You can install it as a Web App.  It is easily accessible and will even work when you are disconnected from the Internet.  How Convenient! "
                 data-n55-marquee-size="medium">
                 <pre data-n55-theme="marcom"></pre>
@@ -1462,6 +1462,7 @@ tabindex="0">
         </div>
     </article>
 </template>
+
 <script>
 /* PWA via SodaPop > CTA */
 let _beforeinstallprompt = null;  //  Event
@@ -1469,9 +1470,10 @@ const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.n
 window.addEventListener('DOMContentLoaded', function(){
     window.addEventListener("beforeinstallprompt", function( ev ){ _beforeinstallprompt = ev })
 })
+
 let doPWA = function( pause = 0 ){
     setTimeout(function(){
-        if( _beforeinstallprompt && !neodigmSodaPop.isOpen() && !isInStandaloneMode() ) neodigmSodaPop.autoOpen("js-pup-pwa")
+        if( _beforeinstallprompt && !neodigmSodaPop.isOpen() && !isInStandaloneMode() ) neodigmSodaPop.autoOpen("js-pup-n55-pwa")
     }, pause)
 }
 doPWA( 60 * 1000 * 4.6 )
