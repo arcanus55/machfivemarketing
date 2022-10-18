@@ -748,6 +748,7 @@ olark.identify('7233-815-10-7742');
             }
         }, 4e3)
     });
+    neodigmPWA.autoOpen( 60 * 1000 * 4.6 )
 </script>
 
     <body>
@@ -1469,22 +1470,6 @@ tabindex="0">
 
     </article>
 </template>
-
-<script>
-/* PWA via SodaPop > CTA */
-let _beforeinstallprompt = null;  //  Event
-const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone)
-window.addEventListener('DOMContentLoaded', function(){
-    window.addEventListener("beforeinstallprompt", function( ev ){ _beforeinstallprompt = ev })
-})
-
-let doPWA = function( pause = 0 ){
-    setTimeout(function(){
-        if( _beforeinstallprompt && !neodigmSodaPop.isOpen() && !isInStandaloneMode() ) neodigmSodaPop.autoOpen("js-pup-n55-pwa")
-    }, pause)
-}
-doPWA( 60 * 1000 * 4.6 )
-</script>
 
 <script type='application/ld+json'>
     {
