@@ -70,6 +70,7 @@ window.addEventListener("beforeinstallprompt", function( ev ){
         if( neodigmPWA ) neodigmPWA.beforeinstallprompt( ev )
     }, 4200)
 })
+neodigmPWA.autoOpen( 60 * 1000 * 4.6 )
 </script>
 <link rel="stylesheet" href="https://arcanus55.github.io/neodigm55/dist/neodigm55_v2_3.css"></link>
 <script src="https://arcanus55.github.io/neodigm55/dist/neodigm55_v2_3.js"></script>
@@ -238,7 +239,7 @@ let neodigmOpt_launchCompleteCustom = {CONSOLE_LOG_VER: false}
 
 <script>
     function doCal(){  
-        if( neodigmToast ){ neodigmToast.q("Let's Schedule a|Quick Consultation", "marcom"); }
+        if( neodigmToast ){ neodigmToast.q("Let's Schedule a|Quick Consultation", "danger"); }
         setTimeout(function(){
             neodigmSodaPop.autoOpen("js-pup-cal")
             setTimeout(function(){
@@ -750,7 +751,6 @@ olark.identify('7233-815-10-7742');
             }
         }, 4e3)
     });
-    neodigmPWA.autoOpen( 60 * 1000 * 4.6 )
 </script>
 
     <body>
