@@ -72,12 +72,19 @@ var neodigmOptCustom = {
 <link rel="stylesheet" href="/css/flickity.min.css">
 <script src="/js/flickity.pkgd.min.js"></script>
 <script>
-window.addEventListener("beforeinstallprompt", function( ev ){
-    setTimeout(function(){
-        if( neodigmPWA ) neodigmPWA.beforeinstallprompt( ev )
-    }, 4200)
-})
-neodigmPWA.autoOpen( 60 * 1000 * 4.6 )
+    var _d = oD = document;
+    var isMobile = function(){ return (oD.body.clientWidth <= 768) ? true : false; }   
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+            navigator.serviceWorker.register("/sw.js");
+        });
+    }
+    window.addEventListener("beforeinstallprompt", function( ev ){
+        setTimeout(function(){
+            if( neodigmPWA ) neodigmPWA.beforeinstallprompt( ev )
+        }, 4200)
+    })
+    neodigmPWA.autoOpen( 60 * 1000 * 4.6 )
 </script>
 <link rel="stylesheet" href="https://arcanus55.github.io/neodigm55/dist/neodigm55_v2_3.css"></link>
 <script src="https://arcanus55.github.io/neodigm55/dist/neodigm55_v2_3.js"></script>
@@ -97,16 +104,6 @@ let neodigmOpt_launchCompleteCustom = {CONSOLE_LOG_VER: false}
     .vec-bullet { fill: #DD4124; height: 32px; width: 32px; margin-bottom: -6px; }
     .vec-bullet:hover { fill: #810000; }
 </style>
-
-<script>
-    var _d = oD = document;
-    var isMobile = function(){ return (oD.body.clientWidth <= 768) ? true : false; }    
-    if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-            navigator.serviceWorker.register("/sw.js");
-        });
-    }
-</script>
 
 <script>  
 
