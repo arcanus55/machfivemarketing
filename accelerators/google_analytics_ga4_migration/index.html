@@ -1316,10 +1316,10 @@ data-n55-sodapop-id="js-cheatsheet--id">
         let autoOpenParm = new URLSearchParams( document.location.search )
         autoOpenParm = autoOpenParm.get("autoOpen")
         if( autoOpenParm && neodigmSodaPop ) {  // Callback by naming convention
-            if (typeof window[autoOpenParm] === "function") neodigmSodaPop.setOnAfterOpen( window[autoOpenParm] )
+            if(typeof window[autoOpenParm] === "function") neodigmSodaPop.setOnAfterOpen( window[autoOpenParm] )
             neodigmSodaPop.autoOpen( autoOpenParm )
         }
-    }, 1256)
+    }, 2256)
     const ga4_infographic = function(){
         neodigmToast.q("ga4_infographic|controller","party")
     }
