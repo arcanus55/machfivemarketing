@@ -1315,6 +1315,7 @@ data-n55-sodapop-id="js-cheatsheet--id">
     setTimeout(()=>{  //  autoOpen if in query string
         let autoOpenParm = new URLSearchParams( document.location.search )
         autoOpenParm = autoOpenParm.get("autoOpen")
+console.log(" ~~~ ~~~ | " + autoOpenParm, neodigmSodaPop )
         if( autoOpenParm && neodigmSodaPop ) {  // Callback by naming convention
             if(typeof window[autoOpenParm] === "function") neodigmSodaPop.setOnAfterOpen( window[autoOpenParm] )
             neodigmSodaPop.autoOpen( autoOpenParm )
