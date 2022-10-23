@@ -1312,20 +1312,20 @@ data-n55-sodapop-id="js-cheatsheet--id">
 </script>
 
 <script type="text/javascript">
+    const ga4_infographic = function(){
+        neodigmToast.q("ga4_infographic|controller","party")
+    }
     setTimeout(()=>{  //  autoOpen if in query string
         let autoOpenParm = new URLSearchParams( document.location.search )
         autoOpenParm = autoOpenParm.get("autoOpen")
 console.log(" ~~~ ~~~ 1 | " + autoOpenParm, neodigmSodaPop )
         if( autoOpenParm && neodigmSodaPop ) {  // Callback by naming convention
 console.log(" ~~~ ~~~ 2 | ")
-if(typeof window[autoOpenParm] === "function") neodigmSodaPop.setOnAfterOpen( window[autoOpenParm] )
+            if(typeof window[autoOpenParm] === "function") neodigmSodaPop.setOnAfterOpen( window[autoOpenParm] )
 console.log(" ~~~ ~~~ 3 | ")
-neodigmSodaPop.autoOpen( autoOpenParm )
+            neodigmSodaPop.autoOpen( autoOpenParm )
         }
     }, 2256)
-    const ga4_infographic = function(){
-        neodigmToast.q("ga4_infographic|controller","party")
-    }
 </script>
 
 <template id="ga4_infographic" data-n55-sodapop-modal="false" data-n55-sodapop-size="small">
