@@ -632,7 +632,7 @@ data-n55-marquee-size="medium">
         <div>
             <section style="background-color: #242424;border-radius: 8px;">
                 <h4 class="h-center readable__caption_white">Install the Web App</h4>
-                <neodigm-marquee data-n55-marquee-text=" Did you know that you can add this website on your home screen.  It's Secure, Smart, and Easy!  You can install it as a Web App.  It is easily accessible and will work when you are disconnected from the Internet.  How Convenient! "
+                <neodigm-marquee data-n55-marquee-text="  Did you know that you can add this website on your home screen?  You can install it as a Web App.  It's fast, secure, and Easy!  It will work when you are disconnected from the Internet.  How Convenient! "
                 data-n55-marquee-size="small">
                 <pre data-n55-theme="info"></pre>
                 </neodigm-marquee>
@@ -1312,8 +1312,10 @@ data-n55-sodapop-id="js-cheatsheet--id">
 </script>
 
 <script type="text/javascript">
+    // pre-cache json
     function ga4_infographic(){
-        neodigmToast.q("ga4_infographic|controller","party")
+        neodigmToast.q("ga4_infographic|controller", "party")
+        // turn on marq
     }
     setTimeout(()=>{  //  autoOpen if in query string
         let autoOpenParm = new URLSearchParams( document.location.search )
@@ -1325,7 +1327,7 @@ data-n55-sodapop-id="js-cheatsheet--id">
     }, 1256)
 </script>
 
-<template id="ga4_infographic" data-n55-sodapop-modal="false" data-n55-sodapop-size="small"  data-n55-sodapop-fullscreen="true">
+<template id="ga4_infographic" data-n55-sodapop-modal="false" data-n55-sodapop-size="large"  data-n55-sodapop-fullscreen="true">
     <article class="rev-artc">
         <section style="background-color: #242424;border-radius: 8px;">
             <h4 class="h-center readable__caption_white">Cheetsheet</h4>
