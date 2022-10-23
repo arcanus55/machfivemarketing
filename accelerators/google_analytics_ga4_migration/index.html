@@ -1318,15 +1318,11 @@ data-n55-sodapop-id="js-cheatsheet--id">
     setTimeout(()=>{  //  autoOpen if in query string
         let autoOpenParm = new URLSearchParams( document.location.search )
         autoOpenParm = autoOpenParm.get("autoOpen")
-console.log(" ~~~ ~~~ 1 | " + autoOpenParm, neodigmSodaPop )
         if( autoOpenParm && neodigmSodaPop ) {  // Callback by naming convention
-console.log(" ~~~ ~~~ 2 | ")
             if(typeof window[autoOpenParm] === "function") neodigmSodaPop.setOnAfterOpen( window[autoOpenParm] )
-console.log(" ~~~ ~~~ 3 | ", autoOpenParm)
             neodigmSodaPop.autoOpen( autoOpenParm )
-console.log(" ~~~ ~~~ 4 | ")
         }
-    }, 4256)
+    }, 1256)
 </script>
 
 <template id="ga4_infographic" data-n55-sodapop-modal="false" data-n55-sodapop-size="small"  data-n55-sodapop-fullscreen="true">
