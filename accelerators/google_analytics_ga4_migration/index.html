@@ -1336,7 +1336,7 @@ data-n55-sodapop-id="js-cheatsheet--id">
         if( eSec ){
             let sMU_crd = `<article class="sm-crd-inver__night-alt h-pos__rel" data-pref-scheme="dark">
 <br><div class="saas-crd__rib--side" data-pref-scheme="dark" onclick="NeodigmClaire.showCanv('#saas-crd-1 > main').initCanvOff('#saas-crd-1 > main').doConfetti('#saas-crd-1 > main')" data-n55-flash-theme="primary" data-n55-wired4sound-click="6"><div class="h-center"><span class="banner-cap h-nowrap">$450 <span class="h-smaller h-strike">$650</span></span></div></div>
-<h2 class="hd3 h-center">Accelerated Migration</h2>
+<h2 class="hd3 h-center">##card##</h2>
 <main>
 <p class="txt-readable prg">GTM <span class="txt-read__16"> - Container | Setup Analytics | Adwords | FB Tags | Necessary Triggers</span></p>
 <p class="txt-readable prg h-center h-ital">7-14 Days</p>
@@ -1347,7 +1347,8 @@ data-n55-sodapop-id="js-cheatsheet--id">
                     for (sK in oCards) {
 console.log( sK, oCards[ sK ] )
                         let eArt = document.createElement("article");
-                        eArt.id = sK;
+                        eArt.id = sK + "_id";
+                        sMU_crd.replaceAll("##card##", sK)
                         eArt.innerHTML = sMU_crd
                         eSec.appendChild( eArt );
                 }
