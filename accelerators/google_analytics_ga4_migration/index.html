@@ -1353,7 +1353,7 @@ console.log( sK, oCards[ sK ] )
                         elArt.id = sK + "_id";
                         elArt.innerHTML = sMU_crd.replaceAll("##card##", sK)
                         elSec.appendChild( elArt );
-                        oCards[ sK ].forEach(function( oLine ){
+                        oCards[ sK ].lines.forEach(function( oLine ){
                             let elMain = elArt.querySelector("main")
                             if( elMain ){
                                 let elLine = document.createElement("p");
