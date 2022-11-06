@@ -1346,7 +1346,7 @@ data-n55-sodapop-id="js-cheatsheet--id">
                 .then(( oCards ) => {
                     for (sK in oCards) {
 console.log( sK, oCards[ sK ] )
-                        let eArt = eSec.createElement("article");
+                        let eArt = document.createElement("article");
                         eArt.id = sK;
                         eArt.innerHTML = sMU_crd
                         eSec.appendChild( eArt );
