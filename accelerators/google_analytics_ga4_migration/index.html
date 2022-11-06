@@ -1354,11 +1354,11 @@ console.log( JSON.stringify( aCards), aCards ) ;
         neodigmToast.q("ga4_infographic|controller", "party")
         console.warn("--- --- --- ga4_infographic")
         //fetch("/accelerators/m5m_ga4_interactive_infographic.json")
-        fetch("https://machfivemarketing.com/accelerators/m5m_ga4_interactive_infographic.json")
+        fetch("/accelerators/m5m_ga4_interactive_infographic.json")
             .then(response => response.json()) // Get cheetsheat
             .then(( aCards ) => {
-                aCards.array.forEach( eC => {
 console.log( " --- | ", JSON.stringify( aCards), aCards ) ;
+aCards.array.forEach( eC => {
 console.log( " --- | ", eC )
                 });
         });
