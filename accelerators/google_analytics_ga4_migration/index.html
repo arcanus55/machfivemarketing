@@ -765,7 +765,7 @@ olark.identify('7233-815-10-7742');
                         neodigmMetronome.init().pause( 2400 )
                             neodigmMarquee.init().pause( 2600 )
                                 neodigmEnchantedCTA.init()
-                    });
+                });
                 neodigmSodaPop.setOnBeforeUserExit( function(){ neodigmToast.q("Act Now! Time is Fleeting ...|Let's chat before its too late", "danger"); neodigmWired4Sound.sound( 5 ); olark('api.box.expand'); } )
             }
         }, 3e3)
@@ -1376,12 +1376,15 @@ data-n55-sodapop-id="js-cheatsheet--id">
 
 <script type="text/javascript">
     ga4_infographic_cb = function(){
-        fetch("/accelerators/m5m_ga4_interactive_infographic.json")
-            .then(response => response.json()) // Get cheetsheat
+        NeodigmClaire.doWaxOn("neodigm-sodapop", ["danger", "warning", "primary"], "random", .7)
+        neodigmMetronome.init().pause( 2400 )
+            neodigmMarquee.init().pause( 2600 )
+                neodigmEnchantedCTA.init()
+        fetch("/accelerators/m5m_ga4_interactive_infographic.json").then(response => response.json()) // Get cheetsheat
             .then(( oCards ) => {
                 for (sK in oCards) {
 console.log( sK, oCards[ sK ] )
-                  }
+            }
         })
     }
 </script>
