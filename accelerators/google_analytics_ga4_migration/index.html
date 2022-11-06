@@ -1348,8 +1348,7 @@ data-n55-sodapop-id="js-cheatsheet--id">
 console.log( sK, oCards[ sK ] )
                         let eArt = document.createElement("article");
                         eArt.id = sK + "_id";
-                        sMU_crd.replaceAll("##card##", sK)
-                        eArt.innerHTML = sMU_crd
+                        eArt.innerHTML = sMU_crd.replaceAll("##card##", sK)
                         eSec.appendChild( eArt );
                 }
             })
