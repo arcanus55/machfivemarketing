@@ -1357,7 +1357,7 @@ console.log( sK, oCards[ sK ] )
                             let elMain = elArt.querySelector("main")
                             if( elMain ){
                                 let elLine = document.createElement("p");
-                                elLine.innerHTML = sMU_line.replaceAll("##name##", elArt.name)
+                                elLine.innerHTML = sMU_line.replaceAll("##name##", oLine.name)
                                 elMain.appendChild( elLine );
                             }
                         })
