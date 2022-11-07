@@ -1361,7 +1361,7 @@ console.log( sK, oCards[ sK ] )
                             if( elAside ){
                                 let elLine = document.createElement("p");
                                 elLine.innerHTML = sMU_line.replaceAll("##name##", oLine.name).replaceAll("##desc##", oLine.desc)
-                                if( oLine.desk.indexOf(" - ") != -1 ) sMU_line.replaceAll("neodigm-marquee","template")
+                                if( oLine.desc.indexOf(" - ") != -1 ) sMU_line.replaceAll("neodigm-marquee","template")
                                 elAside.appendChild( elLine );
                             }
                         })
