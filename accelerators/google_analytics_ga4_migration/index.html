@@ -1343,11 +1343,9 @@ data-n55-sodapop-id="js-cheatsheet--id">
     <aside></aside>
 </details>
 </article>`
-let sMU_line = `<p class="txt-readable prg txt-read__16">##name##</p>
-<neodigm-marquee style="border-radius: 8px;" data-n55-marquee-text=" ##desc##  "
-data-n55-marquee-size="small" data-n55-marquee-direction="false"><pre data-n55-theme="primary"></pre>
-</neodigm-marquee>`
-
+let sMU_line = `<p class="txt-readable prg">##name##</p>
+<p class="txt-read__16">##desc##</p>
+<br>`
             fetch("/accelerators/m5m_ga4_interactive_infographic.json").then(response => response.json()) // Get Cheat Sheet
                 .then(( oCards ) => {
                     for (sK in oCards) {
