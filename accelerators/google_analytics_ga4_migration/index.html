@@ -1336,10 +1336,9 @@ data-n55-sodapop-id="js-cheatsheet--id">
         if( elSec ){
             let sMU_crd = `<article class="sm-crd-inver__night-alt h-pos__rel" data-pref-scheme="dark">
 <br><div class="saas-crd__rib--side" data-pref-scheme="dark" onclick="NeodigmClaire.showCanv('#saas-crd-1 > main').initCanvOff('#saas-crd-1 > main').doConfetti('#saas-crd-1 > main')" data-n55-flash-theme="primary" data-n55-wired4sound-click="6"><div class="h-center"><span class="banner-cap h-nowrap">
-##card##
+##length##
 </span></div></div>
 <h2 class="hd3 h-center">##card##</h2>
-
 <details>
     <summary class="h-marker__danger txt-readable prg h-hvr__danger txt-read__16" data-n55-wired4sound-mouseover="3">Understand Reporting Audience</summary>
     <aside></aside>
@@ -1358,7 +1357,7 @@ data-n55-marquee-size="small" data-n55-marquee-direction="false"><pre data-n55-t
 console.log( sK, oCards[ sK ] )
                         let elArt = document.createElement("article");
                         elArt.id = sK + "_id";
-                        elArt.innerHTML = sMU_crd.replaceAll("##card##", sK)
+                        elArt.innerHTML = sMU_crd.replaceAll("##card##", sK).replaceAll("##length##", oCards[ sK ].lines.length)
                         elSec.appendChild( elArt );
                         oCards[ sK ].lines.forEach(function( oLine ){
                             let elAside = elArt.querySelector("aside")
