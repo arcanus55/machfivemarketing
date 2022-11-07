@@ -1339,11 +1339,18 @@ data-n55-sodapop-id="js-cheatsheet--id">
 ##card##
 </span></div></div>
 <h2 class="hd3 h-center">##card##</h2>
-<main></main>
+
+<details>
+    <summary class="h-marker__danger txt-readable prg h-hvr__danger txt-read__16" data-n55-wired4sound-mouseover="3">Understand Reporting Audience</summary>
+    <aside></aside>
+</details>
+
+
 </article>`
-let sMU_line = `<p class="txt-readable prg">GTM <span class="txt-read__16">
-##name##
-</p>`
+let sMU_line = `<neodigm-marquee style="border-radius: 8px;" data-n55-marquee-text=" ##desc##  "
+data-n55-marquee-size="small" data-n55-marquee-direction="false"><pre data-n55-theme="primary"></pre>
+</neodigm-marquee>
+<p class="txt-readable prg txt-read__16">##name##</p>`
 
             fetch("/accelerators/m5m_ga4_interactive_infographic.json").then(response => response.json()) // Get Cheat Sheet
                 .then(( oCards ) => {
@@ -1354,11 +1361,11 @@ console.log( sK, oCards[ sK ] )
                         elArt.innerHTML = sMU_crd.replaceAll("##card##", sK)
                         elSec.appendChild( elArt );
                         oCards[ sK ].lines.forEach(function( oLine ){
-                            let elMain = elArt.querySelector("main")
-                            if( elMain ){
+                            let elAside = elArt.querySelector("aside")
+                            if( elAside ){
                                 let elLine = document.createElement("p");
-                                elLine.innerHTML = sMU_line.replaceAll("##name##", oLine.name)
-                                elMain.appendChild( elLine );
+                                elLine.innerHTML = sMU_line.replaceAll("##name##", oLine.name).replaceAll("##desc##", oLine.desc)
+                                elAside.appendChild( elLine );
                             }
                         })
                     }
