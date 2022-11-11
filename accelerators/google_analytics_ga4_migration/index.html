@@ -817,7 +817,7 @@ href="#a11y-skipmain">Skip to Main Content</a>
         neodigmSodaPop: true,
         neodigmUtils: true,
         neodigmWired4Sound: true,
-        QQQQneodigmParallax: false,  //  Issue with iPhone!
+        QQQQneodigmParallax: false,  //  Issue with iPhone!!
         QQQQPRLX_MOBILE: true,  //  Show Parallax on Mobile
         neodigmMarquee: true}
 </script>
@@ -1410,7 +1410,7 @@ setTimeout(()=>{  //  autoOpen if in query string
     autoOpenParm = autoOpenParm.get("autoOpen")
     if( autoOpenParm && neodigmSodaPop ) {
         neodigmSodaPop.autoOpen( autoOpenParm )
-        autoOpenParm = autoOpenParm + "_cb"  // Callback by append naming convention
+        autoOpenParm = autoOpenParm +   // Callback by append naming convention
         if(typeof window[ autoOpenParm ] === "function") neodigmSodaPop.setOnAfterOpen( window[ autoOpenParm ] )
     } // Note: Cannot open in fullscreen mode when opened via URL param
 }, 1256)
