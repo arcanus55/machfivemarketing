@@ -1375,7 +1375,7 @@ data-n55-sodapop-id="ga4_infographic">
     let doSideContent = function( aSideTab = null ){  //  
         let elTable = document.getElementById("js-caro-cheatsheet-table")
         if( aSideTab && elTable && window.oM5M_tool ){
-            let sMU = '<p>##TD##</p>', sOut = ""
+            let sMU = '<p class="txt-readable prg">##TD##</p>', sOut = ""
             aSideTab = aSideTab.split(",")
             window.oM5M_tool[aSideTab[0]].lines[aSideTab[1]].table.forEach(function( sTD ){
                 sOut = sOut + sMU.replace("##TD##", sTD)
