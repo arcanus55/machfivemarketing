@@ -18,6 +18,9 @@
             --m5m-gray: #6B6B6B;
             --m5m-gray-light: #E8E8E8;
             --m5m-white: #FFFFFF;
+            --m5m-text: #333;
+            --m5m-text-light: #666;
+            --m5m-border: #e0e0e0;
             --max-width: 1200px;
         }
 
@@ -1028,21 +1031,23 @@
             opacity: 1;
         }
 
+        /* Updated colors for the explore section */
         .explore-item:nth-child(1) .explore-icon {
-            background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);
+            background: linear-gradient(135deg, #FFFFFF 0%, #F0F0F0 100%);
+            color: var(--m5m-gray-dark);
         }
 
         .explore-item:nth-child(2) .explore-icon {
-            background: linear-gradient(135deg, var(--m5m-blue) 0%, #5D7399 100%);
+            background: linear-gradient(135deg, var(--m5m-orange) 0%, #ff7b54 100%);
         }
 
         .explore-item:nth-child(3) .explore-icon {
-            background: linear-gradient(135deg, var(--m5m-orange) 0%, #ff7b54 100%);
+            background: linear-gradient(135deg, #DC143C 0%, #B22222 100%);
         }
 
         .explore-label {
             font-size: 1rem;
-            font-weight: 600;
+            font-weight: 400; /* Changed from 600 to 400 to remove bold */
             color: var(--m5m-gray-dark);
             letter-spacing: -0.02em;
         }
@@ -1147,24 +1152,41 @@
             transform: translateY(-2px);
         }
 
-        /* Footer - Keep Dark */
+        /* Footer - Updated Light Theme from Mach Five Tech */
         .footer {
-            background: linear-gradient(180deg, var(--m5m-charcoal) 0%, var(--m5m-black) 100%);
-            border-top: 4px solid var(--m5m-blue);
-            color: #ccc;
+            background: linear-gradient(180deg, #fafafa 0%, #f5f5f5 100%);
+            border-top: 1px solid var(--m5m-border);
+            color: var(--m5m-text);
             padding: 80px 24px 32px;
             position: relative;
+        }
+
+        /* Subtle brand accent line at top */
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--m5m-blue);
+            border-radius: 0 0 3px 3px;
         }
 
         .footer-inner {
             max-width: var(--max-width);
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 4rem;
-            margin-bottom: 4rem;
-            border-bottom: 1px solid #222;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 48px;
+            border-bottom: 1px solid var(--m5m-border);
             padding-bottom: 48px;
+        }
+
+        .footer-brand {
+            flex: 1 1 400px;
         }
 
         .footer-brand h3 {
@@ -1176,9 +1198,9 @@
         }
 
         .footer-logo-text {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             font-weight: 300;
-            color: var(--m5m-white);
+            color: var(--m5m-text);
             letter-spacing: -0.5px;
         }
 
@@ -1194,35 +1216,38 @@
         }
 
         .footer-brand p {
-            color: rgba(255, 255, 255, 0.6);
+            color: var(--m5m-text-light);
+            line-height: 1.8;
             margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-
-        .footer-contact {
-            margin-top: 2rem;
         }
 
         .footer-contact a {
-            display: block;
-            color: rgba(255, 255, 255, 0.8);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--m5m-text);
             text-decoration: none;
             font-weight: 500;
+            transition: all 0.2s;
             margin-bottom: 0.5rem;
-            transition: color 0.2s ease;
         }
 
         .footer-contact a:hover {
             color: var(--m5m-blue);
+            transform: translateX(2px);
+        }
+
+        .footer-col {
+            flex: 1 1 200px;
         }
 
         .footer-col h4 {
-            font-size: 0.875rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 1.5rem;
             color: var(--m5m-blue);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-size: 13px;
+            font-weight: 700;
         }
 
         .footer-col ul {
@@ -1230,26 +1255,36 @@
         }
 
         .footer-col li {
-            margin-bottom: 0.75rem;
+            margin-bottom: 12px;
         }
 
         .footer-col a {
-            color: rgba(255, 255, 255, 0.5);
+            color: var(--m5m-text-light);
             text-decoration: none;
-            font-size: 0.9375rem;
-            transition: all 0.2s ease;
-            position: relative;
-            display: inline-block;
+            transition: all 0.2s;
+            font-size: 15px;
         }
 
         .footer-col a:hover {
             color: var(--m5m-blue);
+            transform: translateX(2px);
         }
 
         .footer-bottom {
             text-align: center;
-            font-size: 0.8em;
-            color: #888;
+            margin-top: 32px;
+            font-size: 14px;
+            color: var(--m5m-text-light);
+        }
+
+        .footer-bottom a {
+            color: var(--m5m-text-light);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--m5m-blue);
         }
 
         /* Responsive */
@@ -1692,10 +1727,12 @@
         </div>
     </section>
 
-    <!-- Explore More -->
+   
     <section class="explore">
         <div class="explore-inner">
-            <h2>Explore More Solutions</h2>
+            <h2>More from Mach Five</h2>
+            <p>Our brands, connected by Design.</p>
+            <br>
             <div class="explore-grid">
                 <a href="https://machfivegroup.com" class="explore-item">
                     <div class="explore-icon">5</div>
@@ -1738,7 +1775,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer - Updated Light Theme -->
     <footer class="footer">
         <div class="footer-inner">
             <div class="footer-brand">
@@ -1747,8 +1784,9 @@
                     <span class="footer-logo-mark">MARKETING</span>
                 </h3>
                 <p>Performance marketing and technology solutions for ambitious companies.</p>
+                <p>Headquartered in Chicago. Supporting clients nationwide.</p>
                 <div class="footer-contact">
-                    <a href="tel:312-380-7300">312-380-7300</a>
+                    <a href="tel:312-380-7300">312-380-7300</a><br>
                     <a href="mailto:support@machfivemarketing.com">support@machfivemarketing.com</a>
                 </div>
             </div>
@@ -1770,10 +1808,11 @@
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Company</h4>
+                <h4>Our Family</h4>
                 <ul>
                     <li><a href="https://machfivegroup.com">Mach Five Group</a></li>
                     <li><a href="https://machfivetech.com">Mach Five Tech</a></li>
+                    <li><a href="https://machfiveai.com">Mach Five AI</a></li>
                     <li><a href="#careers">Careers</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
