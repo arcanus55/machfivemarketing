@@ -600,143 +600,170 @@
             margin: 0 auto;
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            max-width: 1000px;
+        .services-alternating {
+            max-width: 1400px;
             margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 8rem;
         }
 
-        .service-card {
+        .service-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .service-row.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-row-left .service-content {
+            order: 1;
+        }
+
+        .service-row-left .service-panel {
+            order: 2;
+        }
+
+        .service-row-right .service-content {
+            order: 2;
+        }
+
+        .service-row-right .service-panel {
+            order: 1;
+        }
+
+        .service-content {
+            padding: 0 2rem;
+        }
+
+        .service-tag {
+            display: inline-block;
+            background: var(--m5m-orange);
+            color: var(--m5m-white);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .service-headline {
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--m5m-gray-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-description {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: var(--m5m-text-light);
+            margin-bottom: 2rem;
+        }
+
+        .service-panel {
+            position: relative;
             background: rgba(255, 255, 255, 0.9);
             border: 1px solid rgba(0, 0, 0, 0.05);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            padding: 0;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             border-radius: 16px;
-            cursor: pointer;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+            padding: 3rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
         }
 
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border-color: var(--m5m-blue);
+        .service-panel:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
         }
 
-        .service-card:nth-child(1) { --service-color: var(--m5m-blue); }
-        .service-card:nth-child(2) { --service-color: var(--m5m-orange); }
-        .service-card:nth-child(3) { --service-color: var(--m5m-blue); }
-        .service-card:nth-child(4) { --service-color: var(--m5m-orange); }
-
-        .service-header {
-            padding: 3rem 3rem 0;
-            position: relative;
-        }
-
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--service-color);
+        .service-panel-tab {
+            position: absolute;
+            top: -12px;
+            left: 2rem;
+            background: var(--m5m-blue);
             color: var(--m5m-white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 12px;
             font-weight: 700;
-            margin-bottom: 1.5rem;
-            transition: all 0.3s ease;
-            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transform: rotate(-1deg);
         }
 
-        .service-card:hover .service-icon {
-            transform: scale(1.1);
+        .service-row:nth-child(even) .service-panel-tab {
+            background: var(--m5m-orange);
+            transform: rotate(1deg);
         }
 
-        .service-content {
-            padding: 0 3rem 3rem;
-        }
-
-        .service-content h3 {
-            font-size: 1.5rem;
-            font-weight: 500;
-            margin-bottom: 1rem;
-            color: var(--m5m-gray-dark);
-            line-height: 1.3;
-        }
-
-        .service-content p {
-            color: var(--m5m-gray);
-            line-height: 1.6;
-            margin-bottom: 2rem;
+        .service-panel-content {
+            padding-top: 1rem;
         }
 
         .service-cta {
-            color: var(--service-color);
+            color: var(--m5m-orange);
             font-weight: 600;
             font-size: 1rem;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
             transition: all 0.3s ease;
+            cursor: pointer;
         }
 
-        .service-card:hover .service-cta {
+        .service-cta:hover {
             gap: 0.75rem;
-        }
-
-        .service-expand {
-            padding: 0 3rem 3rem;
-            display: none;
-        }
-
-        .service-expand.active {
-            display: block;
-            animation: slideDown 0.3s ease;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .service-expand h4 {
-            font-size: 0.875rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--m5m-gray);
-            margin-bottom: 1rem;
+            color: var(--m5m-blue);
         }
 
         .service-list {
             list-style: none;
-            color: var(--m5m-gray);
+            color: var(--m5m-text-light);
             font-size: 0.9375rem;
+            padding: 0;
+            margin: 0;
         }
 
         .service-list li {
-            padding: 0.5rem 0;
+            padding: 0.75rem 0;
             position: relative;
             padding-left: 1.5rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .service-list li:last-child {
+            border-bottom: none;
         }
 
         .service-list li::before {
             content: '•';
             position: absolute;
             left: 0;
-            color: var(--service-color);
+            color: var(--m5m-orange);
             font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .service-list li:hover {
+            color: var(--m5m-gray-dark);
+            padding-left: 2rem;
+        }
+
+        .service-list li:hover::before {
+            color: var(--m5m-blue);
         }
 
         /* Technology Section - Already Light */
@@ -1328,7 +1355,33 @@
                 gap: 4rem;
             }
 
-            .services-grid,
+            .services-alternating {
+                gap: 4rem;
+            }
+
+            .service-row {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .service-row-left .service-content,
+            .service-row-right .service-content {
+                order: 1;
+            }
+
+            .service-row-left .service-panel,
+            .service-row-right .service-panel {
+                order: 2;
+            }
+
+            .service-content {
+                padding: 0 1rem;
+            }
+
+            .service-panel {
+                padding: 2rem;
+            }
+
             .tech-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -1575,110 +1628,116 @@
                 <h2 class="services-title">Services that drive growth</h2>
                 <p class="services-subtitle">Where do you want to start?</p>
             </div>
-            <div class="services-grid">
-                <div class="service-card" onclick="toggleService(1)">
-                    <div class="service-header">
-                        <div class="service-icon">01</div>
-                        <div class="service-content">
-                            <h3>I Need to Get Found Online</h3>
-                            <p>We'll make sure your business shows up where customers are searching. From dominating Google results to managing your online reputation, we help you become the obvious choice in your market.</p>
-                            <div class="service-cta">
-                                Get Visible 
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M5 12h14m0 0l-7-7m7 7l-7 7"/>
-                                </svg>
-                            </div>
+            <div class="services-alternating">
+                
+                <!-- Service 1 - Content Left, Panel Right -->
+                <div class="service-row service-row-left">
+                    <div class="service-content">
+                        <div class="service-tag">I Need to Get Found Online</div>
+                        <h3 class="service-headline">Dominate search results and become the obvious choice</h3>
+                        <p class="service-description">We'll make sure your business shows up where customers are searching. From dominating Google results to managing your online reputation, we help you become the obvious choice in your market.</p>
+                        <div class="service-cta">
+                            Get Visible 
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14m0 0l-7-7m7 7l-7 7"/>
+                            </svg>
                         </div>
                     </div>
-                    <div class="service-expand" id="service-1">
-                        <h4>Services</h4>
-                        <ul class="service-list">
-                            <li>Search Engine Optimization (SEO)</li>
-                            <li>Local SEO & Google My Business</li>
-                            <li>Content Marketing Strategy</li>
-                            <li>Directory Management</li>
-                            <li>Online Reputation Management</li>
-                        </ul>
+                    <div class="service-panel">
+                        <div class="service-panel-tab">Proficiencies</div>
+                        <div class="service-panel-content">
+                            <ul class="service-list">
+                                <li>Search Engine Optimization (SEO)</li>
+                                <li>Local SEO & Google My Business</li>
+                                <li>Content Marketing Strategy</li>
+                                <li>Directory Management</li>
+                                <li>Online Reputation Management</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <div class="service-card" onclick="toggleService(2)">
-                    <div class="service-header">
-                        <div class="service-icon">02</div>
-                        <div class="service-content">
-                            <h3>I Need Immediate Results</h3>
-                            <p>Stop waiting for organic growth. Our performance marketing delivers qualified leads and measurable ROI from day one. We'll build campaigns that turn ad spend into revenue while you watch.</p>
-                            <div class="service-cta">
-                                Start Driving Leads 
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M5 12h14m0 0l-7-7m7 7l-7 7"/>
-                                </svg>
-                            </div>
+                <!-- Service 2 - Panel Left, Content Right -->
+                <div class="service-row service-row-right">
+                    <div class="service-panel">
+                        <div class="service-panel-tab">Proficiencies</div>
+                        <div class="service-panel-content">
+                            <ul class="service-list">
+                                <li>Pay-Per-Click Advertising (PPC)</li>
+                                <li>Social Media Advertising</li>
+                                <li>Display & Retargeting Campaigns</li>
+                                <li>Shopping & E-commerce Ads</li>
+                                <li>Video Advertising</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="service-expand" id="service-2">
-                        <h4>Services</h4>
-                        <ul class="service-list">
-                            <li>Pay-Per-Click Advertising (PPC)</li>
-                            <li>Social Media Advertising</li>
-                            <li>Display & Retargeting Campaigns</li>
-                            <li>Shopping & E-commerce Ads</li>
-                            <li>Video Advertising</li>
-                        </ul>
+                    <div class="service-content">
+                        <div class="service-tag">I Need Immediate Results</div>
+                        <h3 class="service-headline">Performance marketing that delivers ROI from day one</h3>
+                        <p class="service-description">Stop waiting for organic growth. Our performance marketing delivers qualified leads and measurable ROI from day one. We'll build campaigns that turn ad spend into revenue while you watch.</p>
+                        <div class="service-cta">
+                            Start Driving Leads 
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14m0 0l-7-7m7 7l-7 7"/>
+                            </svg>
+                        </div>
                     </div>
                 </div>
 
-                <div class="service-card" onclick="toggleService(3)">
-                    <div class="service-header">
-                        <div class="service-icon">03</div>
-                        <div class="service-content">
-                            <h3>I Need to Convert More</h3>
-                            <p>Traffic without conversions is just expensive vanity metrics. We'll transform your website into a conversion machine with our proprietary Lead Magnet™ technology and proven optimization strategies.</p>
-                            <div class="service-cta">
-                                Boost Conversions 
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M5 12h14m0 0l-7-7m7 7l-7 7"/>
-                                </svg>
-                            </div>
+                <!-- Service 3 - Content Left, Panel Right -->
+                <div class="service-row service-row-left">
+                    <div class="service-content">
+                        <div class="service-tag">I Need to Convert More</div>
+                        <h3 class="service-headline">Transform traffic into revenue with Lead Magnet™ technology</h3>
+                        <p class="service-description">Traffic without conversions is just expensive vanity metrics. We'll transform your website into a conversion machine with our proprietary Lead Magnet™ technology and proven optimization strategies.</p>
+                        <div class="service-cta">
+                            Boost Conversions 
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14m0 0l-7-7m7 7l-7 7"/>
+                            </svg>
                         </div>
                     </div>
-                    <div class="service-expand" id="service-3">
-                        <h4>Services</h4>
-                        <ul class="service-list">
-                            <li>Conversion Rate Optimization</li>
-                            <li>Landing Page Design</li>
-                            <li>A/B Testing & Optimization</li>
-                            <li>Lead Magnet™ Widget Installation</li>
-                            <li>Marketing Automation</li>
-                        </ul>
+                    <div class="service-panel">
+                        <div class="service-panel-tab">Proficiencies</div>
+                        <div class="service-panel-content">
+                            <ul class="service-list">
+                                <li>Conversion Rate Optimization</li>
+                                <li>Landing Page Design</li>
+                                <li>A/B Testing & Optimization</li>
+                                <li>Lead Magnet™ Widget Installation</li>
+                                <li>Marketing Automation</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <div class="service-card" onclick="toggleService(4)">
-                    <div class="service-header">
-                        <div class="service-icon">04</div>
-                        <div class="service-content">
-                            <h3>I Need Real Insights</h3>
-                            <p>Flying blind with your marketing budget? We'll show you exactly what's working, what's not, and where to invest next. Real data, real insights, real growth.</p>
-                            <div class="service-cta">
-                                See the Data 
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M5 12h14m0 0l-7-7m7 7l-7 7"/>
-                                </svg>
-                            </div>
+                <!-- Service 4 - Panel Left, Content Right -->
+                <div class="service-row service-row-right">
+                    <div class="service-panel">
+                        <div class="service-panel-tab">Proficiencies</div>
+                        <div class="service-panel-content">
+                            <ul class="service-list">
+                                <li>Marketing Analytics Setup</li>
+                                <li>Performance Audits</li>
+                                <li>ROI & Attribution Reporting</li>
+                                <li>Competitive Analysis</li>
+                                <li>Custom Dashboard Creation</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="service-expand" id="service-4">
-                        <h4>Services</h4>
-                        <ul class="service-list">
-                            <li>Marketing Analytics Setup</li>
-                            <li>Performance Audits</li>
-                            <li>ROI & Attribution Reporting</li>
-                            <li>Competitive Analysis</li>
-                            <li>Custom Dashboard Creation</li>
-                        </ul>
+                    <div class="service-content">
+                        <div class="service-tag">I Need Real Insights</div>
+                        <h3 class="service-headline">Data-driven decisions that maximize marketing ROI</h3>
+                        <p class="service-description">Flying blind with your marketing budget? We'll show you exactly what's working, what's not, and where to invest next. Real data, real insights, real growth.</p>
+                        <div class="service-cta">
+                            See the Data 
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14m0 0l-7-7m7 7l-7 7"/>
+                            </svg>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -1893,21 +1952,28 @@
             });
         }
 
-        // Toggle service expansion
-        function toggleService(num) {
-            const serviceExpand = document.getElementById(`service-${num}`);
-            const allExpands = document.querySelectorAll('.service-expand');
+        // Service row animations
+        function animateServiceRows() {
+            const serviceRows = document.querySelectorAll('.service-row');
             
-            // Close all other expanded services
-            allExpands.forEach((expand, index) => {
-                if (expand !== serviceExpand) {
-                    expand.classList.remove('active');
-                }
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
             });
-            
-            // Toggle current service
-            serviceExpand.classList.toggle('active');
+
+            serviceRows.forEach((row) => {
+                observer.observe(row);
+            });
         }
+
+        // Initialize animations when DOM is loaded
+        document.addEventListener('DOMContentLoaded', animateServiceRows);
 
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
