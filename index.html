@@ -1038,79 +1038,118 @@
             animation: shimmer 3s infinite;
         }
 
-        .explore-grid {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
+        .explore-subtitle {
+            font-size: 1.375rem;
+            color: var(--m5m-gray);
+            max-width: 600px;
+            margin: 0 auto 4rem;
+            text-align: center;
         }
 
-        .explore-item {
+        .explore-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .explore-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 16px;
             text-decoration: none;
-            transition: transform 0.3s ease;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            position: relative;
         }
 
-        .explore-item:hover {
+        .explore-card:hover {
             transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: var(--m5m-blue);
         }
 
-        .explore-icon {
-            width: 100px;
-            height: 100px;
-            border-radius: 20px;
+        .explore-card-header {
+            padding: 2rem 2rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .explore-card-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 48px;
+            font-size: 24px;
             font-weight: 700;
             color: var(--m5m-white);
-            margin: 0 auto 1rem;
+            background: var(--m5m-blue);
+            flex-shrink: 0;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-            position: relative;
-            overflow: hidden;
         }
 
-        .explore-icon::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.1) 100%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
+        .explore-card:nth-child(1) .explore-card-icon {
+            background: linear-gradient(135deg, var(--m5m-blue) 0%, var(--m5m-blue-dark) 100%);
         }
 
-        .explore-item:hover .explore-icon {
-            box-shadow: 0 12px 32px rgba(0,0,0,0.15);
-            transform: scale(1.05);
-        }
-
-        .explore-item:hover .explore-icon::before {
-            opacity: 1;
-        }
-
-        /* Updated colors for the explore section */
-        .explore-item:nth-child(1) .explore-icon {
-            background: linear-gradient(135deg, #FFFFFF 0%, #F0F0F0 100%);
-            color: var(--m5m-gray-dark);
-        }
-
-        .explore-item:nth-child(2) .explore-icon {
+        .explore-card:nth-child(2) .explore-card-icon {
             background: linear-gradient(135deg, var(--m5m-orange) 0%, #ff7b54 100%);
         }
 
-        .explore-item:nth-child(3) .explore-icon {
+        .explore-card:nth-child(3) .explore-card-icon {
             background: linear-gradient(135deg, #DC143C 0%, #B22222 100%);
         }
 
-        .explore-label {
-            font-size: 1rem;
-            font-weight: 400; /* Changed from 600 to 400 to remove bold */
+        .explore-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
             color: var(--m5m-gray-dark);
+            margin: 0;
             letter-spacing: -0.02em;
+        }
+
+        .explore-card-content {
+            padding: 1.5rem 2rem 2rem;
+        }
+
+        .explore-card-content p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--m5m-text-light);
+            margin: 0 0 1.5rem 0;
+        }
+
+        .explore-card-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--m5m-blue);
+            font-weight: 600;
+            font-size: 0.9375rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .explore-card:hover .explore-card-cta {
+            gap: 0.75rem;
+            color: var(--m5m-orange);
+        }
+
+        .explore-card-cta svg {
+            transition: transform 0.3s ease;
+        }
+
+        .explore-card:hover .explore-card-cta svg {
+            transform: translateX(4px);
         }
 
         /* CTA Section - Keep Dark */
@@ -1483,6 +1522,11 @@
                 margin: 0 auto;
             }
 
+            .explore-cards {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
             .footer-inner {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -1827,20 +1871,55 @@
     <section class="explore">
         <div class="explore-inner">
             <h2>More from Mach Five</h2>
-            <p>Our brands, connected by Design.</p>
-            <br>
-            <div class="explore-grid">
-                <a href="https://machfivegroup.com" class="explore-item">
-                    <div class="explore-icon">5</div>
-                    <div class="explore-label">Mach Five Group</div>
+            <p class="explore-subtitle">Our brands, connected by design.</p>
+            
+            <div class="explore-cards">
+                <a href="https://machfivegroup.com" class="explore-card">
+                    <div class="explore-card-header">
+                        <div class="explore-card-icon">5</div>
+                        <h3>Mach Five Group</h3>
+                    </div>
+                    <div class="explore-card-content">
+                        <p>Strategic consulting and business development for ambitious companies looking to scale.</p>
+                        <div class="explore-card-cta">
+                            Learn More
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14m0 0l-7-7m7 7l-7 7"/>
+                            </svg>
+                        </div>
+                    </div>
                 </a>
-                <a href="https://machfivetech.com" class="explore-item">
-                    <div class="explore-icon">5</div>
-                    <div class="explore-label">Mach Five Tech</div>
+                
+                <a href="https://machfivetech.com" class="explore-card">
+                    <div class="explore-card-header">
+                        <div class="explore-card-icon">5</div>
+                        <h3>Mach Five Tech</h3>
+                    </div>
+                    <div class="explore-card-content">
+                        <p>Custom software development and technology solutions built for performance and scale.</p>
+                        <div class="explore-card-cta">
+                            Learn More
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14m0 0l-7-7m7 7l-7 7"/>
+                            </svg>
+                        </div>
+                    </div>
                 </a>
-                <a href="https://machfiveai.com" class="explore-item">
-                    <div class="explore-icon">5</div>
-                    <div class="explore-label">Mach Five AI</div>
+                
+                <a href="https://machfiveai.com" class="explore-card">
+                    <div class="explore-card-header">
+                        <div class="explore-card-icon">5</div>
+                        <h3>Mach Five AI</h3>
+                    </div>
+                    <div class="explore-card-content">
+                        <p>Artificial intelligence and machine learning solutions that drive business transformation.</p>
+                        <div class="explore-card-cta">
+                            Learn More
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14m0 0l-7-7m7 7l-7 7"/>
+                            </svg>
+                        </div>
+                    </div>
                 </a>
             </div>
         </div>
@@ -2013,7 +2092,7 @@
         }, observerOptions);
 
         // Observe elements
-        document.querySelectorAll('.stat, .service-card, .tech-card, .explore-item').forEach(el => {
+        document.querySelectorAll('.stat, .service-card, .tech-card, .explore-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
