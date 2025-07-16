@@ -570,10 +570,14 @@
         .hero-tab-content {
             padding: var(--spacing-xl) var(--spacing-md);
             min-height: 100vh;
-            display: flex;
+            display: none;
             flex-direction: column;
             justify-content: center;
             max-width: 600px;
+        }
+        
+        .hero-tab-content.active {
+            display: flex;
         }
 
         .hero-tab-content h1 {
@@ -2366,6 +2370,12 @@
         }
 
     </style>
+    
+    <!-- GSAP CDN Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    
 </head>
 <body>
     <!-- Navigation -->
@@ -2919,70 +2929,58 @@
             if (portalIndex > 0) showPortalCard(portalIndex - 1);
         }
 
-        // Hero tab switching and scroll-based activation
+        // Hero tab switching with basic GSAP animations
         document.addEventListener('DOMContentLoaded', function() {
+            // Register GSAP plugins
+            gsap.registerPlugin(ScrollTrigger);
+            
             const tabs = document.querySelectorAll('.hero-tab');
             const contents = document.querySelectorAll('.hero-tab-content');
             
             console.log('Found tabs:', tabs.length);
             console.log('Found contents:', contents.length);
             
+            // Function to show specific tab content
+            function showTabContent(targetTab) {
+                // Hide all content
+                contents.forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Show target content with GSAP fade
+                const targetContent = document.getElementById(`tab-${targetTab}`);
+                if (targetContent) {
+                    targetContent.classList.add('active');
+                    // Smooth fade in animation
+                    gsap.fromTo(targetContent, 
+                        { opacity: 0, y: 20 },
+                        { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
+                    );
+                }
+                
+                // Update tab states
+                tabs.forEach(tab => {
+                    if (tab.getAttribute('data-tab') === targetTab) {
+                        tab.classList.add('active');
+                    } else {
+                        tab.classList.remove('active');
+                    }
+                });
+            }
+            
             // Tab click functionality
             tabs.forEach(tab => {
                 tab.addEventListener('click', function() {
                     const targetTab = this.getAttribute('data-tab');
-                    const targetContent = document.getElementById(`tab-${targetTab}`);
-                    
-                    console.log('Clicked tab:', targetTab);
-                    
-                    // Remove active class from all tabs
-                    tabs.forEach(t => t.classList.remove('active'));
-                    // Add active class to clicked tab
-                    this.classList.add('active');
-                    
-                    // Scroll to the target content section
-                    if (targetContent) {
-                        targetContent.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'center'
-                        });
-                    }
+                    showTabContent(targetTab);
                 });
             });
             
-            // Simple scroll-based tab activation
-            const tabObserverOptions = {
-                threshold: 0.3,
-                rootMargin: '-10% 0px -10% 0px'
-            };
-            
-            const tabObserver = new IntersectionObserver((entries) => {
-                console.log('Tab observer triggered, entries:', entries.length);
-                
-                entries.forEach(entry => {
-                    const section = entry.target.getAttribute('data-section');
-                    console.log('Section:', section, 'Intersecting:', entry.isIntersecting, 'Ratio:', entry.intersectionRatio);
-                    
-                    if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
-                        // Remove active from all tabs
-                        tabs.forEach(t => t.classList.remove('active'));
-                        
-                        // Add active to corresponding tab
-                        const activeTab = document.querySelector(`[data-tab="${section}"]`);
-                        console.log('Setting active tab:', activeTab);
-                        if (activeTab) {
-                            activeTab.classList.add('active');
-                        }
-                    }
-                });
-            }, tabObserverOptions);
-            
-            // Observe all content sections
-            contents.forEach(content => {
-                const section = content.getAttribute('data-section');
-                console.log('Observing content with section:', section);
-                tabObserver.observe(content);
-            });
+            // Initialize with first tab active
+            if (tabs.length > 0) {
+                const firstTab = tabs[0].getAttribute('data-tab');
+                showTabContent(firstTab);
+            }
             
             // Initialize tech section cards
             setTimeout(function() {
