@@ -257,6 +257,11 @@
         .nav-logo img.mobile-logo {
             display: none;
         }
+        
+        /* Mobile menu logo - hidden on desktop */
+        .mobile-menu-logo {
+            display: none;
+        }
 
         /* Main Navigation - Light theme */
         .main-nav {
@@ -1715,6 +1720,8 @@
             /* Show mobile logo on mobile */
             .nav-logo img.mobile-logo {
                 display: inline-block;
+                height: 80px;
+                width: auto;
             }
 
             .main-nav {
@@ -1741,6 +1748,19 @@
                 align-items: center;
                 gap: 2rem;
                 transition: left 0.3s ease;
+                padding: 2rem;
+            }
+            
+            /* Show mobile menu logo when menu is open */
+            .mobile-menu-logo {
+                display: block;
+                margin-bottom: 2rem;
+                text-align: center;
+            }
+            
+            .mobile-menu-logo img {
+                max-width: 200px;
+                height: auto;
             }
 
             .nav a {
@@ -1864,9 +1884,12 @@
             <div class="nav-container">
                 <a href="/" class="nav-logo">
                     <img src="/img/Logo_M5M Light Web.png" alt="Mach Five Marketing" height="64" class="desktop-logo">
-                    <img src="/img/Logo_M5M Light Print.png" alt="Mach Five Marketing" height="64" class="mobile-logo">
+                    <img src="/img/Logo_M5T Light Print-16.png" alt="Mach Five Marketing" height="64" class="mobile-logo">
                 </a>
                 <nav class="nav" id="nav">
+                    <div class="mobile-menu-logo">
+                        <img src="/img/Logo_M5T Light Print-16.png" alt="Mach Five Marketing" height="120">
+                    </div>
                     <a href="#services">Services</a>
                     <a href="#technology">Technology</a>
                     <a href="#about">About</a>
