@@ -1707,14 +1707,15 @@
             }
 
             .nav-container {
-                justify-content: space-between;
+                justify-content: center;
                 padding: 0 1rem;
+                position: relative;
             }
 
             .nav {
                 position: fixed;
                 top: 0;
-                right: -100%;
+                left: -100%;
                 width: 100%;
                 height: 100vh;
                 background: rgba(255, 255, 255, 0.98);
@@ -1724,7 +1725,7 @@
                 justify-content: center;
                 align-items: center;
                 gap: 2rem;
-                transition: right 0.3s ease;
+                transition: left 0.3s ease;
             }
 
             .nav a {
@@ -1735,12 +1736,22 @@
             }
 
             .nav--open {
-                right: 0;
+                left: 0;
             }
 
             .mobile-toggle {
                 display: block;
                 z-index: 1001;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            
+            /* Center the logo on mobile */
+            .nav-container .nav-logo {
+                position: static;
+                margin: 0 auto;
             }
 
             .mobile-toggle--open span:nth-child(1) {
@@ -1937,12 +1948,12 @@
                         <div class="service-tag">I Need to Get Found Online</div>
                         <h3 class="service-headline">Dominate search results and become the obvious choice</h3>
                         <p class="service-description">We'll make sure your business shows up where customers are searching. From dominating Google results to managing your online reputation, we help you become the obvious choice in your market.</p>
-                        <div class="service-cta">
+                        <!-- <div class="service-cta">
                             Get Visible 
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M5 12h14m0 0l-7-7m7 7l-7 7"/>
                             </svg>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="service-panel">
                         <div class="service-panel-tab">Proficiencies</div>
@@ -1976,12 +1987,12 @@
                         <div class="service-tag">I Need Immediate Results</div>
                         <h3 class="service-headline">Performance marketing that delivers ROI from day one</h3>
                         <p class="service-description">Stop waiting for organic growth. Our performance marketing delivers qualified leads and measurable ROI from day one. We'll build campaigns that turn ad spend into revenue while you watch.</p>
-                        <div class="service-cta">
+                        <!-- <div class="service-cta">
                             Start Driving Leads 
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M5 12h14m0 0l-7-7m7 7l-7 7"/>
                             </svg>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
@@ -1991,12 +2002,12 @@
                         <div class="service-tag">I Need to Convert More</div>
                         <h3 class="service-headline">Transform traffic into revenue with Lead Magnet™ technology</h3>
                         <p class="service-description">Traffic without conversions is just expensive vanity metrics. We'll transform your website into a conversion machine with our proprietary Lead Magnet™ technology and proven optimization strategies.</p>
-                        <div class="service-cta">
+                        <!-- <div class="service-cta">
                             Boost Conversions 
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M5 12h14m0 0l-7-7m7 7l-7 7"/>
                             </svg>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="service-panel">
                         <div class="service-panel-tab">Proficiencies</div>
@@ -2030,12 +2041,12 @@
                         <div class="service-tag">I Need Real Insights</div>
                         <h3 class="service-headline">Data-driven decisions that maximize marketing ROI</h3>
                         <p class="service-description">Flying blind with your marketing budget? We'll show you exactly what's working, what's not, and where to invest next. Real data, real insights, real growth.</p>
-                        <div class="service-cta">
+                        <!-- <div class="service-cta">
                             See the Data 
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M5 12h14m0 0l-7-7m7 7l-7 7"/>
                             </svg>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
