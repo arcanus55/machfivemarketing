@@ -252,6 +252,11 @@
         .nav-logo.mobile-only {
             display: none;
         }
+        
+        /* Hide mobile logo image on desktop */
+        .nav-logo img.mobile-logo {
+            display: none;
+        }
 
         /* Main Navigation - Light theme */
         .main-nav {
@@ -1702,9 +1707,14 @@
                 display: inline-flex !important;
             }
 
-            /* Override logo image on mobile to use Print version */
-            .nav-logo img {
-                content: url('/img/Logo_M5M Light Print.png');
+            /* Hide desktop logo on mobile */
+            .nav-logo img.desktop-logo {
+                display: none;
+            }
+            
+            /* Show mobile logo on mobile */
+            .nav-logo img.mobile-logo {
+                display: inline-block;
             }
 
             .main-nav {
@@ -1853,7 +1863,8 @@
         <div class="main-nav">
             <div class="nav-container">
                 <a href="/" class="nav-logo">
-                    <img src="/img/Logo_M5M Light Web.png" alt="Mach Five Marketing" height="64">
+                    <img src="/img/Logo_M5M Light Web.png" alt="Mach Five Marketing" height="64" class="desktop-logo">
+                    <img src="/img/Logo_M5M Light Print.png" alt="Mach Five Marketing" height="64" class="mobile-logo">
                 </a>
                 <nav class="nav" id="nav">
                     <a href="#services">Services</a>
