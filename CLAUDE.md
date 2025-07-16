@@ -202,6 +202,104 @@ gsap.to("#heroAccent1", {
 - **Interactive Feedback**: Mouse movements and hover states provide engaging user feedback
 - **Scrub Optimization**: Fine-tuned scrub values prevent animation lag
 
+## Brand & Visual Design Principles
+
+### Logo Usage Guidelines
+- **Desktop Navigation**: Use `Logo_M5M Light Web.png` for web display
+- **Mobile Navigation**: Use `Logo_M5T Light Print-16.png` for better readability on small screens
+- **Brand Family Logos**: 
+  - M5G: `Logo_M5G Light Web.png` (Mach Five Group)
+  - M5T: `Logo_M5T Light Web.png` (Mach Five Tech)
+  - M5M: `Logo_M5M Light Web.png` (Mach Five Marketing)
+- **Logo Sizing**: Standard navigation height of 64px, mobile at 80px for prominence
+
+### Color Psychology & Usage
+- **Primary Orange (`#DD4124`)**: Action, urgency, CTAs, emphasis elements
+- **Primary Blue (`#34495E`)**: Trust, technology, hero emphasis, branded elements
+- **Dark Blue (`#2C3E50`)**: Depth, sophistication, gradients with primary blue
+- **Color Combinations**: Avoid using orange and blue together except in gradients
+
+### Typography & Messaging Tone
+- **Font Stack**: 'Inter' for clean, modern readability; 'Roboto Condensed' for impact headlines
+- **Tone**: Professional yet approachable, data-driven confidence
+- **Messaging Pattern**: Problem → Solution → Value
+- **Voice**: "We help ambitious companies" (empowering, partnership-focused)
+
+### Visual Hierarchy & Spacing
+- **Section Spacing**: 5rem between major sections (avoid template-like 8rem+ spacing)
+- **Element Spacing**: 3rem for headers, 2.5rem for sub-elements
+- **Mobile Considerations**: Tighter spacing on mobile (4rem sections, 2rem elements)
+- **Spacing Philosophy**: Tight, professional spacing avoids "template-like" appearance
+
+### Interactive Elements & Animations
+- **Hover States**: Subtle movement (-2px to -8px translateY) with box-shadow enhancement
+- **Animation Timing**: 0.3s for interactions, 0.8s for page loads, 1.2s for complex animations
+- **Easing**: `cubic-bezier(0.34, 1.56, 0.64, 1)` for bouncy, dynamic feel
+- **Scroll Triggers**: Use Intersection Observer for performance, 30% visibility threshold
+
+### Component Styling Patterns
+
+#### Ripped Tape Effect (Service Tags)
+```css
+.service-tag {
+    position: relative;
+    background: /* Complex gradient with scratches and scuff marks */;
+    box-shadow: /* Inset shadows for depth */;
+    transform: rotate(-1deg);
+}
+.service-tag::before, .service-tag::after {
+    clip-path: polygon(/* Jagged edges */);
+}
+```
+
+#### Mobile-First Navigation
+- **Hamburger Position**: Right side for better thumb accessibility
+- **Logo Treatment**: Centered on mobile, left-aligned on desktop
+- **Menu Slide**: Left-to-right slide animation
+- **Dual Logo System**: Separate desktop/mobile logo elements with CSS show/hide
+
+#### Card Layouts
+- **Equal Heights**: Use `display: flex; flex-direction: column` on cards
+- **CTA Alignment**: `flex: 1` on content, `justify-content: space-between` for bottom-alignment
+- **Hover Effects**: Combine scale, shadow, and translateY for depth
+- **Responsive Gaps**: `gap: 2rem` for cards, `gap: 4rem` for sections
+
+### Content Structure & Narrative
+- **Hero Pattern**: Benefit-focused tagline with blue emphasis words
+- **Problem-Solution Flow**: "Marketing is broken" → supporting evidence → clear solution statement
+- **Social Proof**: Specific metrics over generic claims ("85% Lead Quality Score" vs "Many satisfied clients")
+- **Value Proposition**: "Growth Story" emphasizes client success over company features
+
+### Technical Implementation Notes
+- **CSS Architecture**: Inline styles with custom properties for main site consistency
+- **Animation Libraries**: GSAP for complex effects, CSS transitions for simple interactions
+- **Performance**: Intersection Observer for scroll triggers, `will-change` for animated elements
+- **Accessibility**: Respect `prefers-reduced-motion`, maintain focus states
+
+### User Experience Principles
+- **Mobile Navigation**: Hamburger on right, logo centered, menu slides from left
+- **CTA Strategy**: Single focused action per section, avoid choice paralysis
+- **Visual Feedback**: Immediate response to user interactions (hover, click)
+- **Progressive Enhancement**: Core functionality works without JavaScript
+
+### Brand Consistency Across MachFive Family
+- **Shared Elements**: Color scheme, typography, component patterns
+- **Unique Differentiation**: Logo variations, content focus, imagery style
+- **Cross-linking**: "More from Mach Five" section with appropriate logos and descriptions
+- **Unified Voice**: Consistent messaging tone across all properties
+
+### Code Quality Standards
+- **Clean CSS**: Avoid `!important` declarations, use specificity instead
+- **Semantic Naming**: `.service-tag`, `.hero-statement`, `.about-logo` over generic classes
+- **Maintainable Structure**: Logical grouping, clear comments, consistent indentation
+- **Performance**: Minimize DOM manipulation, batch style changes, optimize animations
+
+### Development Workflow Insights
+- **Iterative Design**: Small, testable changes over large rewrites
+- **User Feedback Integration**: Quick response to spacing, positioning, and functionality requests
+- **Brand Consistency**: Always reference existing patterns before creating new ones
+- **Mobile-First Approach**: Design for mobile constraints, enhance for desktop
+
 ## Branch Strategy
 - **Main branch**: `gh-pages` (also serves as production)
 - **Deployment**: Automatic via GitHub Pages when pushing to `gh-pages`

@@ -659,7 +659,33 @@
             max-width: 300px;
             margin: 0 auto 3rem;
             display: block;
+            opacity: 0;
+            transform: scale(0.8) rotate(-10deg);
+            transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+            filter: blur(5px);
+        }
+        
+        .about-logo.animate-in {
             opacity: 0.9;
+            transform: scale(1) rotate(0deg);
+            filter: blur(0);
+        }
+        
+        /* Add a subtle glow effect on animation */
+        @keyframes logoGlow {
+            0% {
+                filter: drop-shadow(0 0 10px rgba(52, 73, 94, 0));
+            }
+            50% {
+                filter: drop-shadow(0 0 20px rgba(52, 73, 94, 0.3));
+            }
+            100% {
+                filter: drop-shadow(0 0 10px rgba(52, 73, 94, 0));
+            }
+        }
+        
+        .about-logo.animate-in {
+            animation: logoGlow 2s ease-in-out 0.8s;
         }
 
         /* New flex layout for logo and statement */
@@ -2036,7 +2062,7 @@
                         <img src="/img/Logo_M5T Light Print-16.png" alt="Mach Five Marketing" class="about-logo">
                     </div>
                     <div class="about-hero-statement-wrapper">
-                        <p class="about-hero-statement">How we fix this? We help ambitious companies grow through data-driven marketing and our proven proprietary technology.</p>
+                        <p class="about-hero-statement">Our fix? We help ambitious companies grow through data-driven marketing and our proven proprietary technology.</p>
                     </div>
                 </div>
             </div>
@@ -2447,7 +2473,27 @@
         }
 
         // Initialize animations when DOM is loaded
-        document.addEventListener('DOMContentLoaded', animateServiceRows);
+        document.addEventListener('DOMContentLoaded', () => {
+            animateServiceRows();
+            
+            // Logo animation in "Marketing is broken" section
+            const aboutLogo = document.querySelector('.about-logo');
+            if (aboutLogo) {
+                const logoObserver = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animate-in');
+                            logoObserver.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.3,
+                    rootMargin: '0px 0px -100px 0px'
+                });
+                
+                logoObserver.observe(aboutLogo);
+            }
+        });
 
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
