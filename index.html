@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mach Five Marketing - Performance Marketing & Technology</title>
+    
+    <!-- Neodigm Scripts -->
+    <script>
+        let neodigmOptCustom = { CONSOLE_LOG_VER:true, W4S_VOLUME: .016 }
+        let neodigmOpt_launchCompleteCustom = {
+          ver: "1.2.4",
+          N55_LC_DOMAIN: ["MachFiveMarketing.com", 256],
+          N55_LC_TAG1: ["MachFive Marketing 🌶️ Performance Marketing & Technology", 256],
+          N55_LC_COLOR_BRAND: ["DD4124", 256],
+          CONSOLE_LOG_VER: true,
+        }
+    </script>
+    <link rel="stylesheet" href="https://arcanus55.github.io/neodigm55/dist/neodigm55__v4_0.css">
+    <script src="https://arcanus55.github.io/neodigm55/dist/neodigm55__v4_0.js"></script>
+    <link rel="stylesheet" href="https://arcanus55.github.io/neodigm55/dist/neodigm55_v1_0_launchComplete.css">
+    <script src="https://arcanus55.github.io/neodigm55/dist/neodigm55_v1_0_launchComplete.js"></script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=Roboto+Condensed:wght@300;400;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,300,0,0&display=swap" rel="stylesheet">
@@ -33,6 +50,75 @@
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             font-size: 18px;
+        }
+
+        /* Neodigm widget overrides */
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] span:first-child,
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] .word-1,
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] [class*="word"]:first-child {
+            color: var(--m5m-black) !important;
+        }
+
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] span:nth-child(2),
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] .word-2,
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] [class*="word"]:nth-child(2) {
+            color: var(--m5m-blue) !important;
+        }
+
+        /* Override neodigm yellow scrollbar with brand colors */
+        ::-webkit-scrollbar {
+            width: 12px;
+            height: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--m5m-blue) !important;
+            border-radius: 6px;
+            border: 2px solid transparent;
+            background-clip: content-box;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--m5m-blue-dark) !important;
+            background-clip: content-box;
+        }
+
+        /* Firefox scrollbar styling */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: var(--m5m-blue) rgba(0, 0, 0, 0.05) !important;
+        }
+
+        /* Override neodigm yellow text selection with brand blue */
+        ::selection {
+            background: var(--m5m-blue) !important;
+            color: white !important;
+        }
+
+        ::-moz-selection {
+            background: var(--m5m-blue) !important;
+            color: white !important;
+        }
+
+        /* Make footer column headers non-selectable */
+        .footer .footer-col h4 {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .footer .footer-col h4::selection {
+            background: transparent;
+        }
+
+        .footer .footer-col h4::-moz-selection {
+            background: transparent;
             line-height: 1.6;
             color: var(--m5m-gray-dark);
             background: var(--m5m-white);
@@ -699,16 +785,75 @@
         }
 
         .service-tag {
+            position: relative;
             display: inline-block;
-            background: var(--m5m-orange);
-            color: var(--m5m-white);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
+            padding: 8px 25px 8px 20px;
+            font-size: 16px;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            font-family: 'Roboto Condensed', sans-serif;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 16px;
+            transform: rotate(-1deg);
+            
+            /* Heavy wear pattern with brand blue */
+            background: 
+                /* Scratches */
+                linear-gradient(95deg, transparent 15%, rgba(255,255,255,0.12) 16%, transparent 18%),
+                linear-gradient(-25deg, transparent 35%, rgba(255,255,255,0.1) 36%, transparent 37%),
+                /* Scuff marks */
+                radial-gradient(ellipse at 20% 20%, rgba(255,255,255,0.15) 0%, transparent 25%),
+                radial-gradient(ellipse at 60% 70%, rgba(255,255,255,0.12) 0%, transparent 20%),
+                /* Base blue color */
+                radial-gradient(ellipse at center, #34495E 0%, #2C3E50 100%);
+            
+            box-shadow: 
+                0 2px 5px rgba(0, 0, 0, 0.3),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .service-tag::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            bottom: 0;
+            width: 15px;
+            background: inherit;
+            clip-path: polygon(
+                20% 0%,
+                100% 0%,
+                100% 100%,
+                25% 100%,
+                15% 80%,
+                0% 60%,
+                15% 40%,
+                0% 20%
+            );
+            z-index: -1;
+        }
+
+        .service-tag::after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: 0;
+            bottom: 0;
+            width: 15px;
+            background: inherit;
+            clip-path: polygon(
+                0% 0%,
+                100% 0%,
+                85% 20%,
+                100% 40%,
+                85% 60%,
+                100% 80%,
+                80% 100%,
+                0% 100%
+            );
+            z-index: -1;
         }
 
         .service-headline {
@@ -747,19 +892,76 @@
             position: absolute;
             top: -12px;
             left: 2rem;
-            background: var(--m5m-blue);
-            color: var(--m5m-white);
-            padding: 8px 20px;
-            border-radius: 20px;
+            display: inline-block;
+            padding: 8px 25px 8px 20px;
             font-size: 12px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
+            font-family: 'Roboto Condensed', sans-serif;
+            color: rgba(255, 255, 255, 0.9);
             transform: rotate(-1deg);
+            
+            /* Heavy wear pattern with black color */
+            background: 
+                /* Scratches */
+                linear-gradient(95deg, transparent 15%, rgba(255,255,255,0.12) 16%, transparent 18%),
+                linear-gradient(-25deg, transparent 35%, rgba(255,255,255,0.1) 36%, transparent 37%),
+                /* Scuff marks */
+                radial-gradient(ellipse at 20% 20%, rgba(255,255,255,0.15) 0%, transparent 25%),
+                radial-gradient(ellipse at 60% 70%, rgba(255,255,255,0.12) 0%, transparent 20%),
+                /* Base black color */
+                radial-gradient(ellipse at center, #1a1a1a 0%, #0a0a0a 100%);
+            
+            box-shadow: 
+                0 2px 5px rgba(0, 0, 0, 0.3),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .service-panel-tab::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            bottom: 0;
+            width: 15px;
+            background: inherit;
+            clip-path: polygon(
+                20% 0%,
+                100% 0%,
+                100% 100%,
+                25% 100%,
+                15% 80%,
+                0% 60%,
+                15% 40%,
+                0% 20%
+            );
+            z-index: -1;
+        }
+
+        .service-panel-tab::after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: 0;
+            bottom: 0;
+            width: 15px;
+            background: inherit;
+            clip-path: polygon(
+                0% 0%,
+                100% 0%,
+                85% 20%,
+                100% 40%,
+                85% 60%,
+                100% 80%,
+                80% 100%,
+                0% 100%
+            );
+            z-index: -1;
         }
 
         .service-row:nth-child(even) .service-panel-tab {
-            background: var(--m5m-orange);
             transform: rotate(1deg);
         }
 
@@ -1098,6 +1300,8 @@
             transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
 
         .explore-card:hover {
@@ -1121,24 +1325,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--m5m-white);
-            background: var(--m5m-blue);
             flex-shrink: 0;
             transition: all 0.3s ease;
+            padding: 8px;
         }
 
-        .explore-card:nth-child(1) .explore-card-icon {
-            background: linear-gradient(135deg, var(--m5m-blue) 0%, var(--m5m-blue-dark) 100%);
-        }
-
-        .explore-card:nth-child(2) .explore-card-icon {
-            background: linear-gradient(135deg, var(--m5m-orange) 0%, #ff7b54 100%);
-        }
-
-        .explore-card:nth-child(3) .explore-card-icon {
-            background: linear-gradient(135deg, #DC143C 0%, #B22222 100%);
+        .explore-card-icon img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
         }
 
         .explore-card h3 {
@@ -1151,6 +1346,10 @@
 
         .explore-card-content {
             padding: 1.5rem 2rem 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .explore-card-content p {
@@ -1933,7 +2132,7 @@
             <div class="explore-cards">
                 <a href="https://machfivegroup.com" class="explore-card">
                     <div class="explore-card-header">
-                        <div class="explore-card-icon">5</div>
+                        <div class="explore-card-icon"><img src="/img/Logo_M5G Light Web.png" alt="Mach Five Group" height="32"></div>
                         <h3>Mach Five Group</h3>
                     </div>
                     <div class="explore-card-content">
@@ -1949,7 +2148,7 @@
                 
                 <a href="https://machfivetech.com" class="explore-card">
                     <div class="explore-card-header">
-                        <div class="explore-card-icon">5</div>
+                        <div class="explore-card-icon"><img src="/img/Logo_M5T Light Web.png" alt="Mach Five Tech" height="32"></div>
                         <h3>Mach Five Tech</h3>
                     </div>
                     <div class="explore-card-content">
@@ -1963,13 +2162,13 @@
                     </div>
                 </a>
                 
-                <a href="https://machfiveai.com" class="explore-card">
+                <a href="https://machvive.com" class="explore-card">
                     <div class="explore-card-header">
-                        <div class="explore-card-icon">5</div>
-                        <h3>Mach Five AI</h3>
+                        <div class="explore-card-icon"><img src="/img/Logo_M5G Light Web.png" alt="MachVive" height="32"></div>
+                        <h3>MachVive</h3>
                     </div>
                     <div class="explore-card-content">
-                        <p>Artificial intelligence and machine learning solutions that drive business transformation.</p>
+                        <p>Lightweight, open-source web application framework for building responsive and high-performance web applications.</p>
                         <div class="explore-card-cta">
                             Learn More
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2015,10 +2214,7 @@
     <footer class="footer">
         <div class="footer-inner">
             <div class="footer-brand">
-                <h3>
-                    <span class="footer-logo-text">Mach Five</span>
-                    <span class="footer-logo-mark">MARKETING</span>
-                </h3>
+                <neodigm-widget style="width: 40%;" data-n55-widget-config="{conf:'', ampm:'',mobile:''}" data-n55-widget-id="effect_two_word_rotate"></neodigm-widget>
                 <p>Performance marketing and technology solutions for ambitious companies.</p>
                 <p>Headquartered in Chicago. Supporting clients nationwide.</p>
                 <div class="footer-contact">
