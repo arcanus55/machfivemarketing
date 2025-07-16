@@ -32,7 +32,7 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 16px;
+            font-size: 18px;
             line-height: 1.6;
             color: var(--m5m-gray-dark);
             background: var(--m5m-white);
@@ -105,6 +105,25 @@
             color: var(--m5m-blue);
         }
 
+        .top-bar-link[href="/portal"] {
+            background: var(--m5m-blue);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            border: 1px solid var(--m5m-blue);
+            transition: all 0.2s ease;
+        }
+
+        .top-bar-link[href="/portal"]:hover {
+            background: var(--m5m-blue-dark);
+            border-color: var(--m5m-blue-dark);
+            color: white;
+        }
+
+        .top-bar-link[href="/portal"] .material-symbols-outlined {
+            color: white;
+        }
+
         .top-bar-link .material-symbols-outlined {
             font-size: 16px;
             color: var(--m5m-blue);
@@ -150,9 +169,8 @@
         /* Main Navigation - Light theme */
         .main-nav {
             background: white;
-            padding: 20px 0;
+            padding: 12px 0;
             position: relative;
-            border-bottom: 3px solid var(--m5m-blue);
         }
 
         .nav-container {
@@ -161,6 +179,22 @@
             padding: 0 2rem;
             display: flex;
             justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .nav-logo {
+            position: absolute;
+            left: 2rem;
+        }
+
+        .nav-logo-bottom {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 2rem;
+            padding-top: 12px;
+            display: flex;
+            justify-content: flex-start;
             align-items: center;
         }
 
@@ -173,12 +207,12 @@
         .nav a {
             color: var(--m5m-gray-dark);
             text-decoration: none;
-            font-size: 0.9375rem;
+            font-size: 0.875rem;
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             transition: all 0.3s ease;
-            padding: 10px 20px;
+            padding: 8px 16px;
             position: relative;
             background: rgba(0, 0, 0, 0.02);
             backdrop-filter: blur(10px);
@@ -332,10 +366,7 @@
 
         .hero h1 strong {
             font-weight: 400;
-            background: linear-gradient(135deg, var(--m5m-blue) 0%, var(--m5m-orange) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--m5m-blue);
         }
 
         .hero-subtitle {
@@ -443,10 +474,7 @@
             font-weight: 200;
             line-height: 1;
             margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, var(--m5m-blue) 0%, var(--m5m-orange) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--m5m-blue);
         }
 
         .stat-label {
@@ -492,16 +520,59 @@
         .about-inner {
             max-width: var(--max-width);
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .about-hero {
+            margin-bottom: 4rem;
+        }
+
+        .about-hero h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 300;
+            margin-bottom: 3rem;
+            color: var(--m5m-gray-dark);
+        }
+
+        .about-hero h2 span {
+            color: var(--m5m-blue);
+            font-weight: 600;
+        }
+
+        .about-logo {
+            max-width: 300px;
+            margin: 0 auto 3rem;
+            display: block;
+            opacity: 0.9;
+        }
+
+        .about-columns {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 6rem;
             align-items: start;
-            position: relative;
-            z-index: 1;
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .about-hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .about-logo {
+                max-width: 250px;
+            }
+            
+            .about-columns {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
         }
 
         .about-content h2 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 300;
             margin-bottom: 2rem;
             letter-spacing: -0.02em;
@@ -575,23 +646,7 @@
             display: inline-block;
         }
 
-        .services-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--m5m-blue), var(--m5m-orange), transparent);
-            animation: shimmer 3s infinite;
-        }
 
-        @keyframes shimmer {
-            0% { transform: translateX(-50%) scaleX(0); }
-            50% { transform: translateX(-50%) scaleX(1); }
-            100% { transform: translateX(-50%) scaleX(0); }
-        }
 
         .services-subtitle {
             font-size: 1.375rem;
@@ -821,17 +876,6 @@
             display: inline-block;
         }
 
-        .tech-header h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--m5m-blue), var(--m5m-orange), transparent);
-            animation: shimmer 3s infinite;
-        }
 
         .tech-header p {
             font-size: 1.375rem;
@@ -1026,17 +1070,6 @@
             display: inline-block;
         }
 
-        .explore h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--m5m-blue), var(--m5m-orange), transparent);
-            animation: shimmer 3s infinite;
-        }
 
         .explore-subtitle {
             font-size: 1.375rem;
@@ -1155,9 +1188,39 @@
         /* CTA Section - Keep Dark */
         .cta {
             padding: 10rem 2rem;
-            background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
+            background: #0A0A0A;
             position: relative;
             overflow: hidden;
+        }
+
+        /* CTA Background image with parallax */
+        .cta-background {
+            position: absolute;
+            top: -10%;
+            left: -5%;
+            width: 110%;
+            height: 110%;
+            background-image: url('/img/m5t_hero-01.jpg');
+            background-size: cover;
+            background-position: center;
+            will-change: transform;
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        /* CTA Overlay for additional darkening */
+        .cta-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(
+                ellipse at center,
+                rgba(10, 10, 10, 0.4) 0%,
+                rgba(10, 10, 10, 0.85) 100%
+            );
+            z-index: 2;
         }
 
         .cta::before {
@@ -1183,7 +1246,7 @@
             margin: 0 auto;
             text-align: center;
             position: relative;
-            z-index: 1;
+            z-index: 3;
         }
 
         .cta h2 {
@@ -1195,16 +1258,16 @@
         }
 
         .cta h2 span {
-            background: linear-gradient(135deg, var(--m5m-blue) 0%, var(--m5m-orange) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--m5m-blue);
+            font-weight: 600;
         }
 
         .cta p {
             font-size: 1.5rem;
-            color: rgba(255, 255, 255, 0.7);
+            color: white;
             margin-bottom: 3rem;
+            font-weight: 500;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .cta-buttons {
@@ -1261,18 +1324,6 @@
             position: relative;
         }
 
-        /* Subtle brand accent line at top */
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: var(--m5m-blue);
-            border-radius: 0 0 3px 3px;
-        }
 
         .footer-inner {
             max-width: var(--max-width);
@@ -1564,20 +1615,19 @@
         <div class="top-bar">
             <div class="top-bar-inner">
                 <div class="top-bar-left">
-                    <a href="/" class="nav-logo">Mach Five <span>MARKETING</span></a>
                 </div>
                 <div class="top-bar-right">
-                    <a href="/blog" class="top-bar-link">
+                    <!-- <a href="/blog" class="top-bar-link">
                         <span class="material-symbols-outlined">rss_feed</span>
                         Knowledge Base
                     </a>
                     <a href="/careers" class="top-bar-link">
                         <span class="material-symbols-outlined">person</span>
                         Careers
-                    </a>
+                    </a> -->
                     <a href="/portal" class="top-bar-link">
                         <span class="material-symbols-outlined">login</span>
-                        Portal Login
+                        Portal
                     </a>
                 </div>
             </div>
@@ -1586,7 +1636,9 @@
         <!-- Main Nav -->
         <div class="main-nav">
             <div class="nav-container">
-                <a href="/" class="nav-logo mobile-only">Mach Five <span>MARKETING</span></a>
+                <a href="/" class="nav-logo">
+                    <img src="/img/Logo_M5M Light Web.png" alt="Mach Five Marketing" height="64">
+                </a>
                 <nav class="nav" id="nav">
                     <a href="#services">Services</a>
                     <a href="#technology">Technology</a>
@@ -1629,20 +1681,20 @@
     <section class="stats">
         <div class="stats-inner">
             <div class="stat">
-                <div class="stat-number">250+</div>
-                <div class="stat-label">Clients Served</div>
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Live Performance Insights</div>
             </div>
             <div class="stat">
-                <div class="stat-number">$45M</div>
-                <div class="stat-label">Revenue Generated</div>
+                <div class="stat-number">85%</div>
+                <div class="stat-label">Lead Quality Score</div>
             </div>
             <div class="stat">
-                <div class="stat-number">3.2x</div>
-                <div class="stat-label">Average ROI</div>
+                <div class="stat-number">2.3x</div>
+                <div class="stat-label">Faster Lead Response</div>
             </div>
             <div class="stat">
-                <div class="stat-number">47%</div>
-                <div class="stat-label">Faster Optimization</div>
+                <div class="stat-number">ROI+</div>
+                <div class="stat-label">Measurable Pipeline Growth</div>
             </div>
         </div>
     </section>
@@ -1650,17 +1702,22 @@
     <!-- About -->
     <section class="about" id="about">
         <div class="about-inner">
-            <div class="about-content">
+            <div class="about-hero">
                 <h2>Marketing is <span>broken</span>. We're fixing it.</h2>
-                <p>Most agencies run the same playbooks with the same tools, delivering the same mediocre results. They send monthly reports, host quarterly reviews, and hope you don't look too closely at the numbers.</p>
-                <p><strong>We built a better way.</strong> By combining proven marketing strategies with proprietary technology, we deliver transparency, accountability, and results you can actually measure.</p>
-                <p>When you work with Mach Five, you're not just hiring an agency. You're getting a technology partner invested in your growth.</p>
+                <img src="/img/Logo_M5T Light Print-16.png" alt="Mach Five Marketing" class="about-logo">
             </div>
-            <div class="about-content">
-                <h2>Built by <span>marketers who code</span>.</h2>
-                <p>We started Mach Five because we were frustrated with the tools available to marketers. So we built our own.</p>
-                <p>Our team includes marketers, developers, data scientists, and designers who work together to create integrated solutions that actually move the needle.</p>
-                <p><strong>Chicago-based. Supporting businesses nationwide.</strong></p>
+            <div class="about-columns">
+                <div class="about-content">
+                    <p>Most agencies run the same playbooks with the same tools, delivering the same mediocre results. They send monthly reports, host quarterly reviews, and hope you don't look too closely at the numbers.</p>
+                    <p><strong>We built a better way.</strong> By combining proven marketing strategies with proprietary technology, we deliver transparency, accountability, and results you can actually measure.</p>
+                    <p>When you work with Mach Five, you're not just hiring an agency. You're getting a technology partner invested in your growth.</p>
+                </div>
+                <div class="about-content">
+                    <h2>Built by <span>marketers who code</span>.</h2>
+                    <p>We started Mach Five because we were frustrated with the tools available to marketers. So we built our own.</p>
+                    <p>Our team includes marketers, developers, data scientists, and designers who work together to create integrated solutions that actually move the needle.</p>
+                    <p><strong>Chicago-based. Supporting businesses nationwide.</strong></p>
+                </div>
             </div>
         </div>
     </section>
@@ -1927,6 +1984,10 @@
 
     <!-- CTA -->
     <section class="cta" id="contact">
+        <!-- Background image with parallax -->
+        <div class="cta-background" id="ctaBackground"></div>
+        <div class="cta-overlay"></div>
+        
         <div class="cta-inner">
             <h2>Ready to <span>grow?</span></h2>
             <p>Let's discuss how we can help you achieve your marketing goals.</p>
@@ -1961,7 +2022,6 @@
                 <p>Performance marketing and technology solutions for ambitious companies.</p>
                 <p>Headquartered in Chicago. Supporting clients nationwide.</p>
                 <div class="footer-contact">
-                    <a href="tel:312-380-7300">312-380-7300</a><br>
                     <a href="mailto:support@machfivemarketing.com">support@machfivemarketing.com</a>
                 </div>
             </div>
@@ -1979,17 +2039,15 @@
                 <ul>
                     <li><a href="#portal">Mach Five Portal</a></li>
                     <li><a href="#leadmagnet">Lead Magnet</a></li>
-                    <li><a href="https://portal.machfivemarketing.com">Client Login</a></li>
+                    <li><a href="https://portal.machfivemarketing.com">Portal Login</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Our Family</h4>
+                <h4>Mach Five</h4>
                 <ul>
-                    <li><a href="https://machfivegroup.com">Mach Five Group</a></li>
-                    <li><a href="https://machfivetech.com">Mach Five Tech</a></li>
-                    <li><a href="https://machfiveai.com">Mach Five AI</a></li>
-                    <li><a href="#careers">Careers</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="https://machfivegroup.com" target="_blank">Mach Five Group</a></li>
+                    <li><a href="https://machfivetech.com" target="_blank">Mach Five Tech</a></li>
+                    <li><a href="https://machvive.com" target="_blank">MachVive</a></li>
                 </ul>
             </div>
         </div>
@@ -2007,15 +2065,32 @@
         
         function updateParallax() {
             const scrolled = window.pageYOffset;
-            const parallax = document.getElementById('heroBackground');
+            const heroParallax = document.getElementById('heroBackground');
             const hero = document.querySelector('.hero');
+            const ctaParallax = document.getElementById('ctaBackground');
+            const cta = document.querySelector('.cta');
             
-            if (parallax && hero) {
+            // Hero parallax
+            if (heroParallax && hero) {
                 const heroBottom = hero.offsetTop + hero.offsetHeight;
                 if (scrolled < heroBottom) {
                     const speed = 0.3;
                     const yPos = scrolled * speed;
-                    parallax.style.transform = `translateY(${yPos}px)`;
+                    heroParallax.style.transform = `translateY(${yPos}px)`;
+                }
+            }
+            
+            // CTA parallax
+            if (ctaParallax && cta) {
+                const ctaTop = cta.offsetTop;
+                const ctaBottom = ctaTop + cta.offsetHeight;
+                const windowBottom = scrolled + window.innerHeight;
+                
+                if (windowBottom > ctaTop && scrolled < ctaBottom) {
+                    const speed = 0.3;
+                    const relativeScroll = scrolled - ctaTop;
+                    const yPos = relativeScroll * speed;
+                    ctaParallax.style.transform = `translateY(${yPos}px)`;
                 }
             }
         }
