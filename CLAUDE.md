@@ -98,6 +98,425 @@ Both maintain brand consistency using the same color scheme:
 ### Plugins Used
 
 1. **ScrollTrigger**: Scroll-based animation triggers
+
+## Scroll-Locked Step-by-Step Experience Implementation
+
+### Overview
+The `index-hero-split.html` page implements a scroll-locked, step-by-step experience where users scroll through different sections, each with a left side showing "I need a [changing word]" and a right side with supporting content.
+
+### Key Architecture Components
+
+#### 1. HTML Structure
+```html
+<div class="experience-container" id="experienceContainer">
+    <section class="experience-section" data-step="1">
+        <div class="hero-left">
+            <div class="need-state-container">
+                <div class="need-state-static">I need a</div>
+                <div class="need-state-options">
+                    <div class="need-state-option" data-step="1">strategy.</div>
+                    <div class="need-state-option" data-step="2">market traction.</div>
+                    <div class="need-state-option" data-step="3">tools that scale.</div>
+                    <div class="need-state-option" data-step="4">smarter stack.</div>
+                    <div class="need-state-option" data-step="5">clear way forward.</div>
+                </div>
+            </div>
+        </div>
+        <div class="step-supporting">
+            <div class="step-supporting-content step-content">
+                <!-- Right side content -->
+            </div>
+        </div>
+    </section>
+    <!-- Repeat for each step -->
+</div>
+```
+
+#### 2. CSS Structure
+```css
+.experience-container {
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.experience-section {
+    height: 100vh;
+    display: flex;
+    position: relative;
+    scroll-snap-align: start;
+}
+
+.hero-left {
+    width: 50%;
+    background: var(--m5m-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+}
+
+.step-supporting {
+    width: 50%;
+    background: var(--m5m-gray-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+}
+
+/* Left side content is always visible */
+.hero-left .need-state-container {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* Options container */
+.need-state-options {
+    position: relative;
+    height: 15rem;
+}
+
+/* Individual option styling */
+.need-state-option {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.75rem;
+    line-height: 1.8;
+    color: var(--m5m-gray);
+    font-weight: 400;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    transition: all 0.6s ease;
+}
+
+/* Position each option vertically */
+.need-state-option[data-step="1"] { top: 0; }
+.need-state-option[data-step="2"] { top: 2.5rem; }
+.need-state-option[data-step="3"] { top: 5rem; }
+.need-state-option[data-step="4"] { top: 7.5rem; }
+.need-state-option[data-step="5"] { top: 10rem; }
+
+/* Active option styling */
+.need-state-option.active {
+    color: var(--m5m-orange);
+    font-weight: 700;
+    text-shadow: 0 0 20px rgba(221, 65, 36, 0.3);
+}
+```
+
+#### 3. JavaScript Implementation
+```javascript
+class StepExperience {
+    constructor() {
+        this.currentStep = 1;
+        this.totalSteps = 6;
+        this.isScrolling = false;
+        this.isManualNavigation = false;
+        this.scrollTimeout = null;
+        this.init();
+    }
+
+    init() {
+        this.container = document.getElementById('experienceContainer');
+        this.stepIndicator = document.getElementById('stepIndicator');
+        this.scrollHint = document.getElementById('scrollHint');
+        this.steps = document.querySelectorAll('.experience-section');
+        this.dots = document.querySelectorAll('.step-dot');
+        
+        this.setupEventListeners();
+        this.activateStep(1);
+        this.updateScrollHint();
+    }
+
+    setupEventListeners() {
+        // Scroll event with throttling
+        let ticking = false;
+        this.container.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    this.handleScroll();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // Step indicator clicks
+        this.dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                this.goToStep(index + 1);
+            });
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+                e.preventDefault();
+                this.nextStep();
+            } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+                e.preventDefault();
+                this.previousStep();
+            }
+        });
+    }
+
+    handleScroll() {
+        if (this.isScrolling || this.isManualNavigation) {
+            return;
+        }
+
+        const scrollTop = this.container.scrollTop;
+        const windowHeight = this.container.clientHeight;
+        const containerCenter = scrollTop + (windowHeight / 2);
+
+        // Find which step is most visible in the center of the viewport
+        let newStep = 1;
+        let stepFound = false;
+        
+        this.steps.forEach((step, index) => {
+            const stepTop = step.offsetTop;
+            const stepBottom = stepTop + step.offsetHeight;
+            
+            if (containerCenter >= stepTop && containerCenter < stepBottom) {
+                newStep = index + 1;
+                stepFound = true;
+            }
+        });
+
+        if (newStep !== this.currentStep) {
+            this.activateStep(newStep);
+        }
+    }
+
+    activateStep(stepNumber) {
+        if (stepNumber < 1 || stepNumber > this.totalSteps) {
+            return;
+        }
+
+        this.currentStep = stepNumber;
+        this.isScrolling = true;
+
+        // Update step indicator
+        this.dots.forEach((dot, index) => {
+            dot.classList.remove('active', 'completed');
+            if (index + 1 < stepNumber) {
+                dot.classList.add('completed');
+            } else if (index + 1 === stepNumber) {
+                dot.classList.add('active');
+            }
+        });
+
+        // Update active step highlighting
+        this.steps.forEach((step, index) => {
+            step.classList.remove('active-step');
+            if (index + 1 === stepNumber) {
+                step.classList.add('active-step');
+            }
+        });
+
+        // Ensure all step content is visible for the current step
+        const currentStep = document.querySelector(`[data-step="${stepNumber}"]`);
+        if (currentStep) {
+            const stepContents = currentStep.querySelectorAll('.step-content');
+            
+            stepContents.forEach((content, index) => {
+                // Immediately make content visible
+                content.style.opacity = '1';
+                content.style.transform = 'translateY(0)';
+                content.classList.add('active');
+            });
+            
+            // Update the left side highlighting (once, outside the loop)
+            this.updateLeftSide(stepNumber);
+        }
+
+        // Update scroll hint
+        this.updateScrollHint();
+
+        // Reset scrolling flag after animation
+        setTimeout(() => {
+            this.isScrolling = false;
+        }, 1000);
+    }
+
+    updateLeftSide(activeStep) {
+        // Find ALL options and update them
+        const allOptions = document.querySelectorAll('.need-state-option');
+        
+        allOptions.forEach((option, index) => {
+            const optionStep = parseInt(option.getAttribute('data-step'));
+            
+            if (optionStep === activeStep) {
+                // Active option - orange and glowing
+                option.style.color = '#DD4124';
+                option.style.fontWeight = '700';
+                option.style.textShadow = '0 0 20px rgba(221, 65, 36, 0.3)';
+                option.classList.add('active');
+            } else {
+                // Inactive options - gray
+                option.style.color = '#aaa';
+                option.style.fontWeight = '400';
+                option.style.textShadow = 'none';
+                option.classList.remove('active');
+            }
+        });
+    }
+
+    goToStep(stepNumber) {
+        if (stepNumber < 1 || stepNumber > this.totalSteps) {
+            return;
+        }
+
+        this.isManualNavigation = true;
+        
+        const targetScrollTop = (stepNumber - 1) * this.container.clientHeight;
+        
+        // Immediately activate the step content
+        this.activateStep(stepNumber);
+        
+        this.container.scrollTo({
+            top: targetScrollTop,
+            behavior: 'smooth'
+        });
+
+        // Reset flags after animation completes
+        setTimeout(() => {
+            this.isScrolling = false;
+            this.isManualNavigation = false;
+        }, 1000);
+    }
+
+    nextStep() {
+        if (this.currentStep < this.totalSteps) {
+            this.isScrolling = false;
+            this.isManualNavigation = false;
+            this.goToStep(this.currentStep + 1);
+        }
+    }
+
+    previousStep() {
+        if (this.currentStep > 1) {
+            this.isScrolling = false;
+            this.isManualNavigation = false;
+            this.goToStep(this.currentStep - 1);
+        }
+    }
+}
+```
+
+### Critical Implementation Lessons
+
+#### 1. **Left Side Content Visibility**
+**Problem**: Left side content was being hidden because it had the `step-content` class, which gets `opacity: 0` applied during step transitions.
+
+**Solution**: 
+```css
+/* Left side content is always visible */
+.hero-left .need-state-container {
+    opacity: 1 !important;
+    transform: none !important;
+}
+```
+
+#### 2. **JavaScript Method Call Placement**
+**Problem**: `updateLeftSide()` was being called inside a loop, causing it to execute multiple times per step activation.
+
+**Solution**: Move the method call outside the loop:
+```javascript
+stepContents.forEach((content, index) => {
+    // Make content visible
+    content.style.opacity = '1';
+    content.style.transform = 'translateY(0)';
+    content.classList.add('active');
+});
+
+// Update the left side highlighting (once, outside the loop)
+this.updateLeftSide(stepNumber);
+```
+
+#### 3. **Option Targeting Strategy**
+**Problem**: Initially tried to target only visible options, but this was unreliable because content visibility changes during transitions.
+
+**Solution**: Target ALL options and update them all:
+```javascript
+updateLeftSide(activeStep) {
+    // Find ALL options and update them
+    const allOptions = document.querySelectorAll('.need-state-option');
+    
+    allOptions.forEach((option, index) => {
+        const optionStep = parseInt(option.getAttribute('data-step'));
+        
+        if (optionStep === activeStep) {
+            // Active option - orange and glowing
+            option.style.color = '#DD4124';
+            option.style.fontWeight = '700';
+            option.style.textShadow = '0 0 20px rgba(221, 65, 36, 0.3)';
+            option.classList.add('active');
+        } else {
+            // Inactive options - gray
+            option.style.color = '#aaa';
+            option.style.fontWeight = '400';
+            option.style.textShadow = 'none';
+            option.classList.remove('active');
+        }
+    });
+}
+```
+
+#### 4. **Scroll Event Management**
+**Problem**: Scroll events and manual navigation were interfering with each other.
+
+**Solution**: Use flags to prevent conflicts:
+```javascript
+this.isScrolling = false;
+this.isManualNavigation = false;
+
+handleScroll() {
+    if (this.isScrolling || this.isManualNavigation) {
+        return;
+    }
+    // ... rest of scroll logic
+}
+```
+
+#### 5. **CSS Positioning for Options**
+**Problem**: Options were overlapping or not positioned correctly.
+
+**Solution**: Use absolute positioning with specific top values:
+```css
+.need-state-option[data-step="1"] { top: 0; }
+.need-state-option[data-step="2"] { top: 2.5rem; }
+.need-state-option[data-step="3"] { top: 5rem; }
+.need-state-option[data-step="4"] { top: 7.5rem; }
+.need-state-option[data-step="5"] { top: 10rem; }
+```
+
+### Common Pitfalls to Avoid
+
+1. **Don't put left side content inside `step-content`** - it will be hidden during transitions
+2. **Don't call update methods inside loops** - they'll execute multiple times
+3. **Don't try to target only "visible" options** - target all and update all
+4. **Don't forget scroll event flags** - manual navigation and scroll events will conflict
+5. **Don't use complex selectors** - simple `querySelectorAll('.need-state-option')` works best
+
+### Testing Checklist
+
+When implementing this pattern again:
+
+- [ ] Left side content is always visible (not affected by step transitions)
+- [ ] All options are found and updated (check console for option count)
+- [ ] Highlighting works on scroll navigation
+- [ ] Highlighting works on button navigation
+- [ ] Highlighting works on dot navigation
+- [ ] No duplicate method calls (check console for multiple executions)
+- [ ] Scroll and manual navigation don't conflict
+- [ ] Options are properly positioned and don't overlap
 2. **ScrollToPlugin**: Smooth scrolling functionality
 3. **Core GSAP**: Tweening and timeline functionality
 

@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Mach Five Marketing</title>
+    
+    <!-- Neodigm Scripts -->
+    <script>
+        let neodigmOptCustom = { CONSOLE_LOG_VER:true, W4S_VOLUME: .016 }
+        let neodigmOpt_launchCompleteCustom = {
+          ver: "1.2.4",
+          N55_LC_DOMAIN: ["MachFiveMarketing.com", 256],
+          N55_LC_TAG1: ["MachFive Marketing 🌶️ Performance Marketing & Technology", 256],
+          N55_LC_COLOR_BRAND: ["DD4124", 256],
+          CONSOLE_LOG_VER: true,
+        }
+    </script>
+    <link rel="stylesheet" href="https://arcanus55.github.io/neodigm55/dist/neodigm55__v4_0.css">
+    <script src="https://arcanus55.github.io/neodigm55/dist/neodigm55__v4_0.js"></script>
+    <link rel="stylesheet" href="https://arcanus55.github.io/neodigm55/dist/neodigm55_v1_0_launchComplete.css">
+    <script src="https://arcanus55.github.io/neodigm55/dist/neodigm55_v1_0_launchComplete.js"></script>
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;600;700&family=Inter:wght@300;400;500;600&family=Roboto:wght@300;400;500;700&family=Roboto+Condensed:wght@300;400;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,300,0,0&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --m5m-blue: #34495E;
+            --m5m-orange: #DD4124;
+            --m5m-white: #ffffff;
+            --m5m-gray: #aaa;
+            --m5m-black: #000000;
+            --m5m-gray-light: #f8f9fa;
+            --m5m-border: #e5e7eb;
+            --m5m-blue-dark: #2C3E50;
+            --m5m-gray-dark: #2A2A2A;
+            --max-width: 1200px;
+            
+            /* Mach Five Tech compatible variables */
+            --m5-brand: #DD4124;
+            --m5-brand-dark: #810000;
+            --m5-accent: #7BC4C4;
+            --m5-dark: #181818;
+            --m5-darker: #000;
+            --m5-night-mid: #323232;
+            --m5-light: #f8f8f8;
+            --m5-lighter: #fff;
+            --m5-text: #333;
+            --m5-text-light: #666;
+            --m5-border: #e0e0e0;
+            --m5-shadow: 0 2px 16px rgba(0,0,0,0.08);
+            --m5-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Neodigm widget overrides */
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] span:first-child,
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] .word-1,
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] [class*="word"]:first-child {
+            color: var(--m5m-black) !important;
+        }
+
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] span:nth-child(2),
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] .word-2,
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] [class*="word"]:nth-child(2) {
+            color: var(--m5m-blue) !important;
+        }
+
+        /* Override neodigm yellow scrollbar with brand colors */
+        ::-webkit-scrollbar {
+            width: 12px;
+            height: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--m5m-blue) !important;
+            border-radius: 6px;
+            border: 2px solid transparent;
+            background-clip: content-box;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--m5m-blue-dark) !important;
+            background-clip: content-box;
+        }
+
+        /* Firefox scrollbar styling */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: var(--m5m-blue) rgba(0, 0, 0, 0.05) !important;
+        }
+
+        /* Override neodigm yellow text selection with brand blue */
+        ::selection {
+            background: var(--m5m-blue) !important;
+            color: white !important;
+        }
+
+        ::-moz-selection {
+            background: var(--m5m-blue) !important;
+            color: white !important;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--m5m-black);
+            background: var(--m5m-white);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            position: relative;
+        }
+
+        /* Light Grid Background with Parallax */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(rgba(52, 73, 94, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(52, 73, 94, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px, 60px 60px;
+            background-position: 0 0, 0 0;
+            transform: translateZ(0);
+            will-change: transform;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Parallax effect on scroll */
+        @media (prefers-reduced-motion: no-preference) {
+            body::before {
+                animation: gridParallax 20s linear infinite;
+            }
+        }
+
+        @keyframes gridParallax {
+            0% { transform: translateY(0px) translateZ(0); }
+            100% { transform: translateY(-60px) translateZ(0); }
+        }
+
+        /* Header & Navigation */
+        .header-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .top-bar {
+            background: linear-gradient(135deg, var(--m5m-blue) 0%, var(--m5m-blue-dark) 100%);
+            padding: 10px 0;
+            font-size: 13px;
+        }
+
+        .top-bar-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 36px;
+        }
+
+        .top-bar-left,
+        .top-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .top-bar-right {
+            padding-right: 0;
+            margin-left: auto;
+            margin-right: 100px;
+        }
+
+        .top-bar-left a,
+        .top-bar-right a {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s;
+            opacity: 0.9;
+        }
+
+        .top-bar-left a:hover,
+        .top-bar-right a:hover {
+            color: white;
+            opacity: 1;
+            transform: translateY(-1px);
+        }
+
+        .top-bar-left .material-symbols-outlined,
+        .top-bar-right .material-symbols-outlined {
+            font-size: 18px;
+            color: white;
+        }
+
+        /* Make Portal link more prominent */
+        .top-bar-link[href="/portal/"] {
+            background: rgba(255, 255, 255, 0.2);
+            color: white !important;
+            padding: 6px 12px;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.2s ease;
+        }
+
+        .top-bar-link[href="/portal/"]:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.4);
+            color: white !important;
+            transform: translateY(-1px);
+        }
+
+        .top-bar-link[href="/portal/"] .material-symbols-outlined {
+            color: white;
+        }
+
+        /* Main navigation */
+        .main-nav {
+            background: white;
+            padding: 5px 0;
+            position: relative;
+            border-bottom: 3px solid var(--m5m-blue);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Nav logo (center logo) */
+        .nav-logo {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            justify-self: center;
+        }
+
+        .nav-logo img {
+            height: 60px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-logo:hover {
+            transform: scale(1.05);
+        }
+
+        /* Hide mobile-only items on desktop */
+        .mobile-only {
+            display: none;
+        }
+
+        /* Nav spacer for grid layout */
+        .nav-spacer {
+            justify-self: end;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Navigation menu */
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 8px;
+            align-items: center;
+        }
+
+        /* Nav prompt styling */
+        .nav-prompt {
+            color: var(--m5m-blue);
+            font-size: 16px;
+            font-weight: 600;
+            padding-right: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: -0.02em;
+            white-space: nowrap;
+        }
+
+        .nav-prompt::after {
+            content: '→';
+            font-size: 20px;
+            animation: pointRight 2s ease-in-out infinite;
+        }
+
+        .mobile-nav-prompt {
+            display: none;
+            color: var(--m5m-blue);
+            font-size: 18px;
+            font-weight: 600;
+            width: 100%;
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(52, 73, 94, 0.2);
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .mobile-nav-prompt::after {
+            content: '→';
+            font-size: 22px;
+            margin-left: 8px;
+            display: inline-block;
+            animation: pointRight 2s ease-in-out infinite;
+        }
+
+        /* Nav divider */
+        .nav-divider {
+            width: 1px;
+            height: 24px;
+            background: var(--m5-border);
+            margin: 0 8px;
+        }
+
+        .nav-menu a {
+            color: var(--m5-text);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            padding: 10px 20px;
+            position: relative;
+            background: rgba(0, 0, 0, 0.02);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+        }
+
+        .nav-menu a:hover {
+            color: var(--m5m-blue);
+            background: rgba(52, 73, 94, 0.05);
+            border-color: rgba(52, 73, 94, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(52, 73, 94, 0.1);
+        }
+
+        /* Mobile menu toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+            position: relative;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--m5-text);
+            margin: 4px 0;
+            transition: all 0.3s;
+            transform-origin: center;
+        }
+
+        .mobile-menu-toggle.active span:first-child {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:last-child {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Menu overlay for mobile */
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 998;
+        }
+
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Page Content */
+        .page-content {
+            margin-top: 120px;
+            padding: 4rem 2rem;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        /* About Hero Section */
+        .about-hero {
+            margin-bottom: 5rem;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-logo {
+            flex-shrink: 0;
+        }
+
+        .animated-logo {
+            height: 360px;
+            width: auto;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: logoReveal 1.2s ease-out 0.3s forwards, logoFloat 6s ease-in-out infinite 1.5s;
+            filter: drop-shadow(0 10px 30px rgba(52, 73, 94, 0.1));
+        }
+
+        @keyframes logoReveal {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.75rem;
+            color: var(--m5m-blue);
+            font-weight: 500;
+            line-height: 1.5;
+            margin: 0;
+            text-align: left;
+        }
+
+        /* Marketing is Broken Section */
+        .marketing-broken {
+            background: var(--m5m-gray-light);
+            padding: 5rem 2rem;
+            margin: 4rem -2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .marketing-broken::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+            background-size: 50px 50px, 50px 50px;
+            mask-image: linear-gradient(90deg, 
+                transparent 0%, 
+                black 15%, 
+                black 85%, 
+                transparent 100%);
+            -webkit-mask-image: linear-gradient(90deg, 
+                transparent 0%, 
+                black 15%, 
+                black 85%, 
+                transparent 100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .marketing-broken-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .marketing-broken h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 200;
+            letter-spacing: -0.03em;
+            margin-bottom: 2rem;
+            color: var(--m5m-black);
+            text-align: center;
+        }
+
+        .marketing-broken h2 span {
+            color: var(--m5m-orange);
+            font-weight: 600;
+        }
+
+        .marketing-broken p {
+            font-size: 1.25rem;
+            color: var(--m5m-gray);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+            line-height: 1.7;
+        }
+
+        .marketing-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .marketing-stat {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--m5m-border);
+        }
+
+        .marketing-stat-number {
+            font-size: 2.5rem;
+            font-weight: 200;
+            color: var(--m5m-orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .marketing-stat-label {
+            font-size: 1rem;
+            color: var(--m5m-gray);
+            font-weight: 500;
+        }
+
+        /* About Content */
+        .about-content {
+            margin-top: 4rem;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            font-weight: 200;
+            color: var(--m5m-blue);
+            margin-bottom: 2rem;
+        }
+
+        .about-content p {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: var(--m5m-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .content-block {
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .content-block.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .content-block:nth-child(1) { transition-delay: 0.1s; }
+        .content-block:nth-child(2) { transition-delay: 0.2s; }
+        .content-block:nth-child(3) { transition-delay: 0.3s; }
+        .content-block:nth-child(4) { transition-delay: 0.4s; }
+        .content-block:nth-child(5) { transition-delay: 0.5s; }
+
+        .content-block p {
+            font-size: 1.25rem;
+            line-height: 1.7;
+            color: var(--m5m-gray);
+            margin-bottom: 1rem;
+        }
+
+        .content-block {
+            transition: all 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .content-block:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(52, 73, 94, 0.08);
+        }
+
+        .content-block.highlight {
+            background: var(--m5m-gray-light);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--m5m-orange);
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-block.highlight::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(221, 65, 36, 0.02) 0%, rgba(52, 73, 94, 0.02) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .content-block.highlight:hover::before {
+            opacity: 1;
+        }
+
+        .content-block.highlight:hover {
+            border-left-width: 6px;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(221, 65, 36, 0.15);
+        }
+
+        .content-block.highlight h2 {
+            color: var(--m5m-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .content-block.highlight p {
+            margin-bottom: 1rem;
+        }
+
+        .content-block:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(180deg, #fafafa 0%, #f5f5f5 100%);
+            border-top: 1px solid var(--m5m-border);
+            color: var(--m5m-text);
+            padding: 50px 24px 32px;
+            position: relative;
+        }
+
+        .footer-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 48px;
+            border-bottom: 1px solid var(--m5m-border);
+            padding-bottom: 48px;
+        }
+
+        .footer-brand {
+            flex: 1 1 400px;
+        }
+
+        .footer-brand h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        .footer-logo-text {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--m5m-text);
+            letter-spacing: -0.5px;
+        }
+
+        .footer-logo-mark {
+            background: var(--m5m-blue);
+            color: var(--m5m-white);
+            padding: 0.5rem 0.75rem;
+            font-weight: 700;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border-radius: 3px;
+        }
+
+        .footer-brand p {
+            color: var(--m5m-text-light);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .footer-contact a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--m5m-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-contact a:hover {
+            color: var(--m5m-blue);
+            transform: translateX(2px);
+        }
+
+        .footer-col {
+            flex: 1 1 200px;
+        }
+
+        .footer-col h4 {
+            color: var(--m5m-blue);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: var(--m5m-text-light);
+            text-decoration: none;
+            transition: all 0.2s;
+            font-size: 15px;
+        }
+
+        .footer-col a:hover {
+            color: var(--m5m-blue);
+            transform: translateX(2px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 32px;
+            font-size: 14px;
+            color: var(--m5m-text-light);
+        }
+
+        .footer-bottom a {
+            color: var(--m5m-text-light);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--m5m-blue);
+        }
+
+
+        .page-transition-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--m5m-white) 0%, var(--m5m-gray-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.6s ease-out, visibility 0.6s ease-out;
+        }
+
+        .transition-content {
+            text-align: center;
+        }
+
+        .transition-logo {
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .transition-logo img {
+            height: 60px;
+            width: auto;
+            animation: logoPulse 2s ease-in-out infinite;
+        }
+
+        .transition-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(52, 73, 94, 0.1);
+            border-top: 3px solid var(--m5m-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes logoPulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Animations */
+        @keyframes pointRight {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(5px); }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+
+            .top-bar {
+                display: none;
+            }
+
+            .nav-container {
+                display: flex;
+                justify-content: space-between;
+                padding: 0 16px;
+                grid-template-columns: none;
+                gap: 0;
+            }
+
+            /* Mobile menu toggle */
+            .mobile-menu-toggle {
+                display: block !important;
+            }
+
+            /* Mobile menu */
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 320px;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                padding: 80px 32px 32px 32px;
+                gap: 20px;
+                box-shadow: -2px 0 16px rgba(0, 0, 0, 0.1);
+                transition: right 0.3s;
+                z-index: 999;
+                overflow-y: auto;
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-menu a {
+                width: 100%;
+                text-align: center;
+                padding: 12px 24px;
+            }
+
+            /* Show mobile nav prompt */
+            .mobile-nav-prompt {
+                display: block;
+            }
+
+            /* Hide desktop nav prompt */
+            .nav-prompt {
+                display: none;
+            }
+
+            /* Mobile only items */
+            .mobile-only {
+                display: block !important;
+            }
+
+            /* Nav divider in mobile */
+            .nav-divider {
+                width: 100%;
+                height: 1px;
+                margin: 16px 0;
+            }
+
+            .page-content {
+                margin-top: 70px;
+                padding: 2rem 1rem;
+            }
+
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .animated-logo {
+                height: 240px;
+            }
+
+            .hero-subtitle {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+
+            .marketing-broken {
+                margin: 2rem -1rem;
+                padding: 3rem 1rem;
+            }
+
+            .marketing-stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        /* Very small mobile */
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 0 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header-wrapper">
+        <div class="top-bar">
+            <div class="top-bar-inner">
+                <div class="top-bar-left">
+                </div>
+                <div class="top-bar-right">
+                    <!-- <a href="/knowledge-base/" class="top-bar-link">
+                        <span class="material-symbols-outlined">rss_feed</span>
+                        Knowledge Base
+                    </a> -->
+                    <!-- <a href="/careers/" class="top-bar-link">
+                        <span class="material-symbols-outlined">person</span>
+                        Careers
+                    </a> -->
+                    <a href="/portal/" class="top-bar-link">
+                        <span class="material-symbols-outlined">login</span>
+                        Portal
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <div class="nav-container">
+                <a href="/" class="nav-logo">
+                    <img src="/img/Logo_M5M Light Web.png" alt="Mach Five Marketing" style="height: 60px; width: auto;">
+                </a>
+                
+                <ul class="nav-menu">
+                    <li class="mobile-nav-prompt">I Need...</li>
+                    <li class="nav-prompt">I Need...</li>
+                    <li><a href="/#services">Services</a></li>
+                    <li><a href="/#technology">Technology</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/#contact" onclick="openContactForm()">Contact</a></li>
+                    <li class="nav-divider"></li>
+                    <!-- <li class="mobile-only">
+                        <a href="/careers/">
+                            <span class="material-symbols-outlined">person</span>
+                            Careers
+                        </a>
+                    </li> -->
+                    <li class="mobile-only">
+                        <a href="/portal/">
+                            <span class="material-symbols-outlined">login</span>
+                            Portal
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="nav-spacer"></div>
+
+                <button class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="menu-overlay"></div>
+
+    <!-- Page Content -->
+    <main class="page-content">
+        <div class="container">
+            <!-- Marketing is Broken Section -->
+            <section class="marketing-broken">
+                <div class="marketing-broken-inner">
+                    <h2>Marketing is <span>broken</span>.</h2>
+                    <p>We're fixing it.</p>
+                </div>
+            </section>
+
+            <!-- About Hero -->
+            <section class="about-hero">
+                <div class="hero-content">
+                    <div class="hero-logo">
+                        <img src="/img/Logo_M5T Light Print-16.png" alt="Mach Five Marketing" class="animated-logo">
+                    </div>
+                    <div class="hero-text">
+                        <p class="hero-subtitle">Our fix? We help ambitious companies grow through data-driven marketing and our proven proprietary technology.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Content -->
+            <section class="about-content">
+                <div class="content-block">
+                    <p>Most agencies run the same playbooks with the same tools, delivering the same mediocre results. They send monthly reports, host quarterly reviews, and hope you don't look too closely at the numbers.</p>
+                </div>
+
+                <div class="content-block">
+                    <p>We built a better way. By combining proven marketing strategies with proprietary technology, we deliver transparency, accountability, and results you can actually measure.</p>
+                </div>
+
+                <div class="content-block">
+                    <p>When you work with Mach Five, you're not just hiring an agency. You're getting a technology partner invested in your growth.</p>
+                </div>
+
+                <div class="content-block highlight">
+                    <h2>Built by marketers who code.</h2>
+                    <p>We started Mach Five because we were frustrated with the tools available to marketers. So we built our own.</p>
+                    <p>Our team includes marketers, developers, data scientists, and designers who work together to create integrated solutions that actually move the needle.</p>
+                </div>
+
+                <div class="content-block">
+                    <p><strong>Chicago-based. Supporting businesses nationwide.</strong></p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <neodigm-widget style="width: 40%;" data-n55-widget-config="{conf:'', ampm:'',mobile:''}" data-n55-widget-id="effect_two_word_rotate"></neodigm-widget>
+                <p>Performance marketing and technology solutions for ambitious companies.</p>
+                <p>Headquartered in Chicago. Supporting clients nationwide.</p>
+                <div class="footer-contact">
+                    <a href="mailto:support@machfivemarketing.com">support@machfivemarketing.com</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Technology</h4>
+                <ul>
+                    <li><a href="/#portal">Mach Five Portal</a></li>
+                    <li><a href="/#leadmagnet">Lead Magnet</a></li>
+                    <li><a href="https://portal.machfivemarketing.com">Portal Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Mach Five</h4>
+                <ul>
+                    <li><a href="https://machfivegroup.com" target="_blank">Mach Five Group</a></li>
+                    <li><a href="https://machfivetech.com" target="_blank">Mach Five Tech</a></li>
+                    <li><a href="https://machvive.com" target="_blank">MachVive</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Proudly built by the <a href="https://www.machfivegroup.com" target="_blank">Mach Five Group</a>.</p>
+            <p>© 2025 Mach Five Marketing • <a href="/privacy-policy">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+    <!-- Portal Transitions - For main pages only -->
+    <script src="/js/portal-transitions.js"></script>
+
+    <script>
+        // Mobile menu functionality and scroll animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            const menuOverlay = document.querySelector('.menu-overlay');
+
+            if (mobileMenuToggle && navMenu && menuOverlay) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    mobileMenuToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                    menuOverlay.classList.toggle('active');
+                    document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+                });
+
+                menuOverlay.addEventListener('click', function() {
+                    mobileMenuToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    menuOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+
+                // Close menu when clicking on a link
+                navMenu.addEventListener('click', function(e) {
+                    if (e.target.tagName === 'A') {
+                        mobileMenuToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        menuOverlay.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+
+            // Scroll-triggered animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all content blocks
+            document.querySelectorAll('.content-block').forEach(block => {
+                observer.observe(block);
+            });
+
+            // Parallax effect for grid background
+            let ticking = false;
+            function updateParallax() {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * -0.5;
+                document.body.style.setProperty('--parallax-offset', rate + 'px');
+                ticking = false;
+            }
+
+            function requestTick() {
+                if (!ticking) {
+                    requestAnimationFrame(updateParallax);
+                    ticking = true;
+                }
+            }
+
+            window.addEventListener('scroll', requestTick);
+        });
+    </script>
+</body>
+</html> 

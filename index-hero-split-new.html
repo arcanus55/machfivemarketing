@@ -225,7 +225,7 @@
         }
 
         /* Make Portal link more prominent */
-        .top-bar-link[href="/portal/"] {
+        .top-bar-link[href="/customer-portal/"] {
             background: rgba(255, 255, 255, 0.2);
             color: white !important;
             padding: 6px 12px;
@@ -235,14 +235,14 @@
             transition: all 0.2s ease;
         }
 
-        .top-bar-link[href="/portal/"]:hover {
+        .top-bar-link[href="/customer-portal/"]:hover {
             background: rgba(255, 255, 255, 0.3);
             border-color: rgba(255, 255, 255, 0.4);
             color: white !important;
             transform: translateY(-1px);
         }
 
-        .top-bar-link[href="/portal/"] .material-symbols-outlined {
+        .top-bar-link[href="/customer-portal/"] .material-symbols-outlined {
             color: white;
         }
 
@@ -495,15 +495,11 @@
             left: -5%;
             width: 110%;
             height: 110%;
-            background-image: url('/img/mach five marketing hero.png');
+            background-image: url('/img/m5t_hero-01.jpg');
             background-size: cover;
             background-position: center;
             opacity: 0.4;
             z-index: 1;
-            will-change: transform;
-            transform: translateZ(0);
-            /* Ensure background covers the entire area during parallax */
-            background-attachment: fixed;
         }
 
         .hero-overlay {
@@ -514,8 +510,8 @@
             height: 100%;
             background: radial-gradient(
                 ellipse at center,
-                rgba(10, 10, 10, 0.1) 0%,
-                rgba(10, 10, 10, 0.4) 100%
+                rgba(10, 10, 10, 0.4) 0%,
+                rgba(10, 10, 10, 0.85) 100%
             );
             z-index: 2;
         }
@@ -546,11 +542,6 @@
         .hero h1 strong {
             font-weight: 400;
             color: var(--m5m-blue);
-        }
-
-        /* Lighter blue for heroVerb scrolling words for better readability */
-        #heroVerb {
-            color: #5DADE2 !important; /* Light blue for better readability */
         }
 
         .hero-subtitle {
@@ -661,643 +652,35 @@
 
         .step-supporting {
             width: 50%;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+            background: var(--m5m-gray-light);
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 4rem;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            padding: 3rem;
         }
-
-        .step-supporting::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-            background-size: 60px 60px, 60px 60px;
-            mask-image: 
-                linear-gradient(90deg, 
-                    transparent 0%, 
-                    black 25%, 
-                    black 75%, 
-                    transparent 100%),
-                linear-gradient(180deg, 
-                    transparent 0%, 
-                    black 15%, 
-                    black 85%, 
-                    transparent 100%);
-            -webkit-mask-image: 
-                linear-gradient(90deg, 
-                    transparent 0%, 
-                    black 25%, 
-                    black 75%, 
-                    transparent 100%),
-                linear-gradient(180deg, 
-                    transparent 0%, 
-                    black 15%, 
-                    black 85%, 
-                    transparent 100%);
-            -webkit-mask-composite: multiply;
-            mask-composite: multiply;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-
 
         .step-supporting-content {
             max-width: 400px;
             text-align: center;
         }
 
-        /* Ripped Tape Effect for Step Supporting Titles */
         .step-supporting h3 {
-            font-family: 'Inter', sans-serif;
-            font-size: 18px !important;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: rgba(255, 255, 255, 0.95);
-            margin-bottom: 2rem;
-            position: relative;
-            display: inline-block;
-            padding: 10px 28px 10px 22px;
-            transform: rotate(-1deg);
-            transition: all 0.3s ease;
-            
-            /* Heavy wear pattern with orange color */
-            background: 
-                /* Scratches */
-                linear-gradient(95deg, transparent 15%, rgba(255,255,255,0.12) 16%, transparent 18%),
-                linear-gradient(-25deg, transparent 35%, rgba(255,255,255,0.1) 36%, transparent 37%),
-                /* Scuff marks */
-                radial-gradient(ellipse at 20% 20%, rgba(255,255,255,0.15) 0%, transparent 25%),
-                radial-gradient(ellipse at 60% 70%, rgba(255,255,255,0.12) 0%, transparent 20%),
-                radial-gradient(ellipse at 80% 30%, rgba(255,255,255,0.08) 0%, transparent 15%),
-                radial-gradient(ellipse at 40% 50%, rgba(255,255,255,0.06) 0%, transparent 18%),
-                /* Base orange color */
-                radial-gradient(ellipse at center, #DD4124 0%, #B73820 100%);
-            
-            box-shadow: 
-                0 3px 8px rgba(0, 0, 0, 0.4),
-                inset 0 -1px 0 rgba(0, 0, 0, 0.5),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
-        }
-
-        /* Left edge gradient for depth */
-        .step-supporting h3::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 20px;
-            background: linear-gradient(90deg, rgba(0,0,0,0.15) 0%, transparent 100%);
-        }
-
-        /* Arrow end for tab effect */
-        .step-supporting h3::after {
-            content: '';
-            position: absolute;
-            right: -6px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 10px 0 10px 6px;
-            border-color: transparent transparent transparent #C63C28;
-            filter: drop-shadow(2px 0 2px rgba(0, 0, 0, 0.2));
-        }
-
-        /* Orange tape on blue background for step 1 (I need card) */
-        .experience-section[data-step="1"] .step-supporting h3 {
-            background: 
-                /* Scratches */
-                linear-gradient(95deg, transparent 15%, rgba(255,255,255,0.12) 16%, transparent 18%),
-                linear-gradient(-25deg, transparent 35%, rgba(255,255,255,0.1) 36%, transparent 37%),
-                /* Scuff marks */
-                radial-gradient(ellipse at 20% 20%, rgba(255,255,255,0.15) 0%, transparent 25%),
-                radial-gradient(ellipse at 60% 70%, rgba(255,255,255,0.12) 0%, transparent 20%),
-                radial-gradient(ellipse at 80% 30%, rgba(255,255,255,0.08) 0%, transparent 15%),
-                radial-gradient(ellipse at 40% 50%, rgba(255,255,255,0.06) 0%, transparent 18%),
-                /* Base orange color */
-                radial-gradient(ellipse at center, #DD4124 0%, #B73820 100%);
-            opacity: 0;
-            transform: rotate(-1deg) translateY(20px);
-        }
-
-        .experience-section[data-step="1"] .step-supporting h3::after {
-            border-color: transparent transparent transparent #C63C28;
-        }
-
-        /* Blue tape on orange backgrounds for steps 2, 4 (I need cards) */
-        .experience-section[data-step="2"] .step-supporting h3,
-        .experience-section[data-step="4"] .step-supporting h3 {
-            background: 
-                /* Scratches */
-                linear-gradient(95deg, transparent 15%, rgba(255,255,255,0.12) 16%, transparent 18%),
-                linear-gradient(-25deg, transparent 35%, rgba(255,255,255,0.1) 36%, transparent 37%),
-                /* Scuff marks */
-                radial-gradient(ellipse at 20% 20%, rgba(255,255,255,0.15) 0%, transparent 25%),
-                radial-gradient(ellipse at 60% 70%, rgba(255,255,255,0.12) 0%, transparent 20%),
-                radial-gradient(ellipse at 80% 30%, rgba(255,255,255,0.08) 0%, transparent 15%),
-                radial-gradient(ellipse at 40% 50%, rgba(255,255,255,0.06) 0%, transparent 18%),
-                /* Base blue color */
-                radial-gradient(ellipse at center, #23394e 0%, #1a2b3a 100%);
-            opacity: 0;
-            transform: rotate(-1deg) translateY(20px);
-        }
-
-        .experience-section[data-step="2"] .step-supporting h3::after,
-        .experience-section[data-step="4"] .step-supporting h3::after {
-            border-color: transparent transparent transparent #1a2b3a;
-        }
-
-        /* Orange tape on blue backgrounds for steps 3, 5 (I need cards) */
-        .experience-section[data-step="3"] .step-supporting h3,
-        .experience-section[data-step="5"] .step-supporting h3 {
-            background: 
-                /* Scratches */
-                linear-gradient(95deg, transparent 15%, rgba(255,255,255,0.12) 16%, transparent 18%),
-                linear-gradient(-25deg, transparent 35%, rgba(255,255,255,0.1) 36%, transparent 37%),
-                /* Scuff marks */
-                radial-gradient(ellipse at 20% 20%, rgba(255,255,255,0.15) 0%, transparent 25%),
-                radial-gradient(ellipse at 60% 70%, rgba(255,255,255,0.12) 0%, transparent 20%),
-                radial-gradient(ellipse at 80% 30%, rgba(255,255,255,0.08) 0%, transparent 15%),
-                radial-gradient(ellipse at 40% 50%, rgba(255,255,255,0.06) 0%, transparent 18%),
-                /* Base orange color */
-                radial-gradient(ellipse at center, #DD4124 0%, #B73820 100%);
-            opacity: 0;
-            transform: rotate(-1deg) translateY(20px);
-        }
-
-        .experience-section[data-step="3"] .step-supporting h3::after,
-        .experience-section[data-step="5"] .step-supporting h3::after {
-            border-color: transparent transparent transparent #C63C28;
-        }
-
-        /* Remove ripped tape effect from Technology section and final step (steps 6-9) */
-        .experience-section[data-step="6"] .step-supporting h3,
-        .experience-section[data-step="7"] .step-supporting h3,
-        .experience-section[data-step="8"] .step-supporting h3,
-        .experience-section[data-step="9"] .step-supporting h3 {
-            background: none;
-            box-shadow: none;
-            transform: none;
-            opacity: 1;
-            color: var(--m5m-white);
-            font-family: 'Inter', sans-serif;
-            font-size: 1.25rem !important;
-            font-weight: 600;
-            text-transform: none;
-            letter-spacing: normal;
-            padding: 0;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1.25rem;
+            color: var(--m5m-blue);
             margin-bottom: 1rem;
-        }
-
-        .experience-section[data-step="6"] .step-supporting h3::before,
-        .experience-section[data-step="7"] .step-supporting h3::before,
-        .experience-section[data-step="8"] .step-supporting h3::before,
-        .experience-section[data-step="9"] .step-supporting h3::before,
-        .experience-section[data-step="6"] .step-supporting h3::after,
-        .experience-section[data-step="7"] .step-supporting h3::after,
-        .experience-section[data-step="8"] .step-supporting h3::after,
-        .experience-section[data-step="9"] .step-supporting h3::after {
-            display: none;
-        }
-
-        /* Hover effects */
-        .step-supporting h3:hover {
-            transform: scale(1.02) rotate(-1deg);
-            box-shadow: 
-                0 4px 8px rgba(0, 0, 0, 0.4),
-                inset 0 -1px 0 rgba(0, 0, 0, 0.6),
-                inset 0 1px 0 rgba(255, 255, 255, 0.15);
-        }
-
-        /* Paper texture overlay */
-        .step-supporting h3 .texture-noise {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            opacity: 0.15;
-            background-image: 
-                repeating-linear-gradient(
-                    0deg,
-                    transparent,
-                    transparent 2px,
-                    rgba(255,255,255,0.02) 2px,
-                    rgba(255,255,255,0.02) 3px
-                );
-            mix-blend-mode: overlay;
-            pointer-events: none;
-        }
-
-        /* Tape Animation Keyframes */
-        @keyframes tapeSlideIn {
-            0% {
-                opacity: 0;
-                transform: rotate(-1deg) translateY(20px) scale(0.9);
-            }
-            50% {
-                opacity: 0.7;
-                transform: rotate(-1deg) translateY(-5px) scale(1.05);
-            }
-            100% {
-                opacity: 1;
-                transform: rotate(-1deg) translateY(0) scale(1);
-            }
-        }
-
-        /* Intersection Observer for tape animations */
-        .step-supporting h3.animate-tape {
-            animation: tapeSlideIn 0.8s ease-out forwards;
-        }
-
-        /* Clean, Simple Content Display */
-        .step-supporting-content {
-            max-width: 500px;
-            text-align: left;
-            position: relative;
-            z-index: 2;
-        }
-
-        .step-supporting-content p {
-            color: rgba(255, 255, 255, 0.95);
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 2rem;
-            font-weight: 400;
-        }
-
-        .step-supporting-content ul {
-            list-style: none;
-            padding: 0;
-            margin: 1.5rem 0;
-        }
-
-        .step-supporting-content li {
-            padding: 0.75rem 0;
-            color: rgba(255, 255, 255, 0.95);
-            font-size: 1rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-            font-weight: 400;
-        }
-
-        .step-supporting-content li:last-child {
-            border-bottom: none;
-        }
-
-        .step-supporting-content li::before {
-            content: '→';
-            color: var(--accent-orange);
-            margin-right: 1rem;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        /* Card Animation Classes */
-        .step-supporting {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .step-supporting.animate-in {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Stagger animation for list items */
-        .step-supporting-content ul {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            transition-delay: 0.3s;
-        }
-
-        .step-supporting.animate-in .step-supporting-content ul {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .step-supporting-content li {
-            opacity: 0;
-            transform: translateX(-20px);
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .step-supporting.animate-in .step-supporting-content li {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        /* Stagger the list items */
-        .step-supporting.animate-in .step-supporting-content li:nth-child(1) { transition-delay: 0.4s; }
-        .step-supporting.animate-in .step-supporting-content li:nth-child(2) { transition-delay: 0.5s; }
-        .step-supporting.animate-in .step-supporting-content li:nth-child(3) { transition-delay: 0.6s; }
-        .step-supporting.animate-in .step-supporting-content li:nth-child(4) { transition-delay: 0.7s; }
-
-        .tab-buttons {
-            display: flex;
-            gap: 0.25rem;
-            margin-bottom: 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 0.25rem;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .tab-button {
-            background: none;
-            border: none;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.7rem;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            padding: 0.6rem 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-radius: 6px;
-            flex: 1;
-            position: relative;
-        }
-
-        .tab-button:hover {
-            color: rgba(255, 255, 255, 0.95);
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .tab-button.active {
-            color: white;
-            background: var(--accent-orange);
-            box-shadow: 0 2px 8px rgba(221, 65, 36, 0.3);
-        }
-
-        .tab-button.active::before {
-            content: '';
-            position: absolute;
-            top: -1px;
-            left: -1px;
-            right: -1px;
-            bottom: -1px;
-            background: linear-gradient(45deg, var(--accent-orange), #E85A3A);
-            border-radius: 6px;
-            z-index: -1;
-            opacity: 0.8;
-        }
-
-        .tab-content {
-            position: relative;
-            min-height: 200px;
-        }
-
-        .tab-panel {
-            display: none;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.3s ease;
-        }
-
-        .tab-panel.active {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .tab-panel ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .tab-panel li {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            font-size: 0.875rem;
-            color: rgba(255, 255, 255, 0.9);
-            transition: all 0.2s ease;
-        }
-
-        .tab-panel li:hover {
-            background: rgba(255, 255, 255, 0.03);
-            padding-left: 0.5rem;
-            border-radius: 4px;
-        }
-
-        .tab-panel li:last-child {
-            border-bottom: none;
-        }
-
-        .tab-panel li::before {
-            content: '✓';
-            color: var(--accent-orange);
-            margin-right: 0.75rem;
-            font-weight: bold;
-            font-size: 1rem;
-        }
-
-        /* Tab panel styling */
-        .tab-panel p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .tab-panel .results-grid {
-            margin-top: 0.5rem;
-        }
-
-        .capability-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .capability-list li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            font-size: 0.875rem;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .capability-list li:last-child {
-            border-bottom: none;
-        }
-
-        .capability-list li::before {
-            content: '✓';
-            color: var(--accent-orange);
-            margin-right: 0.5rem;
-            font-weight: bold;
-        }
-
-        .results-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-top: 0.5rem;
-        }
-
-        .result-item {
-            text-align: center;
-            padding: 1.25rem;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .result-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent-orange), #E85A3A);
-            opacity: 0.8;
-        }
-
-        .result-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-            border-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .result-number {
-            display: block;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--accent-orange);
-            margin-bottom: 0.25rem;
-        }
-
-        .result-label {
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.7);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .cta-btn {
-            background: linear-gradient(135deg, var(--accent-orange), #E85A3A);
-            color: white;
-            border: none;
-            padding: 0.875rem 2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.875rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 1.5rem;
-            position: relative;
-            overflow: hidden;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .cta-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .cta-btn:hover {
-            background: linear-gradient(135deg, #E85A3A, var(--accent-orange));
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(221, 65, 36, 0.4);
-        }
-
-        .cta-btn:hover::before {
-            left: 100%;
-        }
-
-        /* Responsive Design for Proficiency Tabs */
-        @media (max-width: 768px) {
-            .tab-nav {
-                flex-wrap: wrap;
-                gap: 0.25rem;
-            }
-            
-            .tab-btn {
-                font-size: 0.7rem;
-                padding: 0.4rem 0.6rem;
-                flex: 1;
-                min-width: 0;
-            }
-            
-            .results-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 0.75rem;
-            }
-            
-            .result-item {
-                padding: 0.75rem;
-            }
-            
-            .result-number {
-                font-size: 1.25rem;
-            }
-            
-            .capability-list li {
-                font-size: 0.8rem;
-                padding: 0.4rem 0;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .results-grid {
-                grid-template-columns: 1fr;
-                gap: 0.5rem;
-            }
-            
-            .result-item {
-                padding: 0.5rem;
-            }
-            
-            .result-number {
-                font-size: 1.1rem;
-            }
-            
-            .result-label {
-                font-size: 0.65rem;
-            }
         }
 
         .step-supporting p {
             font-size: 1rem;
             line-height: 1.6;
-            color: rgba(255, 255, 255, 0.9);
-            position: relative;
-            z-index: 2;
+            color: var(--m5m-gray);
         }
 
-        /* Step 1 - Blue background with grid (RIGHT side) */
+        /* Alternating colors for experience cards */
         .experience-section[data-step="1"] .step-supporting {
-            background: var(--m5m-blue) !important;
+            background: var(--m5m-blue);
             position: relative;
             overflow: hidden;
         }
@@ -1310,34 +693,76 @@
             right: 0;
             bottom: 0;
             background: 
-                linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+                linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
             background-size: 50px 50px, 50px 50px;
-            opacity: 0.3;
+            mask-image: linear-gradient(90deg, 
+                transparent 0%, 
+                black 15%, 
+                black 85%, 
+                transparent 100%);
+            -webkit-mask-image: linear-gradient(90deg, 
+                transparent 0%, 
+                black 15%, 
+                black 85%, 
+                transparent 100%);
             pointer-events: none;
             z-index: 1;
         }
 
         .experience-section[data-step="1"] .step-supporting::after {
-            content: 'STRATEGIC';
+            content: 'MACH FIVE';
             position: absolute;
-            bottom: -40px;
-            right: -50px;
+            top: -30px;
+            left: -60px;
             font-family: 'IBM Plex Mono', monospace;
             font-size: 6rem;
             font-weight: 700;
             color: rgba(255, 255, 255, 0.03);
-            transform: rotate(12deg);
+            transform: rotate(-8deg);
             z-index: 1;
         }
 
+        .experience-section[data-step="1"] .step-supporting .mach-five-bg-1 {
+            content: 'MACH FIVE';
+            position: absolute;
+            bottom: -20px;
+            right: -40px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 4rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.02);
+            transform: rotate(15deg);
+            z-index: 1;
+        }
 
+        .experience-section[data-step="1"] .step-supporting .mach-five-bg-2 {
+            content: 'MACH FIVE';
+            position: absolute;
+            top: 50%;
+            left: 20%;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 3rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.015);
+            transform: rotate(-3deg);
+            z-index: 1;
+        }
 
+        .experience-section[data-step="1"] .step-supporting h3 {
+            color: var(--m5m-white);
+            position: relative;
+            z-index: 2;
+        }
 
+        .experience-section[data-step="1"] .step-supporting p {
+            color: rgba(255, 255, 255, 0.8);
+            position: relative;
+            z-index: 2;
+        }
 
-        /* Step 2 - Orange background with grid (RIGHT side) */
         .experience-section[data-step="2"] .step-supporting {
-            background: var(--m5m-orange) !important;
+            background: var(--m5m-orange);
             position: relative;
             overflow: hidden;
         }
@@ -1350,10 +775,19 @@
             right: 0;
             bottom: 0;
             background: 
-                linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+                linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
             background-size: 50px 50px, 50px 50px;
-            opacity: 0.3;
+            mask-image: linear-gradient(90deg, 
+                transparent 0%, 
+                black 15%, 
+                black 85%, 
+                transparent 100%);
+            -webkit-mask-image: linear-gradient(90deg, 
+                transparent 0%, 
+                black 15%, 
+                black 85%, 
+                transparent 100%);
             pointer-events: none;
             z-index: 1;
         }
@@ -1371,13 +805,46 @@
             z-index: 1;
         }
 
+        .experience-section[data-step="2"] .step-supporting .mach-five-bg-1 {
+            content: 'MACH FIVE';
+            position: absolute;
+            top: -15px;
+            left: -30px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.02);
+            transform: rotate(-10deg);
+            z-index: 1;
+        }
 
+        .experience-section[data-step="2"] .step-supporting .mach-five-bg-2 {
+            content: 'MACH FIVE';
+            position: absolute;
+            top: 30%;
+            right: 10%;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.015);
+            transform: rotate(5deg);
+            z-index: 1;
+        }
 
+        .experience-section[data-step="2"] .step-supporting h3 {
+            color: var(--m5m-white);
+            position: relative;
+            z-index: 2;
+        }
 
+        .experience-section[data-step="2"] .step-supporting p {
+            color: rgba(255, 255, 255, 0.8);
+            position: relative;
+            z-index: 2;
+        }
 
-        /* Step 3 - Blue background with grid (RIGHT side) */
         .experience-section[data-step="3"] .step-supporting {
-            background: var(--m5m-blue) !important;
+            background: var(--m5m-blue);
             position: relative;
             overflow: hidden;
         }
@@ -1390,30 +857,76 @@
             right: 0;
             bottom: 0;
             background: 
-                linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+                linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
             background-size: 50px 50px, 50px 50px;
-            opacity: 0.3;
+            mask-image: linear-gradient(90deg, 
+                transparent 0%, 
+                black 15%, 
+                black 85%, 
+                transparent 100%);
+            -webkit-mask-image: linear-gradient(90deg, 
+                transparent 0%, 
+                black 15%, 
+                black 85%, 
+                transparent 100%);
             pointer-events: none;
             z-index: 1;
         }
 
         .experience-section[data-step="3"] .step-supporting::after {
-            content: 'EXECUTION';
+            content: 'MACH FIVE';
             position: absolute;
-            bottom: -40px;
-            right: -50px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-5deg);
             font-family: 'IBM Plex Mono', monospace;
-            font-size: 6rem;
+            font-size: 8rem;
             font-weight: 700;
-            color: rgba(255, 255, 255, 0.03);
-            transform: rotate(12deg);
+            color: rgba(255, 255, 255, 0.02);
             z-index: 1;
         }
 
-        /* Step 4 - Orange background with grid (RIGHT side) */
+        .experience-section[data-step="3"] .step-supporting .mach-five-bg-1 {
+            content: 'MACH FIVE';
+            position: absolute;
+            top: -25px;
+            left: -45px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 5rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.02);
+            transform: rotate(-12deg);
+            z-index: 1;
+        }
+
+        .experience-section[data-step="3"] .step-supporting .mach-five-bg-2 {
+            content: 'MACH FIVE';
+            position: absolute;
+            bottom: -35px;
+            right: -55px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 4rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.015);
+            transform: rotate(8deg);
+            z-index: 1;
+        }
+
+        .experience-section[data-step="3"] .step-supporting h3 {
+            color: var(--m5m-white);
+            position: relative;
+            z-index: 2;
+        }
+
+        .experience-section[data-step="3"] .step-supporting p {
+            color: rgba(255, 255, 255, 0.8);
+            position: relative;
+            z-index: 2;
+        }
+
         .experience-section[data-step="4"] .step-supporting {
-            background: var(--m5m-orange) !important;
+            background: var(--m5m-orange);
             position: relative;
             overflow: hidden;
         }
@@ -1426,30 +939,76 @@
             right: 0;
             bottom: 0;
             background: 
-                linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+                linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
             background-size: 50px 50px, 50px 50px;
-            opacity: 0.3;
+            mask-image: linear-gradient(90deg, 
+                transparent 0%, 
+                black 15%, 
+                black 85%, 
+                transparent 100%);
+            -webkit-mask-image: linear-gradient(90deg, 
+                transparent 0%, 
+                black 15%, 
+                black 85%, 
+                transparent 100%);
             pointer-events: none;
             z-index: 1;
         }
 
         .experience-section[data-step="4"] .step-supporting::after {
-            content: 'OPTIMIZATION';
+            content: 'MACH FIVE';
             position: absolute;
-            bottom: -40px;
-            right: -50px;
+            top: -20px;
+            right: -30px;
             font-family: 'IBM Plex Mono', monospace;
-            font-size: 4.5rem;
+            font-size: 5.5rem;
             font-weight: 700;
             color: rgba(255, 255, 255, 0.03);
-            transform: rotate(12deg);
+            transform: rotate(15deg);
             z-index: 1;
         }
 
-        /* Step 5 - Blue background with grid (RIGHT side) */
+        .experience-section[data-step="4"] .step-supporting .mach-five-bg-1 {
+            content: 'MACH FIVE';
+            position: absolute;
+            bottom: -25px;
+            left: -35px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.02);
+            transform: rotate(-8deg);
+            z-index: 1;
+        }
+
+        .experience-section[data-step="4"] .step-supporting .mach-five-bg-2 {
+            content: 'MACH FIVE';
+            position: absolute;
+            top: 20%;
+            left: 15%;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 3rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.015);
+            transform: rotate(3deg);
+            z-index: 1;
+        }
+
+        .experience-section[data-step="4"] .step-supporting h3 {
+            color: var(--m5m-white);
+            position: relative;
+            z-index: 2;
+        }
+
+        .experience-section[data-step="4"] .step-supporting p {
+            color: rgba(255, 255, 255, 0.8);
+            position: relative;
+            z-index: 2;
+        }
+
         .experience-section[data-step="5"] .step-supporting {
-            background: var(--m5m-blue) !important;
+            background: var(--m5m-blue);
             position: relative;
             overflow: hidden;
         }
@@ -1462,28 +1021,73 @@
             right: 0;
             bottom: 0;
             background: 
-                linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+                linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
             background-size: 50px 50px, 50px 50px;
-            opacity: 0.3;
+            mask-image: linear-gradient(90deg, 
+                transparent 0%, 
+                black 15%, 
+                black 85%, 
+                transparent 100%);
+            -webkit-mask-image: linear-gradient(90deg, 
+                transparent 0%, 
+                black 15%, 
+                black 85%, 
+                transparent 100%);
             pointer-events: none;
             z-index: 1;
         }
 
         .experience-section[data-step="5"] .step-supporting::after {
-            content: 'SCALE';
+            content: 'MACH FIVE';
             position: absolute;
-            bottom: -40px;
-            right: -50px;
+            bottom: -20px;
+            left: -40px;
             font-family: 'IBM Plex Mono', monospace;
-            font-size: 7rem;
+            font-size: 6.5rem;
             font-weight: 700;
             color: rgba(255, 255, 255, 0.03);
-            transform: rotate(12deg);
+            transform: rotate(-12deg);
             z-index: 1;
         }
 
+        .experience-section[data-step="5"] .step-supporting .mach-five-bg-1 {
+            content: 'MACH FIVE';
+            position: absolute;
+            top: -10px;
+            right: -25px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 4rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.02);
+            transform: rotate(10deg);
+            z-index: 1;
+        }
 
+        .experience-section[data-step="5"] .step-supporting .mach-five-bg-2 {
+            content: 'MACH FIVE';
+            position: absolute;
+            bottom: 30%;
+            right: 20%;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.015);
+            transform: rotate(-5deg);
+            z-index: 1;
+        }
+
+        .experience-section[data-step="5"] .step-supporting h3 {
+            color: var(--m5m-white);
+            position: relative;
+            z-index: 2;
+        }
+
+        .experience-section[data-step="5"] .step-supporting p {
+            color: rgba(255, 255, 255, 0.8);
+            position: relative;
+            z-index: 2;
+        }
 
         /* Final step - Blueprint panel */
         .hero-right {
@@ -1604,7 +1208,6 @@
             font-size: 0.875rem;
             opacity: 0.7;
             animation: bounce 2s infinite;
-            transition: opacity 0.3s ease;
         }
 
         @keyframes bounce {
@@ -1880,45 +1483,6 @@
             overflow: hidden;
         }
 
-        .explore::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
-            background-size: 60px 60px, 60px 60px;
-            mask-image: 
-                linear-gradient(90deg, 
-                    transparent 0%, 
-                    black 25%, 
-                    black 75%, 
-                    transparent 100%),
-                linear-gradient(180deg, 
-                    transparent 0%, 
-                    black 15%, 
-                    black 85%, 
-                    transparent 100%);
-            -webkit-mask-image: 
-                linear-gradient(90deg, 
-                    transparent 0%, 
-                    black 25%, 
-                    black 75%, 
-                    transparent 100%),
-                linear-gradient(180deg, 
-                    transparent 0%, 
-                    black 15%, 
-                    black 85%, 
-                    transparent 100%);
-            -webkit-mask-composite: multiply;
-            mask-composite: multiply;
-            pointer-events: none;
-            z-index: 0;
-        }
-
 
 
         .explore-inner {
@@ -1940,9 +1504,9 @@
 
         .explore-cards {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            max-width: 1400px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
@@ -2041,142 +1605,9 @@
             transform: translateX(4px);
         }
 
-        /* You're Here indicator styles */
-        .explore-card.you-are-here {
-            border-color: var(--m5m-blue);
-            background: rgba(52, 73, 94, 0.02);
-            position: relative;
-        }
-
-        .explore-card.you-are-here::before {
-            content: "You're Here";
-            position: absolute;
-            top: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--m5m-blue);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            z-index: 2;
-        }
-
-        .explore-card.you-are-here .explore-card-header {
-            border-bottom-color: rgba(52, 73, 94, 0.1);
-        }
-
-        .explore-card.you-are-here .explore-card-cta {
-            color: var(--m5m-blue);
-        }
-
-        .explore-card.you-are-here:hover {
-            border-color: var(--m5m-blue);
-            transform: translateY(-4px);
-        }
-
-        /* Technology Philosophy Styles */
-        .tech-philosophy {
-            margin-top: 2rem;
-        }
-
-        .tech-philosophy p {
-            font-size: 1.125rem;
-            line-height: 1.6;
-            color: var(--m5m-gray);
-            margin-bottom: 1.5rem;
-        }
-
-        .tech-philosophy-points {
-            list-style: none;
-            padding: 0;
-        }
-
-        .tech-philosophy-points li {
-            font-size: 1rem;
-            color: var(--m5m-gray);
-            margin-bottom: 0.75rem;
-            padding-left: 0;
-        }
-
-        /* Technology Features List */
-        .tech-features-list {
-            margin-top: 2rem;
-        }
-
-        .tech-feature-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            background: rgba(52, 73, 94, 0.02);
-            border-radius: 8px;
-            border: 1px solid rgba(52, 73, 94, 0.05);
-        }
-
-        .tech-feature-icon {
-            font-size: 1.5rem;
-            flex-shrink: 0;
-            margin-top: 0.25rem;
-        }
-
-        .tech-feature-content h4 {
-            font-size: 1.125rem;
-            font-weight: 600;
-            color: var(--m5m-blue);
-            margin-bottom: 0.5rem;
-        }
-
-        .tech-feature-content p {
-            font-size: 0.9375rem;
-            line-height: 1.5;
-            color: var(--m5m-gray);
-            margin: 0;
-        }
-
-        /* Platform Placeholder */
-        .platform-placeholder {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            min-height: 300px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px dashed rgba(255, 255, 255, 0.3);
-            border-radius: 12px;
-            margin: 1rem;
-        }
-
-        .placeholder-content {
-            text-align: center;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .placeholder-icon {
-            font-size: 3rem;
-            display: block;
-            margin-bottom: 1rem;
-        }
-
-        .placeholder-content h4 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .placeholder-content p {
-            font-size: 0.875rem;
-            margin: 0;
-        }
-
         /* CTA Section */
         .cta {
-            padding: 8rem 2rem 6rem;
+            padding: 6rem 2rem;
             background: #0A0A0A;
             position: relative;
             overflow: hidden;
@@ -2188,14 +1619,12 @@
             left: -5%;
             width: 110%;
             height: 110%;
-            background-image: url('/img/mach five marketing hero.png');
+            background-image: url('/img/m5t_hero-01.jpg');
             background-size: cover;
             background-position: center;
             will-change: transform;
             opacity: 0.3;
             z-index: 1;
-            /* Ensure background covers the entire area during parallax */
-            background-attachment: fixed;
         }
 
         .cta-overlay {
@@ -2206,8 +1635,8 @@
             height: 100%;
             background: radial-gradient(
                 ellipse at center,
-                rgba(10, 10, 10, 0.05) 0%,
-                rgba(10, 10, 10, 0.25) 100%
+                rgba(10, 10, 10, 0.4) 0%,
+                rgba(10, 10, 10, 0.85) 100%
             );
             z-index: 2;
         }
@@ -2247,7 +1676,7 @@
         }
 
         .cta h2 span {
-            color: #5DADE2; /* Light blue for better readability */
+            color: var(--m5m-blue);
             font-weight: 600;
         }
 
@@ -2280,19 +1709,14 @@
         }
 
         .btn-primary {
-            background: rgba(255, 255, 255, 0.1);
+            background: linear-gradient(135deg, var(--m5m-blue) 0%, var(--m5m-blue-dark) 100%);
             color: var(--m5m-white);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 16px rgba(52, 73, 94, 0.3);
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255, 255, 255, 0.3);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 24px rgba(52, 73, 94, 0.4);
         }
 
         /* Footer */
@@ -2540,59 +1964,6 @@
         /* ===========================
            7. Animations
            =========================== */
-        
-        /* Page Transition Overlay */
-        .page-transition-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, var(--m5m-white) 0%, var(--m5m-gray-light) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.6s ease-out, visibility 0.6s ease-out;
-        }
-
-        .transition-content {
-            text-align: center;
-        }
-
-        .transition-logo {
-            margin-bottom: 2rem;
-            opacity: 0.8;
-        }
-
-        .transition-logo img {
-            height: 60px;
-            width: auto;
-            animation: logoPulse 2s ease-in-out infinite;
-        }
-
-        .transition-spinner {
-            width: 40px;
-            height: 40px;
-            border: 3px solid rgba(52, 73, 94, 0.1);
-            border-top: 3px solid var(--m5m-blue);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto;
-        }
-
-        @keyframes logoPulse {
-            0%, 100% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.05); opacity: 1; }
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
         @keyframes pointRight {
             0%, 100% { transform: translateX(0); }
             50% { transform: translateX(5px); }
@@ -2613,247 +1984,6 @@
             }
         }
 
-        /* Typing cursor animation */
-        #heroVerb::after {
-            content: '';
-            display: inline-block;
-            width: 3px;
-            height: 1em;
-            background: var(--m5m-orange);
-            margin-left: 2px;
-            animation: blink 1s ease infinite;
-            vertical-align: text-bottom;
-        }
-
-        @keyframes blink {
-            0%, 49% { opacity: 1; }
-            50%, 100% { opacity: 0; }
-        }
-
-        /* Intro Card Styles */
-        .hero-logo {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-        }
-
-        .animated-logo {
-            height: 300px;
-            width: auto;
-            opacity: 0;
-            transform: scale(0.8);
-            animation: logoReveal 1.2s ease-out 0.3s forwards, logoFloat 6s ease-in-out infinite 1.5s;
-            filter: drop-shadow(0 10px 30px rgba(52, 73, 94, 0.1));
-        }
-
-        @keyframes logoReveal {
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        @keyframes logoFloat {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-        }
-
-        /* Transition Card Styles */
-        .transition-content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            height: 100%;
-            padding: 2rem;
-        }
-
-        .transition-content h2 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: var(--m5m-blue);
-            margin-bottom: 1rem;
-        }
-
-        .transition-content p {
-            font-size: 1.25rem;
-            color: var(--m5m-gray);
-            line-height: 1.6;
-        }
-
-        /* Portal Screenshot Styles */
-        .platform-screenshot {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            padding: 1rem;
-        }
-
-        .portal-screenshot-img {
-            max-width: 120%;
-            max-height: 110%;
-            width: auto;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            border: 1px solid var(--m5m-border);
-            transform: scale(1.1);
-        }
-
-        /* Portal card styling (step 7) - Blue background with grid */
-        .experience-section[data-step="7"] .hero-left {
-            background: var(--m5m-blue) !important;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .experience-section[data-step="7"] .hero-left::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-            background-size: 50px 50px, 50px 50px;
-            opacity: 0.3;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .experience-section[data-step="7"] .hero-left::after {
-            content: 'PORTAL';
-            position: absolute;
-            bottom: -40px;
-            right: -50px;
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 7rem;
-            font-weight: 700;
-            color: rgba(255, 255, 255, 0.03);
-            transform: rotate(12deg);
-            z-index: 1;
-        }
-
-        /* Lead Magnet card styling (step 8) - Orange background with grid */
-        .experience-section[data-step="8"] .hero-left {
-            background: var(--m5m-orange) !important;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .experience-section[data-step="8"] .hero-left::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-            background-size: 50px 50px, 50px 50px;
-            opacity: 0.3;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .experience-section[data-step="8"] .hero-left::after {
-            content: 'LEAD MAGNET';
-            position: absolute;
-            bottom: -40px;
-            right: -50px;
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 4rem;
-            font-weight: 700;
-            color: rgba(255, 255, 255, 0.03);
-            transform: rotate(12deg);
-            z-index: 1;
-        }
-
-
-
-        /* Text styling for Portal and Lead Magnet cards ONLY (steps 7, 8) - white text with shadows */
-        .experience-section[data-step="7"] .hero-left .need-state-static,
-        .experience-section[data-step="7"] .hero-left h4,
-        .experience-section[data-step="7"] .hero-left p,
-        .experience-section[data-step="8"] .hero-left .need-state-static,
-        .experience-section[data-step="8"] .hero-left h4,
-        .experience-section[data-step="8"] .hero-left p {
-            color: white;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Enhanced styling for Portal and Lead Magnet titles ONLY */
-        .experience-section[data-step="7"] .hero-left .need-state-static,
-        .experience-section[data-step="8"] .hero-left .need-state-static {
-            color: white !important;
-            font-weight: 700;
-            font-size: 1.75rem;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Glass-morphism styling for feature items on Portal and Lead Magnet cards ONLY */
-        .experience-section[data-step="7"] .hero-left .tech-feature-item,
-        .experience-section[data-step="8"] .hero-left .tech-feature-item {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            padding: 16px;
-            margin-bottom: 12px;
-            backdrop-filter: blur(10px);
-            position: relative;
-            z-index: 2;
-        }
-
-        /* White grid parallax effect for all white, non-colored cards (left side) */
-        .experience-section[data-step="1"] .hero-left,
-        .experience-section[data-step="2"] .hero-left,
-        .experience-section[data-step="3"] .hero-left,
-        .experience-section[data-step="4"] .hero-left,
-        .experience-section[data-step="5"] .hero-left {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .experience-section[data-step="1"] .hero-left::before,
-        .experience-section[data-step="2"] .hero-left::before,
-        .experience-section[data-step="3"] .hero-left::before,
-        .experience-section[data-step="4"] .hero-left::before,
-        .experience-section[data-step="5"] .hero-left::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
-            background-size: 60px 60px, 60px 60px;
-            opacity: 1;
-            pointer-events: none;
-            z-index: 1;
-            animation: gridParallax 30s linear infinite;
-        }
-
-        @keyframes gridParallax {
-            0% {
-                transform: translate(0, 0);
-            }
-            100% {
-                transform: translate(50px, 50px);
-            }
-        }
-
         /* ===========================
            8. Media Queries
            =========================== */
@@ -2862,24 +1992,6 @@
         @media (max-width: 768px) {
             body {
                 padding-top: 70px;
-            }
-
-            .explore-cards {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-
-            .explore-card-header {
-                padding: 1.5rem 1.5rem 1rem;
-            }
-
-            .explore-card h3 {
-                font-size: 1.2rem;
-            }
-
-            .explore-card-icon {
-                width: 45px;
-                height: 45px;
             }
 
             .top-bar {
@@ -2963,24 +2075,6 @@
             .nav-container {
                 padding: 0 12px;
             }
-            
-            .explore-cards {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .explore-card-header {
-                padding: 1.25rem 1.25rem 1rem;
-            }
-
-            .explore-card h3 {
-                font-size: 1.1rem;
-            }
-
-            .explore-card-icon {
-                width: 40px;
-                height: 40px;
-            }
         }
     </style>
 </head>
@@ -3000,7 +2094,7 @@
                         <span class="material-symbols-outlined">person</span>
                         Careers
                     </a> -->
-                    <a href="/portal/" class="top-bar-link">
+                    <a href="/customer-portal/" class="top-bar-link">
                         <span class="material-symbols-outlined">login</span>
                         Portal
                     </a>
@@ -3015,11 +2109,11 @@
                 </a>
                 
                 <ul class="nav-menu">
-                    <!-- <li class="mobile-nav-prompt">I Need...</li> -->
-                    <!-- <li class="nav-prompt">I Need...</li> -->
+                    <li class="mobile-nav-prompt">I Need...</li>
+                    <li class="nav-prompt">I Need...</li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="/technology.html">Technology</a></li>
-                    <li><a href="/about.html">About</a></li>
+                    <li><a href="#technology">Technology</a></li>
+                    <li><a href="#about">About</a></li>
                     <li><a href="#contact" onclick="openContactForm()">Contact</a></li>
                     <li class="nav-divider"></li>
                     <!-- <li class="mobile-only">
@@ -3029,7 +2123,7 @@
                         </a>
                     </li> -->
                     <li class="mobile-only">
-                        <a href="/portal/">
+                        <a href="/customer-portal/">
                             <span class="material-symbols-outlined">login</span>
                             Portal
                         </a>
@@ -3051,128 +2145,19 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-background" id="heroBackground"></div>
+        <div class="hero-background"></div>
         <div class="hero-overlay"></div>
         <div class="hero-inner">
             <h1>
-                <span>Your <strong id="heroVerb">Growth Story</strong>,</span>
+                <span>Your <strong>Growth Story</strong>,</span>
                 <span>Powered by our</span>
                 <span>People & Platform</span>
             </h1>
-            <p class="hero-subtitle"><span style="color: #DD4124;">✓</span> <span style="color: #ffffff;">Real results.</span> <span style="color: #DD4124;">✓</span> <span style="color: #ffffff;">Real ROI.</span> <span style="color: #DD4124;">✓</span> <span style="color: #ffffff;">Real growth.</span></p>
-        </div>
-    </section>
-
-    <!-- Intro Card -->
-    <section class="experience-section" data-step="intro">
-        <div class="card-container">
-            <div class="hero-left">
-                <div class="hero-logo">
-                    <img src="/img/Logo_M5T Light Print-16.png" alt="Mach Five Marketing" class="animated-logo">
-                </div>
-            </div>
-            <div class="step-supporting">
-                <div class="step-supporting-content">
-                    <p>We help ambitious companies grow through data-driven marketing and our proven proprietary technology. When you work with Mach Five, you're not just hiring an agency. You're getting a technology partner invested in your growth.</p>
-                    
-                    <ul>
-                        <li>Proprietary marketing technology</li>
-                        <li>Data-driven strategy & execution</li>
-                        <li>Transparent reporting & accountability</li>
-                        <li>Built by marketers who code</li>
-                    </ul>
-                </div>
-            </div>
+            <p class="hero-subtitle"><span style="color: #DD4124;">✓</span> Real results. <span style="color: #DD4124;">✓</span> Real ROI. <span style="color: #DD4124;">✓</span> Real growth.</p>
         </div>
     </section>
 
 
-
-
-
-    <!-- Technology: Mach Five Portal -->
-    <section class="experience-section" data-step="7">
-        <div class="card-container">
-            <div class="hero-left">
-                <div class="need-state-container">
-                    <div class="need-state-static">Mach Five Portal™</div>
-                    <div class="tech-features-list">
-                        <div class="tech-feature-item">
-                            <div class="tech-feature-content">
-                                <h4>Real-time Dashboard</h4>
-                                <p>See campaign performance, lead tracking, and ROI metrics in one intelligent interface</p>
-                            </div>
-                        </div>
-                        <div class="tech-feature-item">
-                            <div class="tech-feature-content">
-                                <h4>Multi-user Access</h4>
-                                <p>Role-based permissions with white-label options for seamless client collaboration</p>
-                            </div>
-                        </div>
-                        <div class="tech-feature-item">
-                            <div class="tech-feature-content">
-                                <h4>Automated Reporting</h4>
-                                <p>Custom reports delivered on your schedule with actionable insights and recommendations</p>
-                            </div>
-                        </div>
-                        <div class="tech-feature-item">
-                            <div class="tech-feature-content">
-                                <h4>24/7 Access</h4>
-                                <p>Your command center never sleeps - access critical data and insights anytime, anywhere</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="step-supporting">
-                <div class="platform-screenshot">
-                    <img src="/img/portal home.png" alt="Mach Five Portal Dashboard" class="portal-screenshot-img">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Technology: Lead Magnet -->
-    <section class="experience-section" data-step="8">
-        <div class="card-container">
-            <div class="hero-left">
-                <div class="need-state-container">
-                    <div class="need-state-static">Lead Magnet™</div>
-                    <div class="tech-features-list">
-                        <div class="tech-feature-item">
-                            <div class="tech-feature-content">
-                                <h4>Multi-channel Capture</h4>
-                                <p>Capture leads from website forms, social media, ads, and any other touchpoint automatically</p>
-                            </div>
-                        </div>
-                        <div class="tech-feature-item">
-                            <div class="tech-feature-content">
-                                <h4>Auto-qualification</h4>
-                                <p>Intelligent scoring and qualification so you focus on prospects ready to buy</p>
-                            </div>
-                        </div>
-                        <div class="tech-feature-item">
-                            <div class="tech-feature-content">
-                                <h4>Real-time Notifications</h4>
-                                <p>Instant alerts when high-value leads come in, never miss another opportunity</p>
-                            </div>
-                        </div>
-                        <div class="tech-feature-item">
-                            <div class="tech-feature-content">
-                                <h4>CRM Integration</h4>
-                                <p>Seamless sync with your existing CRM and marketing tools for complete visibility</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="step-supporting">
-                <div class="platform-screenshot">
-                    <img src="/img/lead magnet.png" alt="Lead Magnet Interface" class="portal-screenshot-img">
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Experience Step 1: Strategy -->
     <section class="experience-section" data-step="1">
@@ -3184,11 +2169,11 @@
                         <span class="need-state-dynamic">strategy.</span>
                     </div>
                     <div class="need-state-line" data-step="2">
-                        <span class="need-state-static">I need</span>
+                        <span class="need-state-static">I need a</span>
                         <span class="need-state-dynamic">market traction.</span>
                     </div>
                     <div class="need-state-line" data-step="3">
-                        <span class="need-state-static">I need</span>
+                        <span class="need-state-static">I need a</span>
                         <span class="need-state-dynamic">tools that scale.</span>
                     </div>
                     <div class="need-state-line" data-step="4">
@@ -3202,17 +2187,11 @@
                 </div>
             </div>
             <div class="step-supporting">
+                <div class="mach-five-bg-1">MACH FIVE</div>
+                <div class="mach-five-bg-2">MACH FIVE</div>
                 <div class="step-supporting-content">
                     <h3>Strategic Foundation</h3>
-                    
                     <p>We analyze your market position, competitive landscape, and growth opportunities to create a data-driven strategy that aligns with your business objectives.</p>
-                    
-                    <ul>
-                        <li>Market analysis & competitive intelligence</li>
-                        <li>Customer journey mapping & optimization</li>
-                        <li>Channel strategy & budget allocation</li>
-                        <li>Performance benchmarking & KPI framework</li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -3228,11 +2207,11 @@
                         <span class="need-state-dynamic">strategy.</span>
                     </div>
                     <div class="need-state-line" data-step="2">
-                        <span class="need-state-static">I need</span>
+                        <span class="need-state-static">I need a</span>
                         <span class="need-state-dynamic">market traction.</span>
                     </div>
                     <div class="need-state-line" data-step="3">
-                        <span class="need-state-static">I need</span>
+                        <span class="need-state-static">I need a</span>
                         <span class="need-state-dynamic">tools that scale.</span>
                     </div>
                     <div class="need-state-line" data-step="4">
@@ -3246,17 +2225,11 @@
                 </div>
             </div>
             <div class="step-supporting">
+                <div class="mach-five-bg-1">MACH FIVE</div>
+                <div class="mach-five-bg-2">MACH FIVE</div>
                 <div class="step-supporting-content">
                     <h3>Growth Acceleration</h3>
-                    
                     <p>Our proven methodologies help you identify and capture market opportunities, optimize conversion funnels, and accelerate your path to sustainable growth.</p>
-                    
-                    <ul>
-                        <li>Market opportunity identification & validation</li>
-                        <li>Conversion funnel optimization & A/B testing</li>
-                        <li>Customer acquisition strategy & scaling</li>
-                        <li>Revenue optimization & growth hacking</li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -3272,11 +2245,11 @@
                         <span class="need-state-dynamic">strategy.</span>
                     </div>
                     <div class="need-state-line" data-step="2">
-                        <span class="need-state-static">I need</span>
+                        <span class="need-state-static">I need a</span>
                         <span class="need-state-dynamic">market traction.</span>
                     </div>
                     <div class="need-state-line" data-step="3">
-                        <span class="need-state-static">I need</span>
+                        <span class="need-state-static">I need a</span>
                         <span class="need-state-dynamic">tools that scale.</span>
                     </div>
                     <div class="need-state-line" data-step="4">
@@ -3290,17 +2263,11 @@
                 </div>
             </div>
             <div class="step-supporting">
+                <div class="mach-five-bg-1">MACH FIVE</div>
+                <div class="mach-five-bg-2">MACH FIVE</div>
                 <div class="step-supporting-content">
                     <h3>Scalable Infrastructure</h3>
-                    
                     <p>We design and implement marketing technology stacks that grow with your business, ensuring efficiency and performance at every stage of your journey.</p>
-                    
-                    <ul>
-                        <li>Marketing automation & workflow design</li>
-                        <li>Data pipeline architecture & integration</li>
-                        <li>CRM optimization & lead management</li>
-                        <li>Performance monitoring & optimization</li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -3316,11 +2283,11 @@
                         <span class="need-state-dynamic">strategy.</span>
                     </div>
                     <div class="need-state-line" data-step="2">
-                        <span class="need-state-static">I need</span>
+                        <span class="need-state-static">I need a</span>
                         <span class="need-state-dynamic">market traction.</span>
                     </div>
                     <div class="need-state-line" data-step="3">
-                        <span class="need-state-static">I need</span>
+                        <span class="need-state-static">I need a</span>
                         <span class="need-state-dynamic">tools that scale.</span>
                     </div>
                     <div class="need-state-line" data-step="4">
@@ -3334,17 +2301,11 @@
                 </div>
             </div>
             <div class="step-supporting">
+                <div class="mach-five-bg-1">MACH FIVE</div>
+                <div class="mach-five-bg-2">MACH FIVE</div>
                 <div class="step-supporting-content">
                     <h3>Intelligent Integration</h3>
-                    
                     <p>Our expertise in martech architecture ensures your tools work together seamlessly, providing actionable insights and automated workflows.</p>
-                    
-                    <ul>
-                        <li>API integration & data synchronization</li>
-                        <li>Cross-platform workflow automation</li>
-                        <li>Real-time analytics & reporting</li>
-                        <li>System optimization & performance tuning</li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -3360,11 +2321,11 @@
                         <span class="need-state-dynamic">strategy.</span>
                     </div>
                     <div class="need-state-line" data-step="2">
-                        <span class="need-state-static">I need</span>
+                        <span class="need-state-static">I need a</span>
                         <span class="need-state-dynamic">market traction.</span>
                     </div>
                     <div class="need-state-line" data-step="3">
-                        <span class="need-state-static">I need</span>
+                        <span class="need-state-static">I need a</span>
                         <span class="need-state-dynamic">tools that scale.</span>
                     </div>
                     <div class="need-state-line" data-step="4">
@@ -3378,51 +2339,18 @@
                 </div>
             </div>
             <div class="step-supporting">
+                <div class="mach-five-bg-1">MACH FIVE</div>
+                <div class="mach-five-bg-2">MACH FIVE</div>
                 <div class="step-supporting-content">
                     <h3>Strategic Roadmap</h3>
-                    
                     <p>We provide a clear, actionable roadmap with measurable milestones, ensuring you have confidence in your path to growth and success.</p>
-                    
-                    <ul>
-                        <li>Goal setting & milestone planning</li>
-                        <li>Resource allocation & timeline mapping</li>
-                        <li>Risk assessment & contingency planning</li>
-                        <li>Progress tracking & performance reviews</li>
-                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-
-
-    <!-- Step Indicator -->
-    <div class="step-indicator" id="stepIndicator">
-        <div class="step-dot" data-step="intro"></div>
-        <div class="step-dot" data-step="7"></div>
-        <div class="step-dot" data-step="8"></div>
-        <div class="step-dot" data-step="1"></div>
-        <div class="step-dot" data-step="2"></div>
-        <div class="step-dot" data-step="3"></div>
-        <div class="step-dot" data-step="4"></div>
-        <div class="step-dot" data-step="5"></div>
-        <div class="step-dot" data-step="9"></div>
-    </div>
-
-    <!-- Scroll Hint -->
-    <div class="scroll-hint" id="scrollHint">Scroll to continue</div>
-
-    <!-- Fixed Contact Logo -->
-    <div class="fixed-contact-logo" id="fixedContactLogo">
-        <div class="contact-logo-inner">
-            <img src="/img/Logo_M5M Light Web.png" alt="Mach Five Marketing" height="32">
-            <span class="contact-text">Contact</span>
-        </div>
-    </div>
-
-
-    <!-- Final Step: Ready to Transform -->
-    <section class="experience-section" data-step="9">
+    <!-- Final Step: Blueprint Panel -->
+    <section class="experience-section" data-step="6">
         <div class="card-container">
             <div class="hero-left">
                 <div class="need-state-container">
@@ -3462,25 +2390,99 @@
         </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta" id="contact">
-        <!-- Background image with parallax -->
-        <div class="cta-background" id="ctaBackground"></div>
-        <div class="cta-overlay"></div>
-        
-        <div class="cta-inner">
-            <h2>Growth starts with the right <span>partner</span>.</h2>
-            <p>Let's discuss how we can help you achieve your marketing goals.</p>
-            <div class="cta-buttons">
-                <a href="#schedule" class="btn btn-primary">
-                    Schedule a Call
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                        <line x1="16" y1="2" x2="16" y2="6"/>
-                        <line x1="8" y1="2" x2="8" y2="6"/>
-                        <line x1="3" y1="10" x2="21" y2="10"/>
-                    </svg>
-                </a>
+    <!-- Step Indicator -->
+    <div class="step-indicator" id="stepIndicator">
+        <div class="step-dot" data-step="1"></div>
+        <div class="step-dot" data-step="2"></div>
+        <div class="step-dot" data-step="3"></div>
+        <div class="step-dot" data-step="4"></div>
+        <div class="step-dot" data-step="5"></div>
+        <div class="step-dot" data-step="6"></div>
+    </div>
+
+    <!-- Scroll Hint -->
+    <div class="scroll-hint" id="scrollHint">Scroll to continue</div>
+
+    <!-- Fixed Contact Logo -->
+    <div class="fixed-contact-logo" id="fixedContactLogo">
+        <div class="contact-logo-inner">
+            <img src="/img/Logo_M5M Light Web.png" alt="Mach Five Marketing" height="32">
+            <span class="contact-text">Contact</span>
+        </div>
+    </div>
+
+    <!-- Technology -->
+    <section class="technology" id="technology">
+        <div class="tech-inner">
+            <div class="tech-header">
+                <h2>Technology that multiplies results</h2>
+                <p>While other agencies use the same tools as everyone else, we built our own. Access technology your competitors can't buy.</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-card-header">
+                        <div class="tech-icon">
+                            <img src="/img/Logo_M5M Light Web.png" alt="Mach Five Marketing" height="40">
+                        </div>
+                        <h3>Mach Five Portal™</h3>
+                    </div>
+                    <div class="tech-stats">
+                        <div class="tech-stat-item">
+                            <span class="tech-stat-value">24/7</span>
+                            <span class="tech-stat-label">Access</span>
+                        </div>
+                        <div class="tech-stat-item">
+                            <span class="tech-stat-value">Real-time</span>
+                            <span class="tech-stat-label">Updates</span>
+                        </div>
+                        <div class="tech-stat-item">
+                            <span class="tech-stat-value">100%</span>
+                            <span class="tech-stat-label">Transparency</span>
+                        </div>
+                    </div>
+                    <div class="tech-card-content">
+                        <p>Your command center for all marketing activities. See everything that matters in one intelligent dashboard.</p>
+                    </div>
+                    <ul class="tech-features">
+                        <li><span class="check">✓</span> Real-time campaign performance</li>
+                        <li><span class="check">✓</span> Lead tracking and qualification</li>
+                        <li><span class="check">✓</span> Automated reporting</li>
+                        <li><span class="check">✓</span> Multi-user access controls</li>
+                        <li><span class="check">✓</span> White-label options available</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-header">
+                        <div class="tech-icon">
+                            <img src="/img/Logo_M5M Light Web.png" alt="Mach Five Marketing" height="40">
+                        </div>
+                        <h3>Lead Magnet™</h3>
+                    </div>
+                    <div class="tech-stats">
+                        <div class="tech-stat-item">
+                            <span class="tech-stat-value">45%</span>
+                            <span class="tech-stat-label">More Leads</span>
+                        </div>
+                        <div class="tech-stat-item">
+                            <span class="tech-stat-value">2min</span>
+                            <span class="tech-stat-label">Setup</span>
+                        </div>
+                        <div class="tech-stat-item">
+                            <span class="tech-stat-value">Auto</span>
+                            <span class="tech-stat-label">Qualify</span>
+                        </div>
+                    </div>
+                    <div class="tech-card-content">
+                        <p>Never miss another opportunity. Capture and qualify leads from every channel automatically.</p>
+                    </div>
+                    <ul class="tech-features">
+                        <li><span class="check">✓</span> Multi-channel lead capture</li>
+                        <li><span class="check">✓</span> Automatic lead qualification</li>
+                        <li><span class="check">✓</span> Real-time notifications</li>
+                        <li><span class="check">✓</span> CRM integration</li>
+                        <li><span class="check">✓</span> Full attribution tracking</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -3491,22 +2493,6 @@
             <h2>More from Mach Five</h2>
             
             <div class="explore-cards">
-                <div class="explore-card you-are-here">
-                    <div class="explore-card-header">
-                        <div class="explore-card-icon"><img src="/img/Logo_M5M Light Web.png" alt="Mach Five Marketing" height="32"></div>
-                        <h3>Mach Five Marketing</h3>
-                    </div>
-                    <div class="explore-card-content">
-                        <p>Performance marketing and technology solutions for ambitious companies.</p>
-                        <div class="explore-card-cta">
-                            You're Here
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-                
                 <a href="https://machfivegroup.com" class="explore-card">
                     <div class="explore-card-header">
                         <div class="explore-card-icon"><img src="/img/Logo_M5G Light Web.png" alt="Mach Five Group" height="32"></div>
@@ -3558,6 +2544,29 @@
         </div>
     </section>
 
+    <!-- CTA -->
+    <section class="cta" id="contact">
+        <!-- Background image with parallax -->
+        <div class="cta-background" id="ctaBackground"></div>
+        <div class="cta-overlay"></div>
+        
+        <div class="cta-inner">
+            <h2>Growth starts with the right <span>partner</span>.</h2>
+            <p>Let's discuss how we can help you achieve your marketing goals.</p>
+            <div class="cta-buttons">
+                <a href="#schedule" class="btn btn-primary">
+                    Schedule a Call
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6"/>
+                        <line x1="8" y1="2" x2="8" y2="6"/>
+                        <line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer - Updated Light Theme -->
     <footer class="footer">
         <div class="footer-inner">
@@ -3569,13 +2578,13 @@
                     <a href="mailto:support@machfivemarketing.com">support@machfivemarketing.com</a>
                 </div>
             </div>
-
             <div class="footer-col">
-                <h4>Company</h4>
+                <h4>Services</h4>
                 <ul>
-                    <li><a href="/about.html">About</a></li>
-                    <li><a href="/#contact">Contact</a></li>
-                    <li><a href="https://portal.machfivemarketing.com">Portal Login</a></li>
+                    <li><a href="#seo">Search Marketing</a></li>
+                    <li><a href="#ppc">Paid Advertising</a></li>
+                    <li><a href="#cro">Conversion Optimization</a></li>
+                    <li><a href="#analytics">Analytics</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -3600,9 +2609,6 @@
             <p>© 2025 Mach Five Marketing • <a href="/privacy-policy">Privacy Policy</a></p>
         </div>
     </footer>
-
-    <!-- Portal Transitions - For main pages only -->
-    <script src="/js/portal-transitions.js"></script>
 
     <script>
         // Mobile menu functionality
@@ -3641,7 +2647,7 @@
         class StepExperience {
             constructor() {
                 this.currentStep = 1;
-                this.totalSteps = 10;
+                this.totalSteps = 6;
                 this.init();
             }
 
@@ -3651,14 +2657,6 @@
                 this.dots = document.querySelectorAll('.step-dot');
                 this.sections = document.querySelectorAll('.experience-section');
                 
-                            // Initialize contact logo as hidden (will show after hero)
-            const fixedContactLogo = document.getElementById('fixedContactLogo');
-            if (fixedContactLogo) {
-                fixedContactLogo.style.opacity = '0';
-                fixedContactLogo.style.visibility = 'hidden';
-                fixedContactLogo.style.pointerEvents = 'none';
-            }
-                
                 this.setupEventListeners();
                 this.updateStepIndicator(1);
                 this.updateLeftSide(1);
@@ -3666,84 +2664,14 @@
             }
 
             setupEventListeners() {
-                // Store handlers for cleanup
-                this.scrollHandler = () => {
+                // Simple scroll listener to detect which step is visible
+                window.addEventListener('scroll', () => {
                     const scrollY = window.pageYOffset;
                     const windowHeight = window.innerHeight;
                     
-                    // Check if we're near the footer to hide scroll hint
-                    const footer = document.querySelector('footer');
-                    if (footer) {
-                        const footerTop = footer.offsetTop;
-                        const scrollHintThreshold = footerTop - windowHeight + 200; // Hide 200px before footer
-                        
-                        if (scrollY > scrollHintThreshold) {
-                            this.scrollHint.style.opacity = '0';
-                            this.scrollHint.style.pointerEvents = 'none';
-                        } else {
-                            this.scrollHint.style.opacity = '0.7';
-                            this.scrollHint.style.pointerEvents = 'auto';
-                        }
-                    }
-                    
-                    // Check if we're past the hero section to show contact logo
-                    const heroSection = document.querySelector('.hero');
-                    const fixedContactLogo = document.getElementById('fixedContactLogo');
-                    if (heroSection && fixedContactLogo) {
-                        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-                        const showThreshold = heroBottom - 100; // Show 100px before hero ends
-                        
-                        // Check if we're at the CTA section to hide contact logo
-                        const ctaSection = document.querySelector('.cta');
-                        if (ctaSection) {
-                            const ctaTop = ctaSection.offsetTop;
-                            const ctaThreshold = ctaTop - windowHeight + 100; // Hide 100px before CTA
-                            
-                            if (scrollY > ctaThreshold) {
-                                fixedContactLogo.style.opacity = '0';
-                                fixedContactLogo.style.visibility = 'hidden';
-                                fixedContactLogo.style.pointerEvents = 'none';
-                            } else if (scrollY > showThreshold) {
-                                fixedContactLogo.style.opacity = '1';
-                                fixedContactLogo.style.visibility = 'visible';
-                                fixedContactLogo.style.pointerEvents = 'auto';
-                            } else {
-                                fixedContactLogo.style.opacity = '0';
-                                fixedContactLogo.style.visibility = 'hidden';
-                                fixedContactLogo.style.pointerEvents = 'none';
-                            }
-                        } else if (scrollY > showThreshold) {
-                            fixedContactLogo.style.opacity = '1';
-                            fixedContactLogo.style.visibility = 'visible';
-                            fixedContactLogo.style.pointerEvents = 'auto';
-                        } else {
-                            fixedContactLogo.style.opacity = '0';
-                            fixedContactLogo.style.visibility = 'hidden';
-                            fixedContactLogo.style.pointerEvents = 'none';
-                        }
-                    }
-                    
                     // Find which step is most visible
                     this.sections.forEach((section, index) => {
-                        const dataStep = section.getAttribute('data-step');
-                        
-                        // Map data-step attributes to step numbers
-                        const stepMapping = {
-                            'intro': 1,
-                            '6': 2,
-                            '7': 3,
-                            '8': 4,
-                            '1': 5,
-                            '2': 6,
-                            '3': 7,
-                            '4': 8,
-                            '5': 9,
-                            '9': 10
-                        };
-                        
-                        const stepNumber = stepMapping[dataStep];
-                        if (!stepNumber) return; // Skip if not in mapping
-                        
+                        const stepNumber = index + 1;
                         const sectionTop = section.offsetTop;
                         const sectionBottom = sectionTop + section.offsetHeight;
                         const sectionCenter = sectionTop + (section.offsetHeight / 2);
@@ -3760,7 +2688,7 @@
                                 // Removed slide transition effect to prevent flash
                                 
                                 // Animate final step
-                                if (stepNumber === 10) {
+                                if (stepNumber === 6) {
                                     this.animateFinalStep();
                                 }
                                 
@@ -3769,9 +2697,18 @@
                             }
                         }
                     });
-                };
+                });
 
-                this.keydownHandler = (e) => {
+                // Step indicator clicks
+                this.dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        const stepNumber = index + 1;
+                        this.goToStep(stepNumber);
+                    });
+                });
+
+                // Keyboard navigation
+                document.addEventListener('keydown', (e) => {
                     if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ') {
                         e.preventDefault();
                         this.nextStep();
@@ -3779,23 +2716,7 @@
                         e.preventDefault();
                         this.previousStep();
                     }
-                };
-
-                // Simple scroll listener to detect which step is visible
-                window.addEventListener('scroll', this.scrollHandler);
-
-                // Step indicator clicks
-                this.dots.forEach((dot, index) => {
-                    const clickHandler = () => {
-                        const stepNumber = index + 1;
-                        this.goToStep(stepNumber);
-                    };
-                    dot.clickHandler = clickHandler;
-                    dot.addEventListener('click', clickHandler);
                 });
-
-                // Keyboard navigation
-                document.addEventListener('keydown', this.keydownHandler);
             }
 
             updateStepIndicator(stepNumber) {
@@ -3812,21 +2733,10 @@
             updateLeftSide(activeStep) {
                 const allLines = document.querySelectorAll('.need-state-line');
                 
-                // Map step numbers back to data-step attributes for the "I need" cards
-                const stepMapping = {
-                    5: 1,
-                    6: 2,
-                    7: 3,
-                    8: 4,
-                    9: 5
-                };
-                
-                const targetDataStep = stepMapping[activeStep];
-                
                 allLines.forEach((line) => {
                     const lineStep = parseInt(line.getAttribute('data-step'));
                     
-                    if (lineStep === targetDataStep) {
+                    if (lineStep === activeStep) {
                         line.classList.add('active');
                     } else {
                         line.classList.remove('active');
@@ -3835,22 +2745,7 @@
             }
 
             goToStep(stepNumber) {
-                // Map step numbers to actual data-step attributes
-                const stepMapping = {
-                    1: 'intro',
-                    2: '6',
-                    3: '7',
-                    4: '8',
-                    5: '1',
-                    6: '2',
-                    7: '3',
-                    8: '4',
-                    9: '5',
-                    10: '9'
-                };
-                
-                const actualStep = stepMapping[stepNumber];
-                const targetSection = document.querySelector(`[data-step="${actualStep}"]`);
+                const targetSection = document.querySelector(`[data-step="${stepNumber}"]`);
                 if (targetSection) {
                     targetSection.scrollIntoView({ behavior: 'smooth' });
                 }
@@ -3887,7 +2782,7 @@
 
             updateScrollHint() {
                 if (this.currentStep === this.totalSteps) {
-                    this.scrollHint.textContent = 'Get in touch';
+                    this.scrollHint.textContent = 'Explore our services below';
                 } else {
                     this.scrollHint.textContent = 'Scroll to continue';
                 }
@@ -3907,21 +2802,6 @@
                     console.log(`PowerPoint navigation: ${this.currentStep} -> ${prevStep}`);
                     this.goToStep(prevStep);
                 }
-            }
-
-            destroy() {
-                // Remove event listeners
-                window.removeEventListener('scroll', this.scrollHandler);
-                document.removeEventListener('keydown', this.keydownHandler);
-                
-                // Remove step indicator click listeners
-                if (this.dots) {
-                    this.dots.forEach(dot => {
-                        dot.removeEventListener('click', dot.clickHandler);
-                    });
-                }
-                
-                console.log('StepExperience destroyed');
             }
         }
 
@@ -3950,8 +2830,7 @@
                         const speed = 0.3;
                         const relativeScroll = scrolled - ctaTop;
                         const yPos = relativeScroll * speed;
-                        // Use background-position instead of transform to avoid black areas
-                        ctaParallax.style.backgroundPosition = `center ${yPos}px`;
+                        ctaParallax.style.transform = `translateY(${yPos}px)`;
                     }
                 }
             }
@@ -3996,69 +2875,6 @@
                 observer.observe(el);
             });
 
-                    // Tape Animation Observer
-        const tapeObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    // Stagger the animations
-                    setTimeout(() => {
-                        entry.target.classList.add('animate-tape');
-                    }, index * 200); // 200ms delay between each tape
-                    tapeObserver.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.3,
-            rootMargin: '0px 0px -50px 0px'
-        });
-
-        // Observe all tape titles
-        document.querySelectorAll('.step-supporting h3').forEach(tape => {
-            tapeObserver.observe(tape);
-        });
-
-        // Card Animation Observer
-
-        // Hero rotating text effect using Neodigm
-        function startVerbRotation() {
-            const words = ["Vision", "Strategy", "Growth Story", "Advantage", "Breakthrough", "Momentum", "Ambition"];
-            
-            setTimeout(() => {
-                if (typeof neodigmUtils !== 'undefined') {
-                    neodigmUtils.typeOn({
-                        "q1st": "#heroVerb", 
-                        "msg": words.join("|"), 
-                        "mode": "LOOP",
-                        "uniqueDelay": 203
-                    });
-                }
-            }, 1000);
-        }
-
-        // Start the rotating text effect when page loads
-        startVerbRotation();
-        const cardObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    // Stagger the card animations
-                    setTimeout(() => {
-                        entry.target.classList.add('animate-in');
-                    }, index * 300); // 300ms delay between each card
-                    cardObserver.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.2,
-            rootMargin: '0px 0px -100px 0px'
-        });
-
-        // Observe all step-supporting cards
-        document.querySelectorAll('.step-supporting').forEach(card => {
-            cardObserver.observe(card);
-        });
-
-            
-
             // Fixed contact logo visibility control
             const fixedContactLogo = document.getElementById('fixedContactLogo');
             const hero = document.querySelector('.hero');
@@ -4098,30 +2914,6 @@
                     });
                 }
             });
-
-            // Hero Background Parallax Effect
-            const heroBackground = document.getElementById('heroBackground');
-            const heroSection = document.querySelector('.hero');
-
-            function updateHeroParallax() {
-                if (!heroBackground || !heroSection) return;
-
-                const scrolled = window.pageYOffset;
-                const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-                
-                // Only apply parallax while hero is in view
-                if (scrolled < heroBottom) {
-                    // Use background-position instead of transform to avoid black areas
-                    const yPos = scrolled * 0.5; // Parallax speed
-                    heroBackground.style.backgroundPosition = `center ${yPos}px`;
-                }
-            }
-
-            // Update parallax on scroll
-            window.addEventListener('scroll', updateHeroParallax);
-            
-            // Initial parallax position
-            updateHeroParallax();
         });
     </script>
 </body>
