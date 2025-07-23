@@ -329,7 +329,7 @@
 
         /* Hide mobile-only items on desktop */
         .mobile-only {
-            display: none;
+            display: none !important;
         }
 
         /* Nav spacer for grid layout */
@@ -451,9 +451,9 @@
             box-shadow: 0 4px 16px rgba(221, 65, 36, 0.3);
         }
 
-        /* Mobile menu toggle */
+        /* Mobile menu toggle - hidden on desktop */
         .mobile-menu-toggle {
-            display: none;
+            display: none !important;
             background: transparent;
             border: none;
             cursor: pointer;
@@ -496,11 +496,17 @@
             visibility: hidden;
             transition: all 0.3s;
             z-index: 998;
+            display: none;
         }
 
         .menu-overlay.active {
             opacity: 1;
             visibility: visible;
+        }
+
+        /* Hide mobile menu on desktop */
+        .mobile-menu {
+            display: none;
         }
 
         /* Hero Section */
@@ -3884,6 +3890,16 @@
             z-index: 2;
         }
 
+        /* Enhanced styling for Mach Five Portal title (step 7) - same as Lead Magnet */
+        .experience-section[data-step="7"] .hero-left .need-state-static {
+            color: var(--m5m-blue) !important;
+            font-weight: 700;
+            font-size: 1.75rem;
+            text-shadow: 0 2px 4px rgba(52, 73, 94, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+
         /* Glass-morphism styling for feature items on Lead Magnet card ONLY */
         .experience-section[data-step="8"] .hero-left .tech-feature-item {
             background: rgba(255, 255, 255, 0.1);
@@ -3894,6 +3910,102 @@
             backdrop-filter: blur(10px);
             position: relative;
             z-index: 2;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        /* Interactive feature items for Portal and Lead Magnet */
+        .experience-section[data-step="7"] .tech-feature-item,
+        .experience-section[data-step="8"] .tech-feature-item {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience-section[data-step="7"] .tech-feature-item:hover,
+        .experience-section[data-step="8"] .tech-feature-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Active state styling - subtle */
+        .experience-section[data-step="7"] .tech-feature-item.active,
+        .experience-section[data-step="8"] .tech-feature-item.active {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Active state for Portal (white background) */
+        .experience-section[data-step="7"] .tech-feature-item.active {
+            background: rgba(52, 73, 94, 0.05);
+            border-color: rgba(52, 73, 94, 0.2);
+        }
+
+        /* Active state for Lead Magnet (colored background) */
+        .experience-section[data-step="8"] .tech-feature-item.active {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Active indicators - Option 1: Subtle dot indicator */
+        .experience-section[data-step="7"] .tech-feature-item.active::after {
+            content: '';
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 8px;
+            height: 8px;
+            background: var(--m5m-orange);
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(221, 65, 36, 0.4);
+        }
+
+        .experience-section[data-step="8"] .tech-feature-item.active::after {
+            content: '';
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 8px;
+            height: 8px;
+            background: var(--m5m-blue);
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(52, 73, 94, 0.4);
+        }
+
+        /* Active indicators - Option 2: Checkmark (alternative) */
+        /*
+        .experience-section[data-step="7"] .tech-feature-item.active::after,
+        .experience-section[data-step="8"] .tech-feature-item.active::after {
+            content: '✓';
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            width: 20px;
+            height: 20px;
+            background: var(--m5m-orange);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(221, 65, 36, 0.3);
+        }
+        */
+
+        /* Active indicators - Option 3: Subtle border glow (alternative) */
+        /*
+        .experience-section[data-step="7"] .tech-feature-item.active,
+        .experience-section[data-step="8"] .tech-feature-item.active {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12), 0 0 0 2px rgba(221, 65, 36, 0.2);
+        }
+        */
+
+        /* Image transition */
+        .portal-screenshot-img {
+            transition: all 0.5s ease;
         }
 
         /* White grid parallax effect for all white, non-colored cards (left side) */
@@ -4011,6 +4123,16 @@
                 width: 100%;
                 text-align: center;
                 padding: 12px 24px;
+            }
+
+            /* Show mobile menu on mobile */
+            .mobile-menu {
+                display: block;
+            }
+
+            /* Show menu overlay on mobile */
+            .menu-overlay {
+                display: block;
             }
 
             /* Show mobile nav prompt */
@@ -4191,32 +4313,32 @@
         <div class="card-container">
             <div class="step-supporting">
                 <div class="platform-screenshot">
-                    <img src="/img/portal home.png" alt="Mach Five Portal Dashboard" class="portal-screenshot-img">
+                    <img src="/img/portal home.png" alt="Mach Five Portal Dashboard" class="portal-screenshot-img" id="portal-image">
                 </div>
             </div>
             <div class="hero-left">
                 <div class="need-state-container">
                     <div class="need-state-static">Mach Five Portal™</div>
                     <div class="tech-features-list">
-                        <div class="tech-feature-item">
+                        <div class="tech-feature-item active" data-image="/img/portal home.png" data-alt="Mach Five Portal Dashboard">
                             <div class="tech-feature-content">
                                 <h4>Real-time Dashboard</h4>
                                 <p>See campaign performance, lead tracking, and ROI metrics in one intelligent interface</p>
                             </div>
                         </div>
-                        <div class="tech-feature-item">
+                        <div class="tech-feature-item" data-image="/img/portal home.png" data-alt="Multi-user Access Dashboard">
                             <div class="tech-feature-content">
                                 <h4>Multi-user Access</h4>
                                 <p>Role-based permissions with white-label options for seamless client collaboration</p>
                             </div>
                         </div>
-                        <div class="tech-feature-item">
+                        <div class="tech-feature-item" data-image="/img/portal home.png" data-alt="Automated Reporting Dashboard">
                             <div class="tech-feature-content">
                                 <h4>Automated Reporting</h4>
                                 <p>Custom reports delivered on your schedule with actionable insights and recommendations</p>
                             </div>
                         </div>
-                        <div class="tech-feature-item">
+                        <div class="tech-feature-item" data-image="/img/portal home.png" data-alt="24/7 Access Dashboard">
                             <div class="tech-feature-content">
                                 <h4>24/7 Access</h4>
                                 <p>Your command center never sleeps - access critical data and insights anytime, anywhere</p>
@@ -4235,25 +4357,25 @@
                 <div class="need-state-container">
                     <div class="need-state-static">Lead Magnet™</div>
                     <div class="tech-features-list">
-                        <div class="tech-feature-item">
+                        <div class="tech-feature-item active" data-image="/img/lead magnet.png" data-alt="Lead Magnet Interface">
                             <div class="tech-feature-content">
                                 <h4>Multi-channel Capture</h4>
                                 <p>Capture leads from website forms, social media, ads, and any other touchpoint automatically</p>
                             </div>
                         </div>
-                        <div class="tech-feature-item">
+                        <div class="tech-feature-item" data-image="/img/lead magnet.png" data-alt="Auto-qualification Interface">
                             <div class="tech-feature-content">
                                 <h4>Auto-qualification</h4>
                                 <p>Intelligent scoring and qualification so you focus on prospects ready to buy</p>
                             </div>
                         </div>
-                        <div class="tech-feature-item">
+                        <div class="tech-feature-item" data-image="/img/lead magnet.png" data-alt="Real-time Notifications Interface">
                             <div class="tech-feature-content">
                                 <h4>Real-time Notifications</h4>
                                 <p>Instant alerts when high-value leads come in, never miss another opportunity</p>
                             </div>
                         </div>
-                        <div class="tech-feature-item">
+                        <div class="tech-feature-item" data-image="/img/lead magnet.png" data-alt="CRM Integration Interface">
                             <div class="tech-feature-content">
                                 <h4>CRM Integration</h4>
                                 <p>Seamless sync with your existing CRM and marketing tools for complete visibility</p>
@@ -4264,7 +4386,7 @@
             </div>
             <div class="step-supporting">
                 <div class="platform-screenshot">
-                    <img src="/img/lead magnet.png" alt="Lead Magnet Interface" class="portal-screenshot-img">
+                    <img src="/img/lead magnet.png" alt="Lead Magnet Interface" class="portal-screenshot-img" id="leadmagnet-image">
                 </div>
             </div>
         </div>
@@ -5218,6 +5340,66 @@
             
             // Initial parallax position
             updateHeroParallax();
+
+            // Tab switching functionality for Portal and Lead Magnet
+            function initializeTabSwitching() {
+                // Portal tab switching
+                const portalFeatures = document.querySelectorAll('.experience-section[data-step="7"] .tech-feature-item');
+                const portalImage = document.getElementById('portal-image');
+                
+                portalFeatures.forEach(feature => {
+                    feature.addEventListener('click', function() {
+                        // Remove active class from all features
+                        portalFeatures.forEach(f => f.classList.remove('active'));
+                        
+                        // Add active class to clicked feature
+                        this.classList.add('active');
+                        
+                        // Update image
+                        const newImage = this.getAttribute('data-image');
+                        const newAlt = this.getAttribute('data-alt');
+                        
+                        if (portalImage && newImage) {
+                            portalImage.style.opacity = '0';
+                            setTimeout(() => {
+                                portalImage.src = newImage;
+                                portalImage.alt = newAlt;
+                                portalImage.style.opacity = '1';
+                            }, 250);
+                        }
+                    });
+                });
+
+                // Lead Magnet tab switching
+                const leadMagnetFeatures = document.querySelectorAll('.experience-section[data-step="8"] .tech-feature-item');
+                const leadMagnetImage = document.getElementById('leadmagnet-image');
+                
+                leadMagnetFeatures.forEach(feature => {
+                    feature.addEventListener('click', function() {
+                        // Remove active class from all features
+                        leadMagnetFeatures.forEach(f => f.classList.remove('active'));
+                        
+                        // Add active class to clicked feature
+                        this.classList.add('active');
+                        
+                        // Update image
+                        const newImage = this.getAttribute('data-image');
+                        const newAlt = this.getAttribute('data-alt');
+                        
+                        if (leadMagnetImage && newImage) {
+                            leadMagnetImage.style.opacity = '0';
+                            setTimeout(() => {
+                                leadMagnetImage.src = newImage;
+                                leadMagnetImage.alt = newAlt;
+                                leadMagnetImage.style.opacity = '1';
+                            }, 250);
+                        }
+                    });
+                });
+            }
+
+            // Initialize tab switching when DOM is loaded
+            initializeTabSwitching();
         });
     </script>
 </body>
