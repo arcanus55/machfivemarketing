@@ -676,6 +676,23 @@
             border-right: 1px solid var(--m5m-border);
         }
 
+        /* Border adjustments for flipped cards */
+        .experience-section[data-step="2"] .hero-left,
+        .experience-section[data-step="4"] .hero-left,
+        .experience-section[data-step="7"] .hero-left,
+        .experience-section[data-step="9"] .hero-left {
+            border-right: none;
+            border-left: 1px solid var(--m5m-border);
+        }
+
+        .experience-section[data-step="2"] .step-supporting,
+        .experience-section[data-step="4"] .step-supporting,
+        .experience-section[data-step="7"] .step-supporting,
+        .experience-section[data-step="9"] .step-supporting {
+            border-left: none;
+            border-right: 1px solid var(--m5m-border);
+        }
+
         .need-state-container {
             text-align: left;
             max-width: 400px;
@@ -1380,11 +1397,7 @@
             z-index: 1;
         }
 
-
-
-
-
-        /* Step 2 - Orange background with grid (RIGHT side) */
+        /* Step 2 - Orange background with grid (LEFT side - flipped) */
         .experience-section[data-step="2"] .step-supporting {
             background: var(--m5m-orange) !important;
             position: relative;
@@ -1411,14 +1424,20 @@
             content: 'MACH FIVE';
             position: absolute;
             bottom: -40px;
-            right: -50px;
+            left: -50px;
             font-family: 'IBM Plex Mono', monospace;
             font-size: 7rem;
             font-weight: 700;
             color: rgba(255, 255, 255, 0.03);
-            transform: rotate(12deg);
+            transform: rotate(-12deg);
             z-index: 1;
         }
+
+
+
+
+
+
 
 
 
@@ -1460,7 +1479,7 @@
             z-index: 1;
         }
 
-        /* Step 4 - Orange background with grid (RIGHT side) */
+        /* Step 4 - Orange background with grid (LEFT side - flipped) */
         .experience-section[data-step="4"] .step-supporting {
             background: var(--m5m-orange) !important;
             position: relative;
@@ -1487,12 +1506,12 @@
             content: 'OPTIMIZATION';
             position: absolute;
             bottom: -40px;
-            right: -50px;
+            left: -50px;
             font-family: 'IBM Plex Mono', monospace;
             font-size: 4.5rem;
             font-weight: 700;
             color: rgba(255, 255, 255, 0.03);
-            transform: rotate(12deg);
+            transform: rotate(-12deg);
             z-index: 1;
         }
 
@@ -2540,11 +2559,23 @@
             text-transform: uppercase;
         }
 
-        /* Mobile Responsive */
+        /* Mobile Responsive - SIMPLIFIED */
         @media (max-width: 768px) {
+            /* Basic mobile reset */
+            * {
+                box-sizing: border-box;
+            }
+            
+            body {
+                font-size: 16px;
+                line-height: 1.5;
+                overflow-x: hidden;
+            }
+            
             /* Top bar mobile */
             .top-bar {
                 padding: 8px 16px;
+                font-size: 12px;
             }
             
             .top-bar-left,
@@ -2568,6 +2599,7 @@
                 gap: 16px;
                 padding: 0 16px;
                 position: relative;
+                background: white;
             }
             
             .nav-menu {
@@ -2740,26 +2772,30 @@
                 color: var(--m5m-blue);
             }
 
-            /* Hero mobile */
+            /* Hero mobile - SIMPLIFIED */
             .hero {
-                margin-top: 100px;
-                padding: 60px 20px;
-                min-height: 80vh;
+                margin-top: 80px;
+                padding: 40px 20px;
+                min-height: 60vh;
                 display: flex;
                 align-items: center;
+                background: #1a1a1a;
+                color: white;
             }
             
             .hero h1 {
-                font-size: clamp(2rem, 8vw, 3rem);
+                font-size: 2rem;
                 line-height: 1.2;
-                margin-bottom: 1.5rem;
-                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+                margin-bottom: 1rem;
+                color: white;
+                text-align: center;
             }
 
             .hero-subtitle {
-                font-size: 1.125rem;
+                font-size: 1rem;
                 line-height: 1.5;
-                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+                color: rgba(255, 255, 255, 0.8);
+                text-align: center;
             }
             
             .hero-inner {
@@ -2783,50 +2819,55 @@
                 );
             }
 
-            /* Experience sections mobile */
+            /* Experience sections mobile - SIMPLIFIED */
             .experience-section {
-                flex-direction: column;
+                flex-direction: column !important;
                 margin: 0;
-                min-height: auto;
-                position: relative;
-                overflow: visible;
+                padding: 20px;
+                background: #f5f5f5;
+                display: flex !important;
             }
             
             .card-container {
-                flex-direction: column;
-                gap: 0;
-                min-height: auto;
-                position: relative;
-                overflow: visible;
+                flex-direction: column !important;
+                gap: 20px;
+                margin: 0;
+                display: flex !important;
+                width: 100% !important;
             }
             
-            /* Remove ripped tape effects on mobile - CRITICAL FIX */
-            .step-supporting h3 {
-                transform: none !important;
-                background: rgba(255, 255, 255, 0.1) !important;
-                border-radius: 8px !important;
-                padding: 12px 20px !important;
-                margin-bottom: 2rem !important;
-                font-size: 16px !important;
-                letter-spacing: 0.5px !important;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
-                backdrop-filter: blur(10px) !important;
+            /* Simple card layout - FORCE STACKING */
+            .hero-left,
+            .step-supporting,
+            .hero-right {
+                width: 100% !important;
+                padding: 30px 20px;
+                margin: 0 0 20px 0 !important;
+                background: white;
+                border-radius: 8px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
                 position: relative !important;
-                z-index: 1 !important;
+                display: block !important;
+                float: none !important;
+                clear: both !important;
+            }
+            
+            /* Simple titles */
+            .step-supporting h3 {
+                font-size: 22px !important;
+                font-weight: 700 !important;
+                color: #000 !important;
+                margin-bottom: 25px !important;
+                padding: 0;
+                background: none;
+                border-radius: 0;
+                box-shadow: none;
+                transform: none;
             }
             
             .step-supporting h3::before,
             .step-supporting h3::after {
-                display: none !important;
-            }
-            
-            /* Fix card layout issues */
-            .hero-left,
-            .step-supporting,
-            .hero-right {
-                overflow: visible !important;
-                z-index: 1 !important;
-                position: relative !important;
+                display: none;
             }
             
             /* Ensure proper spacing between sections */
@@ -2845,163 +2886,135 @@
             }
             
             .hero-left {
-                order: 1;
-                min-height: 350px;
-                display: flex;
+                order: 1 !important;
+                min-height: 200px;
+                display: flex !important;
                 align-items: center;
                 justify-content: center;
-                padding-bottom: 2rem;
-                background: rgba(255, 255, 255, 0.05);
-                border-radius: 0;
+                text-align: center;
             }
             
             .step-supporting {
-                order: 2;
-                min-height: 450px;
-                display: flex;
-                align-items: center;
-                padding-top: 2rem;
-                border-radius: 0;
+                order: 2 !important;
+                min-height: 300px;
+                display: block !important;
             }
             
-            /* Improve content readability on mobile */
+            .hero-right {
+                order: 3 !important;
+                display: block !important;
+            }
+            
+            /* Content readability - SIMPLIFIED */
             .step-supporting-content {
                 width: 100%;
                 max-width: 100%;
                 padding: 0;
+                color: #000 !important;
             }
             
-            /* Better spacing for feature items */
+            .step-supporting-content p {
+                font-size: 18px !important;
+                line-height: 1.6 !important;
+                margin-bottom: 20px !important;
+                color: #000 !important;
+                font-weight: 400 !important;
+            }
+            
+            .step-supporting-content ul {
+                padding-left: 20px !important;
+                margin-bottom: 20px !important;
+            }
+            
+            .step-supporting-content li {
+                margin-bottom: 15px !important;
+                font-size: 18px !important;
+                line-height: 1.6 !important;
+                color: #000 !important;
+                font-weight: 400 !important;
+            }
+            
+            /* Feature items - SIMPLIFIED */
             .tech-features-list {
                 display: flex;
                 flex-direction: column;
-                gap: 1.5rem;
-                margin-top: 1.5rem;
+                gap: 15px;
+                margin-top: 20px;
             }
             
             .tech-feature-item {
-                background: rgba(255, 255, 255, 0.08);
-                border: 1px solid rgba(255, 255, 255, 0.15);
-                border-radius: 12px;
-                padding: 1.5rem;
+                background: #ffffff !important;
+                border: 2px solid #e0e0e0 !important;
+                border-radius: 8px;
+                padding: 25px !important;
                 margin-bottom: 0;
-                backdrop-filter: blur(10px);
-                transition: all 0.3s ease;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             }
             
-            .tech-feature-item:hover {
-                background: rgba(255, 255, 255, 0.12);
-                transform: translateY(-3px);
-                box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
-                border-color: rgba(255, 255, 255, 0.25);
+            .tech-feature-content h4 {
+                font-size: 20px !important;
+                margin-bottom: 15px !important;
+                font-weight: 700 !important;
+                color: #000 !important;
+            }
+            
+            .tech-feature-content p {
+                font-size: 18px !important;
+                line-height: 1.6 !important;
+                margin-bottom: 0;
+                color: #000 !important;
+                font-weight: 400 !important;
             }
 
             .need-state-container {
                 text-align: center;
                 max-width: 100%;
-                padding: 2rem 0;
+                padding: 20px 0;
             }
 
             .need-state-static {
-                font-size: 1.75rem;
-                margin-bottom: 1.5rem;
-                font-weight: 700;
-                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-                color: rgba(255, 255, 255, 0.95);
-                letter-spacing: -0.02em;
+                font-size: 28px !important;
+                margin-bottom: 20px !important;
+                font-weight: 700 !important;
+                color: #000 !important;
             }
             
             .need-state-line {
-                font-size: 1.25rem;
-            }
-            
-            .tech-feature-item {
-                margin-bottom: 1rem;
-                padding: 1rem;
-            }
-            
-            .tech-feature-content h4 {
-                font-size: 1.2rem;
-                margin-bottom: 0.75rem;
-                font-weight: 600;
-                color: rgba(255, 255, 255, 0.95);
-                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-            }
-            
-            .tech-feature-content p {
-                font-size: 1rem;
-                line-height: 1.6;
-                margin-bottom: 0;
-                color: rgba(255, 255, 255, 0.9);
-                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+                font-size: 20px !important;
+                color: #000 !important;
+                font-weight: 500 !important;
             }
 
+            /* Hide step indicator on mobile */
             .step-indicator {
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                gap: 0.75rem;
-                z-index: 100;
+                display: none !important;
             }
 
             .step-dot {
-                width: 10px;
-                height: 10px;
+                display: none !important;
             }
             
-            /* Step supporting content mobile */
-            .step-supporting-content {
-                padding: 2rem 0;
-            }
-            
-            .step-supporting-content p {
-                font-size: 1.1rem;
-                line-height: 1.7;
-                margin-bottom: 2rem;
-                color: rgba(255, 255, 255, 0.95);
-                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-                font-weight: 400;
-            }
-            
-            .step-supporting-content ul {
-                padding-left: 2rem;
-                margin-bottom: 2rem;
-            }
-            
-            .step-supporting-content li {
-                margin-bottom: 1.5rem;
-                font-size: 1.1rem;
-                line-height: 1.7;
-                color: rgba(255, 255, 255, 0.9);
-                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-            }
-            
-            /* Portal image mobile */
+            /* Portal image mobile - SIMPLIFIED */
             .portal-screenshot-img {
-                max-width: 95% !important;
-                max-height: 85% !important;
-                transform: scale(1) !important;
-                margin: 0 auto;
+                max-width: 100% !important;
+                height: auto !important;
+                margin: 20px auto;
                 display: block;
-                border-radius: 12px;
-                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 8px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             }
             
             .platform-screenshot {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                height: 100%;
-                padding: 2rem;
+                padding: 20px;
             }
             
-            /* Intro card mobile */
+            /* Logo mobile - SIMPLIFIED */
             .hero-logo img {
-                height: 140px;
+                height: 80px;
                 width: auto;
-                filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+                margin: 20px auto;
             }
             
             /* Step indicator mobile positioning */
@@ -3305,6 +3318,109 @@
             .footer-col a:hover {
                 color: var(--m5m-orange);
                 transform: translateX(4px);
+            }
+        }
+        
+        /* CRITICAL MOBILE FIXES - Override everything */
+        @media (max-width: 768px) {
+            /* Force basic readable layout */
+            .experience-section {
+                background: #f5f5f5 !important;
+                padding: 20px !important;
+                margin: 0 !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            
+            .card-container {
+                gap: 20px !important;
+                margin: 0 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                width: 100% !important;
+            }
+            
+            .hero-left,
+            .step-supporting,
+            .hero-right {
+                background: white !important;
+                color: #333 !important;
+                padding: 30px 20px !important;
+                margin: 0 0 20px 0 !important;
+                border-radius: 8px !important;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+                min-height: auto !important;
+                width: 100% !important;
+                display: block !important;
+                float: none !important;
+                clear: both !important;
+                position: relative !important;
+            }
+            
+            .step-supporting h3 {
+                color: #000 !important;
+                background: none !important;
+                padding: 0 !important;
+                margin-bottom: 25px !important;
+                font-size: 22px !important;
+                font-weight: 700 !important;
+                transform: none !important;
+                box-shadow: none !important;
+            }
+            
+            .step-supporting h3::before,
+            .step-supporting h3::after {
+                display: none !important;
+            }
+            
+            .step-supporting-content p,
+            .step-supporting-content li {
+                color: #000 !important;
+                font-size: 18px !important;
+                line-height: 1.6 !important;
+                text-shadow: none !important;
+                font-weight: 400 !important;
+            }
+            
+            .tech-feature-item {
+                background: #ffffff !important;
+                border: 2px solid #e0e0e0 !important;
+                color: #000 !important;
+                padding: 25px !important;
+            }
+            
+            .tech-feature-content h4 {
+                color: #000 !important;
+                font-size: 20px !important;
+                text-shadow: none !important;
+                font-weight: 700 !important;
+            }
+            
+            .tech-feature-content p {
+                color: #000 !important;
+                font-size: 18px !important;
+                text-shadow: none !important;
+                font-weight: 400 !important;
+            }
+            
+            .need-state-static {
+                color: #000 !important;
+                font-size: 28px !important;
+                text-shadow: none !important;
+                font-weight: 700 !important;
+            }
+            
+            .need-state-line {
+                color: #000 !important;
+                font-size: 20px !important;
+                font-weight: 500 !important;
+            }
+            
+            /* Hide problematic elements */
+            .step-indicator,
+            .step-dot,
+            .fixed-contact-logo {
+                display: none !important;
             }
         }
 
@@ -3674,14 +3790,14 @@
             transform: scale(1.1);
         }
 
-        /* Portal card styling (step 7) - Blue background with grid */
-        .experience-section[data-step="7"] .hero-left {
+        /* Portal card styling (step 7) - Blue background with grid (RIGHT side - flipped) */
+        .experience-section[data-step="7"] .step-supporting {
             background: var(--m5m-blue) !important;
             position: relative;
             overflow: hidden;
         }
 
-        .experience-section[data-step="7"] .hero-left::before {
+        .experience-section[data-step="7"] .step-supporting::before {
             content: '';
             position: absolute;
             top: 0;
@@ -3697,16 +3813,16 @@
             z-index: 1;
         }
 
-        .experience-section[data-step="7"] .hero-left::after {
+        .experience-section[data-step="7"] .step-supporting::after {
             content: 'PORTAL';
             position: absolute;
             bottom: -40px;
-            right: -50px;
+            left: -50px;
             font-family: 'IBM Plex Mono', monospace;
             font-size: 7rem;
             font-weight: 700;
             color: rgba(255, 255, 255, 0.03);
-            transform: rotate(12deg);
+            transform: rotate(-12deg);
             z-index: 1;
         }
 
@@ -3748,10 +3864,7 @@
 
 
 
-        /* Text styling for Portal and Lead Magnet cards ONLY (steps 7, 8) - white text with shadows */
-        .experience-section[data-step="7"] .hero-left .need-state-static,
-        .experience-section[data-step="7"] .hero-left h4,
-        .experience-section[data-step="7"] .hero-left p,
+        /* Text styling for Lead Magnet card ONLY (step 8) - white text with shadows */
         .experience-section[data-step="8"] .hero-left .need-state-static,
         .experience-section[data-step="8"] .hero-left h4,
         .experience-section[data-step="8"] .hero-left p {
@@ -3761,8 +3874,7 @@
             z-index: 2;
         }
 
-        /* Enhanced styling for Portal and Lead Magnet titles ONLY */
-        .experience-section[data-step="7"] .hero-left .need-state-static,
+        /* Enhanced styling for Lead Magnet title ONLY */
         .experience-section[data-step="8"] .hero-left .need-state-static {
             color: white !important;
             font-weight: 700;
@@ -3772,8 +3884,7 @@
             z-index: 2;
         }
 
-        /* Glass-morphism styling for feature items on Portal and Lead Magnet cards ONLY */
-        .experience-section[data-step="7"] .hero-left .tech-feature-item,
+        /* Glass-morphism styling for feature items on Lead Magnet card ONLY */
         .experience-section[data-step="8"] .hero-left .tech-feature-item {
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -4078,6 +4189,11 @@
     <!-- Technology: Mach Five Portal -->
     <section class="experience-section" data-step="7">
         <div class="card-container">
+            <div class="step-supporting">
+                <div class="platform-screenshot">
+                    <img src="/img/portal home.png" alt="Mach Five Portal Dashboard" class="portal-screenshot-img">
+                </div>
+            </div>
             <div class="hero-left">
                 <div class="need-state-container">
                     <div class="need-state-static">Mach Five Portal™</div>
@@ -4107,11 +4223,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="step-supporting">
-                <div class="platform-screenshot">
-                    <img src="/img/portal home.png" alt="Mach Five Portal Dashboard" class="portal-screenshot-img">
                 </div>
             </div>
         </div>
@@ -4206,6 +4317,20 @@
     <!-- Experience Step 2: Market Traction -->
     <section class="experience-section" data-step="2">
         <div class="card-container">
+            <div class="step-supporting">
+                <div class="step-supporting-content">
+                    <h3>Growth Acceleration</h3>
+                    
+                    <p>Our proven methodologies help you identify and capture market opportunities, optimize conversion funnels, and accelerate your path to sustainable growth.</p>
+                    
+                    <ul>
+                        <li>Market opportunity identification & validation</li>
+                        <li>Conversion funnel optimization & A/B testing</li>
+                        <li>Customer acquisition strategy & scaling</li>
+                        <li>Revenue optimization & growth hacking</li>
+                    </ul>
+                </div>
+            </div>
             <div class="hero-left">
                 <div class="need-state-container">
                     <div class="need-state-line" data-step="1">
@@ -4228,20 +4353,6 @@
                         <span class="need-state-static">I need a</span>
                         <span class="need-state-dynamic">clear way forward.</span>
                     </div>
-                </div>
-            </div>
-            <div class="step-supporting">
-                <div class="step-supporting-content">
-                    <h3>Growth Acceleration</h3>
-                    
-                    <p>Our proven methodologies help you identify and capture market opportunities, optimize conversion funnels, and accelerate your path to sustainable growth.</p>
-                    
-                    <ul>
-                        <li>Market opportunity identification & validation</li>
-                        <li>Conversion funnel optimization & A/B testing</li>
-                        <li>Customer acquisition strategy & scaling</li>
-                        <li>Revenue optimization & growth hacking</li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -4294,6 +4405,20 @@
     <!-- Experience Step 4: Smarter Stack -->
     <section class="experience-section" data-step="4">
         <div class="card-container">
+            <div class="step-supporting">
+                <div class="step-supporting-content">
+                    <h3>Intelligent Integration</h3>
+                    
+                    <p>Our expertise in martech architecture ensures your tools work together seamlessly, providing actionable insights and automated workflows.</p>
+                    
+                    <ul>
+                        <li>API integration & data synchronization</li>
+                        <li>Cross-platform workflow automation</li>
+                        <li>Real-time analytics & reporting</li>
+                        <li>System optimization & performance tuning</li>
+                    </ul>
+                </div>
+            </div>
             <div class="hero-left">
                 <div class="need-state-container">
                     <div class="need-state-line" data-step="1">
@@ -4316,20 +4441,6 @@
                         <span class="need-state-static">I need a</span>
                         <span class="need-state-dynamic">clear way forward.</span>
                     </div>
-                </div>
-            </div>
-            <div class="step-supporting">
-                <div class="step-supporting-content">
-                    <h3>Intelligent Integration</h3>
-                    
-                    <p>Our expertise in martech architecture ensures your tools work together seamlessly, providing actionable insights and automated workflows.</p>
-                    
-                    <ul>
-                        <li>API integration & data synchronization</li>
-                        <li>Cross-platform workflow automation</li>
-                        <li>Real-time analytics & reporting</li>
-                        <li>System optimization & performance tuning</li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -4409,11 +4520,6 @@
     <!-- Final Step: Ready to Transform -->
     <section class="experience-section" data-step="9">
         <div class="card-container">
-            <div class="hero-left">
-                <div class="need-state-container">
-                    <div class="need-state-static" style="color: var(--m5m-blue); font-weight: 700; font-size: 1.75rem;">Ready to transform your marketing?</div>
-                </div>
-            </div>
             <div class="hero-right">
                 <div class="blueprint-panel">
                     <div class="panel-headline">
@@ -4442,6 +4548,11 @@
                         <span class="separator">•</span>
                         <span data-animate-capability="8">Technical Discovery</span>
                     </div>
+                </div>
+            </div>
+            <div class="hero-left">
+                <div class="need-state-container">
+                    <div class="need-state-static" style="color: var(--m5m-blue); font-weight: 700; font-size: 1.75rem;">Ready to transform your marketing?</div>
                 </div>
             </div>
         </div>
