@@ -769,7 +769,7 @@
             text-align: center;
         }
 
-        /* Ripped Tape Effect for Step Supporting Titles */
+        /* Clean Step Supporting Titles - Desktop Only */
         .step-supporting h3 {
             font-family: 'Inter', sans-serif;
             font-size: 18px !important;
@@ -1612,6 +1612,17 @@
             flex-direction: column;
             gap: 1rem;
             transition: all 0.3s ease;
+            /* Rounded/beveled container */
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1.5rem 1rem;
+            border-radius: 25px;
+            box-shadow: 
+                inset 2px 2px 8px rgba(255, 255, 255, 0.8),
+                inset -2px -2px 8px rgba(0, 0, 0, 0.1),
+                0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
         }
 
         .step-dot {
@@ -2778,6 +2789,7 @@
                 margin: 0;
                 min-height: auto;
                 position: relative;
+                overflow: visible;
             }
             
             .card-container {
@@ -2785,6 +2797,36 @@
                 gap: 0;
                 min-height: auto;
                 position: relative;
+                overflow: visible;
+            }
+            
+            /* Remove ripped tape effects on mobile - CRITICAL FIX */
+            .step-supporting h3 {
+                transform: none !important;
+                background: rgba(255, 255, 255, 0.1) !important;
+                border-radius: 8px !important;
+                padding: 12px 20px !important;
+                margin-bottom: 2rem !important;
+                font-size: 16px !important;
+                letter-spacing: 0.5px !important;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+                backdrop-filter: blur(10px) !important;
+                position: relative !important;
+                z-index: 1 !important;
+            }
+            
+            .step-supporting h3::before,
+            .step-supporting h3::after {
+                display: none !important;
+            }
+            
+            /* Fix card layout issues */
+            .hero-left,
+            .step-supporting,
+            .hero-right {
+                overflow: visible !important;
+                z-index: 1 !important;
+                position: relative !important;
             }
             
             /* Ensure proper spacing between sections */
@@ -2799,6 +2841,7 @@
                 min-height: auto;
                 padding: 3rem 2rem;
                 position: relative;
+                margin: 0;
             }
             
             .hero-left {
@@ -2808,6 +2851,8 @@
                 align-items: center;
                 justify-content: center;
                 padding-bottom: 2rem;
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 0;
             }
             
             .step-supporting {
@@ -2816,12 +2861,14 @@
                 display: flex;
                 align-items: center;
                 padding-top: 2rem;
+                border-radius: 0;
             }
             
             /* Improve content readability on mobile */
             .step-supporting-content {
                 width: 100%;
                 max-width: 100%;
+                padding: 0;
             }
             
             /* Better spacing for feature items */
@@ -2829,27 +2876,31 @@
                 display: flex;
                 flex-direction: column;
                 gap: 1.5rem;
+                margin-top: 1.5rem;
             }
             
             .tech-feature-item {
-                background: rgba(255, 255, 255, 0.05);
-                border: 1px solid rgba(255, 255, 255, 0.1);
+                background: rgba(255, 255, 255, 0.08);
+                border: 1px solid rgba(255, 255, 255, 0.15);
                 border-radius: 12px;
                 padding: 1.5rem;
                 margin-bottom: 0;
                 backdrop-filter: blur(10px);
                 transition: all 0.3s ease;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             }
             
             .tech-feature-item:hover {
-                background: rgba(255, 255, 255, 0.08);
-                transform: translateY(-2px);
-                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+                background: rgba(255, 255, 255, 0.12);
+                transform: translateY(-3px);
+                box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+                border-color: rgba(255, 255, 255, 0.25);
             }
 
             .need-state-container {
                 text-align: center;
                 max-width: 100%;
+                padding: 2rem 0;
             }
 
             .need-state-static {
@@ -2857,6 +2908,8 @@
                 margin-bottom: 1.5rem;
                 font-weight: 700;
                 text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+                color: rgba(255, 255, 255, 0.95);
+                letter-spacing: -0.02em;
             }
             
             .need-state-line {
@@ -2872,12 +2925,16 @@
                 font-size: 1.2rem;
                 margin-bottom: 0.75rem;
                 font-weight: 600;
+                color: rgba(255, 255, 255, 0.95);
+                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
             }
             
             .tech-feature-content p {
                 font-size: 1rem;
                 line-height: 1.6;
                 margin-bottom: 0;
+                color: rgba(255, 255, 255, 0.9);
+                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
             }
 
             .step-indicator {
@@ -2895,7 +2952,7 @@
             
             /* Step supporting content mobile */
             .step-supporting-content {
-                padding: 1.5rem 0;
+                padding: 2rem 0;
             }
             
             .step-supporting-content p {
@@ -2903,27 +2960,33 @@
                 line-height: 1.7;
                 margin-bottom: 2rem;
                 color: rgba(255, 255, 255, 0.95);
+                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+                font-weight: 400;
             }
             
             .step-supporting-content ul {
-                padding-left: 1.5rem;
-                margin-bottom: 1rem;
+                padding-left: 2rem;
+                margin-bottom: 2rem;
             }
             
             .step-supporting-content li {
-                margin-bottom: 1rem;
-                font-size: 1rem;
-                line-height: 1.6;
+                margin-bottom: 1.5rem;
+                font-size: 1.1rem;
+                line-height: 1.7;
                 color: rgba(255, 255, 255, 0.9);
+                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
             }
             
             /* Portal image mobile */
             .portal-screenshot-img {
-                max-width: 100% !important;
-                max-height: 80% !important;
+                max-width: 95% !important;
+                max-height: 85% !important;
                 transform: scale(1) !important;
                 margin: 0 auto;
                 display: block;
+                border-radius: 12px;
+                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+                border: 1px solid rgba(255, 255, 255, 0.1);
             }
             
             .platform-screenshot {
@@ -2931,13 +2994,14 @@
                 justify-content: center;
                 align-items: center;
                 height: 100%;
-                padding: 1rem;
+                padding: 2rem;
             }
             
             /* Intro card mobile */
             .hero-logo img {
-                height: 120px;
+                height: 140px;
                 width: auto;
+                filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
             }
             
             /* Step indicator mobile positioning */
@@ -3261,17 +3325,17 @@
             .hero-left,
             .step-supporting,
             .hero-right {
-                padding: 2.5rem 1.5rem;
+                padding: 3rem 2rem;
             }
             
             .hero-left {
-                min-height: 300px;
-                padding-bottom: 1.5rem;
+                min-height: 350px;
+                padding-bottom: 2rem;
             }
             
             .step-supporting {
-                min-height: 400px;
-                padding-top: 1.5rem;
+                min-height: 450px;
+                padding-top: 2rem;
             }
             
             .need-state-static {
@@ -3287,16 +3351,16 @@
             }
             
             .tech-feature-item {
-                padding: 1.25rem;
-                margin-bottom: 1rem;
+                padding: 1.5rem;
+                margin-bottom: 1.5rem;
             }
             
             .tech-feature-content h4 {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
             }
             
             .tech-feature-content p {
-                font-size: 0.95rem;
+                font-size: 1rem;
             }
             
             .portal-screenshot-img {
@@ -3306,6 +3370,18 @@
             
             .hero-logo img {
                 height: 120px;
+            }
+            
+            .need-state-static {
+                font-size: 1.75rem;
+            }
+            
+            .step-supporting-content p {
+                font-size: 1.2rem;
+            }
+            
+            .step-supporting-content li {
+                font-size: 1rem;
             }
             
             .step-indicator {
@@ -3415,6 +3491,20 @@
             .mobile-menu-toggle span {
                 width: 20px;
                 height: 2px;
+            }
+            
+                        /* Hide step indicator and contact box on mobile */
+            .step-indicator {
+                display: none !important;
+            }
+
+            .fixed-contact-logo {
+                display: none !important;
+            }
+            
+            /* Hide step dots on mobile */
+            .step-dot {
+                display: none !important;
             }
         }
 
