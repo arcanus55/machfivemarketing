@@ -1,0 +1,1926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Magnet™ - Mach Five Marketing</title>
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://neodigm.github.io/" crossorigin>
+    <link rel="dns-prefetch" href="https://neodigm.github.io/" >
+    
+    <!-- Render-style font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Neodigm Scripts -->
+    <script>
+        let neodigmOptCustom = { CONSOLE_LOG_VER:true, W4S_VOLUME: .016 }
+        let neodigmOpt_launchCompleteCustom = {
+            CONSOLE_LOG_VER: false
+        }
+    </script>
+    <link rel="stylesheet" href="https://arcanus55.github.io/neodigm55/dist/neodigm55__v4_0.css">
+    <script src="https://arcanus55.github.io/neodigm55/dist/neodigm55__v4_0.js"></script>
+    <link rel="stylesheet" href="https://arcanus55.github.io/neodigm55/dist/neodigm55_v1_0_launchComplete.css">
+    <script src="https://arcanus55.github.io/neodigm55/dist/neodigm55_v1_0_launchComplete.js"></script>
+    
+    <style>
+        :root {
+            /* Render-inspired colors */
+            --text-primary: #000000;
+            --text-secondary: #6B7280;
+            --text-tertiary: #9CA3AF;
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #FAFAFA;
+            --bg-tertiary: #F3F4F6;
+            --border-light: #E5E7EB;
+            --border-default: #D1D5DB;
+            --purple-600: #5850EC;
+            --purple-700: #4C44DB;
+            --purple-50: #F5F4FF;
+            --grid-color: #F0F0F0;
+            
+            /* MachFive Brand Colors */
+            --m5m-blue: #34495E;
+            --m5m-blue-dark: #2C3E50;
+            --m5m-orange: #DD4124;
+            --m5m-white: #FFFFFF;
+            
+            /* Parallax Variables */
+            --comparison-parallax-offset: 0px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Top Banner */
+        .top-banner {
+            background: var(--m5m-blue);
+            color: white;
+            padding: 12px 0;
+            text-align: center;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .top-banner p {
+            margin: 0;
+            font-weight: 400;
+        }
+
+        .top-banner a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.15s ease;
+        }
+
+        .top-banner a:hover {
+            opacity: 0.8;
+        }
+
+        /* Breadcrumb Navigation */
+        .breadcrumb-nav {
+            background: white;
+            border-bottom: 1px solid var(--border-light);
+            padding: 16px 0;
+        }
+
+        .breadcrumb-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .breadcrumb-list {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 8px;
+        }
+
+        .breadcrumb-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .breadcrumb-item:not(:last-child)::after {
+            content: '/';
+            margin-left: 8px;
+            color: var(--text-tertiary);
+            font-size: 14px;
+        }
+
+        .breadcrumb-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.15s ease;
+        }
+
+        .breadcrumb-link:hover {
+            color: var(--text-primary);
+        }
+
+        .breadcrumb-current {
+            color: var(--text-primary);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Mini Hero Section */
+        .mini-hero {
+            background: linear-gradient(135deg, rgba(52, 73, 94, 0.9) 0%, rgba(44, 62, 80, 0.9) 100%), url('/img/whiteboard.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-light);
+            position: relative;
+        }
+
+        .mini-hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .mini-hero-content {
+            max-width: 800px;
+        }
+
+        .mini-hero-content h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .mini-hero-content p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Grid Background Pattern */
+        .grid-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 1;
+            pointer-events: none;
+        }
+
+        /* Navigation */
+        .nav {
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-light);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .nav-logo img {
+            height: 32px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.15s ease;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .nav-link:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-arrow {
+            font-size: 10px;
+            transition: transform 0.15s ease;
+        }
+
+        .nav-item:hover .nav-arrow {
+            transform: rotate(180deg);
+        }
+
+        /* Dropdown */
+        .nav-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            padding: 16px;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.15s ease;
+            z-index: 1001;
+        }
+
+        .nav-item:hover .nav-dropdown {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .dropdown-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .dropdown-column h4 {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .dropdown-links {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .dropdown-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 4px 0;
+            transition: color 0.15s ease;
+        }
+
+        .dropdown-link:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .nav-signin {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.15s ease;
+        }
+
+        .nav-signin:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-cta {
+            background: var(--m5m-blue);
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.15s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--m5m-blue-dark);
+            transform: translateY(-1px);
+        }
+
+        /* Mobile Menu Button */
+        .mobile-menu-button {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 20px;
+            height: 2px;
+            background: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-button.active .hamburger span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-menu-button.active .hamburger span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-button.active .hamburger span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: white;
+            z-index: 999;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-content {
+            padding: 80px 24px 24px;
+        }
+
+        .mobile-nav-item {
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .mobile-nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .mobile-nav-arrow {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-nav-item.expanded .mobile-nav-arrow {
+            transform: rotate(180deg);
+        }
+
+        .mobile-dropdown {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .mobile-nav-item.expanded .mobile-dropdown {
+            max-height: 300px;
+        }
+
+        .mobile-dropdown-link {
+            display: block;
+            padding: 12px 0;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .mobile-dropdown-link:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-menu-footer {
+            padding: 24px;
+            border-top: 1px solid var(--border-light);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .mobile-signin {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            text-align: center;
+            padding: 12px;
+        }
+
+        .mobile-cta {
+            background: var(--m5m-blue);
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            text-align: center;
+            padding: 12px;
+            border-radius: 6px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.3;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            text-align: left;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            line-height: 1.6;
+            max-width: 480px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: flex-start;
+            margin-bottom: 48px;
+        }
+
+        .btn {
+            padding: 14px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.15s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            line-height: 1.25;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--m5m-blue);
+            color: #FFFFFF;
+            border: 1px solid var(--m5m-blue);
+        }
+
+        .btn-primary:hover {
+            background: var(--m5m-blue-dark);
+            border-color: var(--m5m-blue-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn-primary svg {
+            transition: transform 0.15s ease;
+        }
+
+        .btn-primary:hover svg {
+            transform: translateX(2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #000000;
+            border: 1px solid #E5E7EB;
+        }
+
+        .btn-secondary:hover {
+            background: #F9FAFB;
+            border-color: #D1D5DB;
+        }
+
+        /* Hero Visual */
+        .hero-visual {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-visual::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.5;
+        }
+
+        .hero-visual-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .hero-logo {
+            height: 200px;
+            width: auto;
+            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
+        }
+
+        /* Lead Magnet Section */
+        .lead-magnet-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .lead-magnet-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .lead-magnet-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .lead-magnet-header h2 {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .lead-magnet-header p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .lead-magnet-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .features-left {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tech-features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .tech-feature-item {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-feature-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .tech-feature-item.active {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+            background: rgba(52, 73, 94, 0.05);
+            border-color: rgba(52, 73, 94, 0.2);
+        }
+
+        .tech-feature-item.active::after {
+            content: '';
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 8px;
+            height: 8px;
+            background: var(--m5m-orange);
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(221, 65, 36, 0.4);
+        }
+
+        .tech-feature-content h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .tech-feature-content p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .features-right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .platform-screenshot {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(135deg, var(--m5m-orange) 0%, #E74C3C 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .platform-screenshot::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        .portal-screenshot-img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+            transition: all 0.5s ease;
+        }
+
+        /* Hero Section from Home Page */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero {
+            background-image: url('/img/mach five marketing hero.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(
+                ellipse at center,
+                rgba(10, 10, 10, 0.1) 0%,
+                rgba(10, 10, 10, 0.4) 100%
+            );
+            z-index: 2;
+        }
+
+        .hero-inner {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: left;
+            z-index: 4;
+            position: relative;
+        }
+
+        .hero-content-box {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 0 auto;
+            max-width: 1000px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+            background-size: 50px 50px, 50px 50px;
+            mask-image: linear-gradient(90deg, 
+                transparent 0%, 
+                black 15%, 
+                black 85%, 
+                transparent 100%);
+            -webkit-mask-image: linear-gradient(90deg, 
+                transparent 0%, 
+                black 15%, 
+                black 85%, 
+                transparent 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero-content-box > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            font-weight: 200;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            color: var(--m5m-white);
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 span {
+            display: block;
+        }
+
+        .hero h1 strong {
+            font-weight: 400;
+            color: var(--m5m-blue);
+        }
+
+        #heroVerb {
+            color: #5DADE2 !important;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Comparison Content Styling for Hero Section */
+        .comparison-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .comparison-header h2 {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .comparison-header p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .comparison-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .comparison-card.lead-magnet {
+            border: 2px solid var(--m5m-orange);
+            position: relative;
+        }
+
+        .comparison-card.lead-magnet::before {
+            content: 'RECOMMENDED';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--m5m-orange);
+            color: white;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .comparison-card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .comparison-card-header h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .comparison-icon {
+            font-size: 32px;
+        }
+
+        .comparison-list {
+            list-style: none;
+        }
+
+        .comparison-list li {
+            padding: 8px 0;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .comparison-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--text-tertiary);
+        }
+
+        .comparison-card.lead-magnet .comparison-list li::before {
+            color: var(--m5m-orange);
+        }
+
+        .comparison-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .comparison-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .comparison-header h2 {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .comparison-header p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .comparison-card {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-light);
+        }
+
+        .comparison-card.lead-magnet {
+            border: 2px solid var(--m5m-orange);
+            position: relative;
+        }
+
+        .comparison-card.lead-magnet::before {
+            content: 'RECOMMENDED';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--m5m-orange);
+            color: white;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .comparison-card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .comparison-card-header h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .comparison-icon {
+            font-size: 32px;
+        }
+
+        .comparison-list {
+            list-style: none;
+        }
+
+        .comparison-list li {
+            padding: 8px 0;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .comparison-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--text-tertiary);
+        }
+
+        .comparison-card.lead-magnet .comparison-list li::before {
+            color: var(--m5m-orange);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .faq-header h2 {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .faq-header p {
+            font-size: 18px;
+            color: var(--text-secondary);
+        }
+
+        .faq-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 24px;
+            background: var(--bg-secondary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background-color 0.15s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--bg-tertiary);
+        }
+
+        .faq-question h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .faq-arrow {
+            font-size: 12px;
+            color: var(--text-secondary);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-arrow {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-answer p {
+            padding: 0 24px 24px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--bg-secondary);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 60px 0 24px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand img {
+            height: 32px;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        .footer-column h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.15s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 24px;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu-button {
+                display: block;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .lead-magnet-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 16px;
+            }
+
+            .hero {
+                padding: 80px 0 60px;
+            }
+
+            .hero-container {
+                padding: 0 16px;
+            }
+
+            .mini-hero-content h1 {
+                font-size: 36px;
+            }
+
+            .mini-hero-content p {
+                font-size: 18px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .lead-magnet-section {
+                padding: 60px 0;
+            }
+
+            .lead-magnet-container {
+                padding: 0 16px;
+            }
+
+            .lead-magnet-header h2 {
+                font-size: 36px;
+            }
+
+            .platform-screenshot {
+                height: 300px;
+            }
+
+            .lead-magnet-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .tech-feature-content h4 {
+                font-size: 16px;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .comparison-header h2 {
+                font-size: 36px;
+            }
+
+            .faq-header h2 {
+                font-size: 36px;
+            }
+
+            .faq-question h3 {
+                font-size: 16px;
+            }
+
+            .cta-section {
+                padding: 60px 0;
+            }
+
+            .cta-section h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <p>We're transforming growth strategies.</p>
+        <a href="/blog">Learn more →</a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="/" class="nav-logo">
+                    <img src="/img/Logo_M5M Light Web.png" alt="Mach Five Marketing">
+                </a>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Services
+                            <span class="nav-arrow">▼</span>
+                        </a>
+                        <div class="nav-dropdown">
+                            <div class="dropdown-grid">
+                                <div class="dropdown-column">
+                                    <h4>I Need...</h4>
+                                    <div class="dropdown-links">
+                                        <a href="/services/strategy.html" class="dropdown-link">Strategy</a>
+                                        <a href="/services/market-traction.html" class="dropdown-link">Market Traction</a>
+                                        <a href="/services/tools-that-scale.html" class="dropdown-link">Tools That Scale</a>
+                                        <a href="/services/smarter-stack.html" class="dropdown-link">Smarter Stack</a>
+                                        <a href="/services/clear-way-forward.html" class="dropdown-link">Clear Way Forward</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Technology
+                            <span class="nav-arrow">▼</span>
+                        </a>
+                        <div class="nav-dropdown">
+                            <div class="dropdown-grid">
+                                <div class="dropdown-column">
+                                    <h4>Platform</h4>
+                                    <div class="dropdown-links">
+                                        <a href="/mach-five-portal/" class="dropdown-link">Mach Five Portal</a>
+                                        <a href="/lead-magnet" class="dropdown-link">Lead Magnet</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Industries Served
+                            <span class="nav-arrow">▼</span>
+                        </a>
+                        <div class="nav-dropdown">
+                            <div class="dropdown-grid">
+                                <div class="dropdown-column">
+                                    <h4>Industries</h4>
+                                    <div class="dropdown-links">
+                                        <a href="#" class="dropdown-link">Healthcare</a>
+                                        <a href="#" class="dropdown-link">Home Services</a>
+                                        <a href="#" class="dropdown-link">SaaS</a>
+                                        <a href="#" class="dropdown-link">Enterprise</a>
+                                        <a href="#" class="dropdown-link">Startups</a>
+                                        <a href="#" class="dropdown-link">Digital Agencies</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Company
+                            <span class="nav-arrow">▼</span>
+                        </a>
+                        <div class="nav-dropdown">
+                            <div class="dropdown-grid">
+                                <div class="dropdown-column">
+                                    <h4>About</h4>
+                                    <div class="dropdown-links">
+                                        <a href="#" class="dropdown-link">Our Story</a>
+                                        <a href="#" class="dropdown-link">Careers</a>
+                                        <a href="#" class="dropdown-link">Press</a>
+                                    </div>
+                                </div>
+                                <div class="dropdown-column">
+                                    <h4>Resources</h4>
+                                    <div class="dropdown-links">
+                                        <a href="#" class="dropdown-link">Knowledge Base</a>
+                                        <a href="#" class="dropdown-link">ROI Calculator</a>
+                                        <a href="#" class="dropdown-link">Marketing Guides</a>
+                                        <a href="#" class="dropdown-link">Contact Us</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <a href="/portal" class="nav-signin">Sign In</a>
+                <a href="#contact" class="nav-cta">Get Started</a>
+                <button class="mobile-menu-button" id="mobileMenuButton">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link" onclick="toggleMobileDropdown(event, 'services')">
+                    Services
+                    <span class="mobile-nav-arrow">▼</span>
+                </a>
+                                <div class="mobile-dropdown" id="services-dropdown">
+                    <a href="/services/strategy.html" class="mobile-dropdown-link">Strategy</a>
+                    <a href="/services/market-traction.html" class="mobile-dropdown-link">Market Traction</a>
+                    <a href="/services/tools-that-scale.html" class="mobile-dropdown-link">Tools That Scale</a>
+                    <a href="/services/smarter-stack.html" class="mobile-dropdown-link">Smarter Stack</a>
+                    <a href="/services/clear-way-forward.html" class="mobile-dropdown-link">Clear Way Forward</a>
+                </div>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link" onclick="toggleMobileDropdown(event, 'technology')">
+                    Technology
+                    <span class="mobile-nav-arrow">▼</span>
+                </a>
+                <div class="mobile-dropdown" id="technology-dropdown">
+                    <a href="/mach-five-portal/" class="mobile-dropdown-link">Mach Five Portal</a>
+                    <a href="/lead-magnet" class="mobile-dropdown-link">Lead Magnet</a>
+                </div>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link" onclick="toggleMobileDropdown(event, 'industries')">
+                    Industries Served
+                    <span class="mobile-nav-arrow">▼</span>
+                </a>
+                <div class="mobile-dropdown" id="industries-dropdown">
+                    <a href="#" class="mobile-dropdown-link">Healthcare</a>
+                    <a href="#" class="mobile-dropdown-link">Home Services</a>
+                    <a href="#" class="mobile-dropdown-link">SaaS</a>
+                    <a href="#" class="mobile-dropdown-link">Enterprise</a>
+                    <a href="#" class="mobile-dropdown-link">Startups</a>
+                    <a href="#" class="mobile-dropdown-link">Digital Agencies</a>
+                </div>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">Blog</a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link" onclick="toggleMobileDropdown(event, 'company')">
+                    Company
+                    <span class="mobile-nav-arrow">▼</span>
+                </a>
+                <div class="mobile-dropdown" id="company-dropdown">
+                    <a href="#" class="mobile-dropdown-link">Our Story</a>
+                    <a href="#" class="mobile-dropdown-link">Careers</a>
+                    <a href="#" class="mobile-dropdown-link">Press</a>
+                    <a href="#" class="mobile-dropdown-link">Knowledge Base</a>
+                    <a href="#" class="mobile-dropdown-link">Contact Us</a>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu-footer">
+            <a href="/portal" class="mobile-signin">Sign In</a>
+            <a href="#contact" class="mobile-cta">Get Started</a>
+        </div>
+    </div>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav">
+        <div class="breadcrumb-container">
+            <ol class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="/" class="breadcrumb-link">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="#" class="breadcrumb-link">Services</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <span class="breadcrumb-current">Lead Magnet™</span>
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Mini Hero Section -->
+    <section class="mini-hero">
+        <div class="mini-hero-container">
+            <div class="mini-hero-content">
+                <h1>Lead Magnet™</h1>
+                <p>Transform your lead capture process with automated qualification, real-time notifications, and seamless CRM integration.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Magnet Features Section -->
+    <section class="lead-magnet-section">
+        <div class="lead-magnet-container">
+            <div class="lead-magnet-content">
+                <div class="features-left">
+                    <div class="tech-features-list">
+                        <div class="tech-feature-item active" data-image="/img/lead magnet.png" data-alt="Lead Magnet Interface">
+                            <div class="tech-feature-content">
+                                <h4>Multi-channel Capture</h4>
+                                <p>Capture leads from website forms, social media, ads, and any other touchpoint automatically</p>
+                            </div>
+                        </div>
+                        <div class="tech-feature-item" data-image="/img/lead magnet.png" data-alt="Auto-qualification Interface">
+                            <div class="tech-feature-content">
+                                <h4>Auto-qualification</h4>
+                                <p>Intelligent scoring and qualification so you focus on prospects ready to buy</p>
+                            </div>
+                        </div>
+                        <div class="tech-feature-item" data-image="/img/lead magnet.png" data-alt="Real-time Notifications Interface">
+                            <div class="tech-feature-content">
+                                <h4>Real-time Notifications</h4>
+                                <p>Instant alerts when high-value leads come in, never miss another opportunity</p>
+                            </div>
+                        </div>
+                        <div class="tech-feature-item" data-image="/img/lead magnet.png" data-alt="CRM Integration Interface">
+                            <div class="tech-feature-content">
+                                <h4>CRM Integration</h4>
+                                <p>Seamless sync with your existing CRM and marketing tools for complete visibility</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="features-right">
+                    <div class="platform-screenshot">
+                        <img src="/img/lead magnet.png" alt="Lead Magnet Interface" class="portal-screenshot-img" id="leadmagnet-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section with Hero Background -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-inner">
+            <div class="hero-content-box">
+                <div class="comparison-header">
+                    <h2>Why Choose Lead Magnet™?</h2>
+                    <p>See how our intelligent lead generation platform outperforms traditional methods.</p>
+                </div>
+                <div class="comparison-grid">
+                    <div class="comparison-card traditional">
+                        <div class="comparison-card-header">
+                            <h3>Traditional Lead Capture</h3>
+                            <div class="comparison-icon">📋</div>
+                        </div>
+                        <ul class="comparison-list">
+                            <li>Manual form processing</li>
+                            <li>No lead qualification</li>
+                            <li>Delayed notifications</li>
+                            <li>Data entry errors</li>
+                            <li>Limited integrations</li>
+                            <li>No scoring system</li>
+                            <li>Time-consuming follow-up</li>
+                            <li>Lost opportunities</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-card lead-magnet">
+                        <div class="comparison-card-header">
+                            <h3>Lead Magnet™ Platform</h3>
+                            <div class="comparison-icon">🚀</div>
+                        </div>
+                        <ul class="comparison-list">
+                            <li>Automated capture across all channels</li>
+                            <li>AI-powered qualification & scoring</li>
+                            <li>Real-time instant notifications</li>
+                            <li>Zero data entry errors</li>
+                            <li>Seamless CRM integrations</li>
+                            <li>Intelligent lead scoring</li>
+                            <li>Automated follow-up sequences</li>
+                            <li>Never miss high-value leads</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <div class="faq-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about Lead Magnet™</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>How quickly can I get started with Lead Magnet™?</h3>
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can be up and running in under 30 minutes. Our simple setup process includes guided integration with your existing CRM, website forms, and marketing tools. No technical expertise required.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Which CRM systems does Lead Magnet™ integrate with?</h3>
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We integrate with all major CRM platforms including Salesforce, HubSpot, Pipedrive, Zoho, and more. We also support custom API integrations for enterprise clients.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>How does the AI qualification work?</h3>
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our AI analyzes lead behavior patterns, engagement levels, company data, and interaction history to assign a qualification score. This helps you focus on prospects most likely to convert.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>What kind of support do you provide?</h3>
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer 24/7 technical support, dedicated account management for enterprise clients, comprehensive documentation, and personalized onboarding to ensure your success.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Is my data secure with Lead Magnet™?</h3>
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. We use enterprise-grade security with SOC 2 compliance, end-to-end encryption, and regular security audits. Your data is protected and never shared with third parties.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Can I try Lead Magnet™ before purchasing?</h3>
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We offer a 14-day free trial with full access to all features. No credit card required. You can see the results for yourself before making any commitment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="cta-container">
+            <h2>Ready to capture more leads?</h2>
+            <p>Join hundreds of companies using Lead Magnet™ to automate their lead generation and never miss another opportunity.</p>
+            <a href="#contact" class="btn btn-primary">
+                Start Free Trial
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="/img/Logo_M5M Light Web.png" alt="Mach Five Marketing">
+                    <p>Your fastest path to sustainable growth through data-driven marketing and proven technology.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Analytics</a></li>
+                        <li><a href="#">Automation</a></li>
+                        <li><a href="#">Integrations</a></li>
+                        <li><a href="#">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">ROI Calculator</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Mach Five Marketing. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const body = document.body;
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenuButton.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Mobile dropdown functionality
+        function toggleMobileDropdown(event, dropdownId) {
+            event.preventDefault();
+            const navItem = event.target.closest('.mobile-nav-item');
+            const wasExpanded = navItem.classList.contains('expanded');
+            
+            // Close all dropdowns
+            document.querySelectorAll('.mobile-nav-item').forEach(item => {
+                item.classList.remove('expanded');
+            });
+            
+            // Toggle current dropdown
+            if (!wasExpanded) {
+                navItem.classList.add('expanded');
+            }
+        }
+
+        // Close mobile menu when clicking a link without dropdown
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            if (!link.querySelector('.mobile-nav-arrow')) {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('active');
+                    mobileMenuButton.classList.remove('active');
+                    body.style.overflow = '';
+                });
+            }
+        });
+
+        // Close mobile menu on resize to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 1024) {
+                mobileMenu.classList.remove('active');
+                mobileMenuButton.classList.remove('active');
+                body.style.overflow = '';
+            }
+        });
+
+        // FAQ Toggle Function
+        function toggleFAQ(element) {
+            const faqItem = element.closest('.faq-item');
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // Lead Magnet Feature Switching
+        function initializeLeadMagnetFeatures() {
+            const leadMagnetFeatures = document.querySelectorAll('.tech-feature-item');
+            const leadMagnetImage = document.getElementById('leadmagnet-image');
+            
+            leadMagnetFeatures.forEach(feature => {
+                feature.addEventListener('click', function() {
+                    // Remove active class from all features
+                    leadMagnetFeatures.forEach(f => f.classList.remove('active'));
+                    
+                    // Add active class to clicked feature
+                    this.classList.add('active');
+                    
+                    // Update image
+                    const newImage = this.getAttribute('data-image');
+                    const newAlt = this.getAttribute('data-alt');
+                    
+                    if (leadMagnetImage && newImage) {
+                        leadMagnetImage.style.opacity = '0';
+                        setTimeout(() => {
+                            leadMagnetImage.src = newImage;
+                            leadMagnetImage.alt = newAlt;
+                            leadMagnetImage.style.opacity = '1';
+                        }, 250);
+                    }
+                });
+            });
+        }
+
+        // Initialize Lead Magnet features when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeLeadMagnetFeatures();
+        });
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html> 

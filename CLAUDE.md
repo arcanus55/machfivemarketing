@@ -719,6 +719,333 @@ gsap.to("#heroAccent1", {
 - **Brand Consistency**: Always reference existing patterns before creating new ones
 - **Mobile-First Approach**: Design for mobile constraints, enhance for desktop
 
+## Cross-Site Implementation Patterns
+
+### Always Check Other Mach Five Websites First
+Before implementing any feature or fixing any issue, ALWAYS check the other Mach Five websites for existing, working implementations:
+
+**Reference Sites:**
+- **machfivetech.com** - Technology-focused implementation patterns
+- **machfivegroup.com** - Group/enterprise implementation patterns  
+- **machvive.com** - Original site with established patterns
+
+**What to Check:**
+- **Footer implementations** - How Neodigm widgets are styled and positioned
+- **Navigation patterns** - Menu structures and responsive behavior
+- **Component styling** - Cards, buttons, forms, and interactive elements
+- **Layout approaches** - Grid systems, spacing, and responsive breakpoints
+- **Animation patterns** - How transitions and effects are implemented
+
+**Implementation Priority:**
+1. **Copy working patterns** from existing sites before creating new solutions
+2. **Avoid `!important` declarations** - They break functionality and create maintenance issues
+3. **Use specificity** instead of `!important` for CSS overrides
+4. **Test against existing sites** to ensure consistency
+
+**Common Issues to Avoid:**
+- **Neodigm widget styling** - Check how it's implemented on other sites first
+- **Footer layout** - Copy the working footer structure from existing sites
+- **Navigation behavior** - Use established patterns from other Mach Five sites
+- **Responsive design** - Follow the same breakpoints and approaches
+
+**Time-Saving Approach:**
+- **5 minutes checking other sites** vs **hours of back-and-forth debugging**
+- **Copy working code** vs **reinventing solutions**
+- **Maintain consistency** across all Mach Five properties
+
+## Navigation Step Indicator Component
+
+### Overview
+A fixed right-side navigation component that provides visual feedback and navigation for page sections. Used on both `index.html` and `index-render-style.html` to show current position and allow quick navigation between sections.
+
+### HTML Structure
+```html
+<!-- Navigation Step Indicator -->
+<div class="nav-step-indicator" id="stepIndicator">
+    <div class="nav-step-dot" data-step="hero"></div>
+    <div class="nav-step-dot" data-step="trusted"></div>
+    <div class="nav-step-dot" data-step="process"></div>
+    <div class="nav-step-dot" data-step="features"></div>
+    <div class="nav-step-dot" data-step="services"></div>
+    <div class="nav-step-dot" data-step="deploy"></div>
+    <div class="nav-step-dot" data-step="more"></div>
+</div>
+
+<!-- Scroll Hint -->
+<div class="scroll-hint" id="scrollHint">Scroll to continue</div>
+```
+
+### CSS Implementation
+```css
+/* Navigation Step Indicator */
+.nav-step-indicator {
+    position: fixed;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: all 0.3s ease;
+    /* Glassmorphism effect */
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1.5rem 1rem;
+    border-radius: 25px;
+    box-shadow: 
+        inset 2px 2px 8px rgba(255, 255, 255, 0.8),
+        inset -2px -2px 8px rgba(0, 0, 0, 0.1),
+        0 8px 25px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+.nav-step-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(52, 73, 94, 0.2);
+    border: 2px solid rgba(52, 73, 94, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    transform: scale(1);
+}
+
+.nav-step-dot:hover {
+    transform: scale(1.2);
+    background: rgba(52, 73, 94, 0.3);
+}
+
+.nav-step-dot.active {
+    background: var(--m5m-blue);
+    border-color: var(--m5m-blue);
+    transform: scale(1.3);
+    box-shadow: 0 0 10px rgba(52, 73, 94, 0.3);
+}
+
+.nav-step-dot.completed {
+    background: var(--m5m-orange);
+    border-color: var(--m5m-orange);
+}
+
+/* Scroll hint */
+.scroll-hint {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    opacity: 0.7;
+    animation: bounce 2s infinite;
+    transition: opacity 0.3s ease;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* Mobile responsive - hide on mobile */
+@media (max-width: 768px) {
+    .nav-step-indicator {
+        display: none !important;
+    }
+}
+```
+
+### JavaScript Implementation
+```javascript
+class StepIndicator {
+    constructor() {
+        this.currentStep = 0;
+        this.totalSteps = 7;
+        this.init();
+    }
+
+    init() {
+        this.stepIndicator = document.getElementById('stepIndicator');
+        this.scrollHint = document.getElementById('scrollHint');
+        this.dots = document.querySelectorAll('.nav-step-dot');
+        this.sections = document.querySelectorAll('section[data-step]');
+        
+        this.setupEventListeners();
+        this.updateStepIndicator(0);
+        this.updateScrollHint();
+    }
+
+    setupEventListeners() {
+        // Scroll detection with visibility calculation
+        this.scrollHandler = () => {
+            const scrollY = window.pageYOffset;
+            const windowHeight = window.innerHeight;
+            
+            // Footer scroll hint management
+            const footer = document.querySelector('footer');
+            if (footer) {
+                const footerTop = footer.offsetTop;
+                const scrollHintThreshold = footerTop - windowHeight + 200;
+                
+                if (scrollY > scrollHintThreshold) {
+                    this.scrollHint.style.opacity = '0';
+                    this.scrollHint.style.pointerEvents = 'none';
+                } else {
+                    this.scrollHint.style.opacity = '0.7';
+                    this.scrollHint.style.pointerEvents = 'auto';
+                }
+            }
+            
+            // Find most visible section
+            let currentVisibleIndex = 0;
+            let maxVisibility = 0;
+            
+            this.sections.forEach((section, index) => {
+                const rect = section.getBoundingClientRect();
+                const sectionTop = rect.top;
+                const sectionBottom = rect.bottom;
+                const sectionHeight = rect.height;
+                
+                // Calculate visibility percentage
+                const visibleTop = Math.max(0, Math.min(sectionHeight, windowHeight - sectionTop));
+                const visibleBottom = Math.max(0, Math.min(sectionHeight, sectionBottom));
+                const visibleHeight = Math.min(visibleTop, visibleBottom);
+                const visibility = visibleHeight / sectionHeight;
+                
+                if (visibility > maxVisibility) {
+                    maxVisibility = visibility;
+                    currentVisibleIndex = index;
+                }
+                
+                // Handle top of page
+                if (scrollY < 100 && index === 0) {
+                    currentVisibleIndex = 0;
+                }
+            });
+            
+            if (currentVisibleIndex !== this.currentStep) {
+                this.currentStep = currentVisibleIndex;
+                this.updateStepIndicator(currentVisibleIndex);
+                this.updateScrollHint();
+            }
+        };
+
+        // Keyboard navigation
+        this.keydownHandler = (e) => {
+            if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ') {
+                e.preventDefault();
+                this.nextStep();
+            } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+                e.preventDefault();
+                this.previousStep();
+            }
+        };
+
+        // Event listeners
+        window.addEventListener('scroll', this.scrollHandler);
+        
+        this.dots.forEach((dot, index) => {
+            const clickHandler = () => {
+                this.goToStep(index);
+            };
+            dot.clickHandler = clickHandler;
+            dot.addEventListener('click', clickHandler);
+        });
+
+        document.addEventListener('keydown', this.keydownHandler);
+    }
+
+    updateStepIndicator(stepNumber) {
+        this.dots.forEach((dot, index) => {
+            dot.classList.remove('active', 'completed');
+            if (index < stepNumber) {
+                dot.classList.add('completed');
+            } else if (index === stepNumber) {
+                dot.classList.add('active');
+            }
+        });
+    }
+
+    goToStep(stepNumber) {
+        const targetSection = this.sections[stepNumber];
+        if (targetSection) {
+            const offset = 100; // Account for fixed navigation
+            const targetPosition = targetSection.offsetTop - offset;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    }
+
+    nextStep() {
+        if (this.currentStep < this.totalSteps - 1) {
+            this.goToStep(this.currentStep + 1);
+        }
+    }
+
+    previousStep() {
+        if (this.currentStep > 0) {
+            this.goToStep(this.currentStep - 1);
+        }
+    }
+
+    updateScrollHint() {
+        if (this.currentStep === this.totalSteps - 1) {
+            this.scrollHint.textContent = 'Get in touch';
+        } else {
+            this.scrollHint.textContent = 'Scroll to continue';
+        }
+    }
+
+    destroy() {
+        window.removeEventListener('scroll', this.scrollHandler);
+        document.removeEventListener('keydown', this.keydownHandler);
+        
+        if (this.dots) {
+            this.dots.forEach(dot => {
+                dot.removeEventListener('click', dot.clickHandler);
+            });
+        }
+    }
+}
+
+// Initialize on DOM load
+document.addEventListener('DOMContentLoaded', function() {
+    const stepIndicator = new StepIndicator();
+});
+```
+
+### Key Features
+- **Visual States**: Inactive (gray), Active (blue), Completed (orange)
+- **Scroll Detection**: Uses `getBoundingClientRect()` for accurate visibility calculation
+- **Click Navigation**: Click any dot to jump to that section
+- **Keyboard Support**: Arrow keys, Page Up/Down, spacebar
+- **Scroll Hint**: Changes text based on current position
+- **Mobile Responsive**: Hidden on mobile devices
+- **Smooth Scrolling**: Uses `scrollTo` with smooth behavior
+
+### Implementation Notes
+- **Section Targeting**: Use `section[data-step]` selector to avoid conflicts with internal elements
+- **Visibility Calculation**: Calculates percentage of section visible in viewport
+- **Glassmorphism Effect**: Backdrop blur with inset shadows for modern appearance
+- **Performance**: Uses `requestAnimationFrame` for smooth scroll detection
+- **Accessibility**: Keyboard navigation and proper focus management
+
+### Common Issues & Solutions
+- **Conflicting Selectors**: Ensure sections use `data-step` attributes, not internal elements
+- **Mobile Display**: Always hide on mobile with `display: none !important`
+- **Z-index Management**: Use high z-index (1001) to stay above other content
+- **Scroll Offset**: Account for fixed navigation when calculating scroll positions
+
 ## Branch Strategy
 - **Main branch**: `gh-pages` (also serves as production)
 - **Deployment**: Automatic via GitHub Pages when pushing to `gh-pages`

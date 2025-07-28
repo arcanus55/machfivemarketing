@@ -1,0 +1,2025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategy - Mach Five Marketing</title>
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://neodigm.github.io/" crossorigin>
+    <link rel="dns-prefetch" href="https://neodigm.github.io/" >
+    
+    <!-- Render-style font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Neodigm Scripts -->
+    <script>
+        let neodigmOptCustom = { CONSOLE_LOG_VER:true, W4S_VOLUME: .016 }
+        let neodigmOpt_launchCompleteCustom = {
+            CONSOLE_LOG_VER: false
+        }
+    </script>
+    <link rel="stylesheet" href="https://arcanus55.github.io/neodigm55/dist/neodigm55__v4_0.css">
+    <script src="https://arcanus55.github.io/neodigm55/dist/neodigm55__v4_0.js"></script>
+    <link rel="stylesheet" href="https://arcanus55.github.io/neodigm55/dist/neodigm55_v1_0_launchComplete.css">
+    <script src="https://arcanus55.github.io/neodigm55/dist/neodigm55_v1_0_launchComplete.js"></script>
+    
+    <style>
+        :root {
+            /* Render-inspired colors */
+            --text-primary: #000000;
+            --text-secondary: #6B7280;
+            --text-tertiary: #9CA3AF;
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #FAFAFA;
+            --bg-tertiary: #F3F4F6;
+            --border-light: #E5E7EB;
+            --border-default: #D1D5DB;
+            --purple-600: #5850EC;
+            --purple-700: #4C44DB;
+            --purple-50: #F5F4FF;
+            --grid-color: #F0F0F0;
+            
+            /* MachFive Brand Colors */
+            --m5m-blue: #34495E;
+            --m5m-blue-dark: #2C3E50;
+            --m5m-orange: #DD4124;
+            --m5m-white: #FFFFFF;
+            --m5m-black: #000000;
+            
+            /* Parallax Variables */
+            --comparison-parallax-offset: 0px;
+        }
+
+        /* Neodigm widget overrides */
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] span:first-child,
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] .word-1,
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] [class*="word"]:first-child {
+            color: var(--m5m-black) !important;
+        }
+
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] span:nth-child(2),
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] .word-2,
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] [class*="word"]:nth-child(2) {
+            color: #5DADE2 !important;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Top Banner */
+        .top-banner {
+            background: var(--m5m-blue);
+            color: white;
+            padding: 12px 0;
+            text-align: center;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .top-banner p {
+            margin: 0;
+            font-weight: 400;
+        }
+
+        .top-banner a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.15s ease;
+        }
+
+        .top-banner a:hover {
+            opacity: 0.8;
+        }
+
+        /* Breadcrumb Navigation */
+        .breadcrumb-nav {
+            background: white;
+            border-bottom: 1px solid var(--border-light);
+            padding: 16px 0;
+        }
+
+        .breadcrumb-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .breadcrumb-list {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 8px;
+        }
+
+        .breadcrumb-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .breadcrumb-item:not(:last-child)::after {
+            content: '/';
+            margin-left: 8px;
+            color: var(--text-tertiary);
+            font-size: 14px;
+        }
+
+        .breadcrumb-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.15s ease;
+        }
+
+        .breadcrumb-link:hover {
+            color: var(--text-primary);
+        }
+
+        .breadcrumb-current {
+            color: var(--text-primary);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Mini Hero Section */
+        .mini-hero {
+            background: linear-gradient(135deg, rgba(52, 73, 94, 0.9) 0%, rgba(44, 62, 80, 0.9) 100%), url('/img/whiteboard.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-light);
+            position: relative;
+        }
+
+        .mini-hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .mini-hero-content {
+            max-width: 800px;
+        }
+
+        .mini-hero-content h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .mini-hero-content p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Grid Background Pattern */
+        .grid-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 1;
+            pointer-events: none;
+        }
+
+        /* Navigation */
+        .nav {
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-light);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .nav-logo img {
+            height: 32px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.15s ease;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .nav-link:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-arrow {
+            font-size: 10px;
+            transition: transform 0.15s ease;
+        }
+
+        .nav-item:hover .nav-arrow {
+            transform: rotate(180deg);
+        }
+
+        /* Dropdown */
+        .nav-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            padding: 16px;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.15s ease;
+            z-index: 1001;
+        }
+
+        .nav-item:hover .nav-dropdown {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .dropdown-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .dropdown-column h4 {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .dropdown-links {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .dropdown-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 4px 0;
+            transition: color 0.15s ease;
+        }
+
+        .dropdown-link:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .nav-signin {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.15s ease;
+        }
+
+        .nav-signin:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-cta {
+            background: var(--m5m-blue);
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.15s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--m5m-blue-dark);
+            transform: translateY(-1px);
+        }
+
+        /* Mobile Menu Button */
+        .mobile-menu-button {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 20px;
+            height: 2px;
+            background: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-button.active .hamburger span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-menu-button.active .hamburger span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-button.active .hamburger span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: white;
+            z-index: 999;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-content {
+            padding: 80px 24px 24px;
+        }
+
+        .mobile-nav-item {
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .mobile-nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .mobile-nav-arrow {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-nav-item.expanded .mobile-nav-arrow {
+            transform: rotate(180deg);
+        }
+
+        .mobile-dropdown {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .mobile-nav-item.expanded .mobile-dropdown {
+            max-height: 300px;
+        }
+
+        .mobile-dropdown-link {
+            display: block;
+            padding: 12px 0;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .mobile-dropdown-link:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-menu-footer {
+            padding: 24px;
+            border-top: 1px solid var(--border-light);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .mobile-signin {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            text-align: center;
+            padding: 12px;
+        }
+
+        .mobile-cta {
+            background: var(--m5m-blue);
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            text-align: center;
+            padding: 12px;
+            border-radius: 6px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.3;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            text-align: left;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            line-height: 1.6;
+            max-width: 480px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: flex-start;
+            margin-bottom: 48px;
+        }
+
+        .btn {
+            padding: 14px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.15s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            line-height: 1.25;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--m5m-blue);
+            color: #FFFFFF;
+            border: 1px solid var(--m5m-blue);
+        }
+
+        .btn-primary:hover {
+            background: var(--m5m-blue-dark);
+            border-color: var(--m5m-blue-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn-primary svg {
+            transition: transform 0.15s ease;
+        }
+
+        .btn-primary:hover svg {
+            transform: translateX(2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #000000;
+            border: 1px solid #E5E7EB;
+        }
+
+        .btn-secondary:hover {
+            background: #F9FAFB;
+            border-color: #D1D5DB;
+        }
+
+        /* Hero Visual */
+        .hero-visual {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-visual::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.5;
+        }
+
+        .hero-visual-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .hero-logo {
+            height: 200px;
+            width: auto;
+            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .content-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Grid Layout */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .content-grid:nth-child(even) {
+            direction: rtl;
+        }
+
+        .content-grid:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .content-text h3 {
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .content-text p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        /* Proficiencies Panel */
+        .proficiencies-panel {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 56px 48px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            min-height: 320px;
+            overflow: visible;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .proficiencies-panel:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Heavy Wear Orange Sticky Tab */
+        .proficiencies-header {
+            position: absolute;
+            top: -5px;
+            left: -20px;
+            transform: rotate(-3deg);
+        }
+
+        /* Paper texture overlay */
+        .texture-noise {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.15;
+            background-image: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255,255,255,0.02) 2px,
+                    rgba(255,255,255,0.02) 3px
+                );
+            mix-blend-mode: overlay;
+            pointer-events: none;
+        }
+
+        /* Different rotation angles for variety */
+        .content-grid:nth-child(1) .proficiencies-header {
+            transform: rotate(-3deg);
+        }
+
+        .content-grid:nth-child(2) .proficiencies-header {
+            transform: rotate(2deg);
+            top: 0px;
+        }
+
+        /* Proficiencies List */
+        .proficiencies-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            padding-top: 60px;
+        }
+
+        .proficiencies-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 16px;
+            font-size: 16px;
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
+        }
+
+        .proficiencies-list li:hover {
+            color: var(--m5m-orange);
+            transform: translateX(4px);
+        }
+
+        .proficiencies-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #666;
+            font-weight: 600;
+            opacity: 1;
+            transition: all 0.2s ease;
+        }
+
+        .proficiencies-list li:hover::before {
+            color: var(--m5m-orange);
+            transform: translateX(0);
+        }
+
+        /* Sticky Tab Scuffed - Blue Ripped Tape Effect */
+        .sticky-tab-scuffed {
+            padding: 8px 25px 8px 40px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            font-family: 'Roboto Condensed', sans-serif;
+            color: rgba(255, 255, 255, 0.9);
+            background: 
+                /* Scratches */
+                linear-gradient(95deg, transparent 15%, rgba(255,255,255,0.12) 16%, transparent 18%),
+                linear-gradient(-25deg, transparent 35%, rgba(255,255,255,0.1) 36%, transparent 37%),
+                /* Scuff marks */
+                radial-gradient(ellipse at 20% 20%, rgba(255,255,255,0.15) 0%, transparent 25%),
+                radial-gradient(ellipse at 60% 70%, rgba(255,255,255,0.12) 0%, transparent 20%),
+                radial-gradient(ellipse at 80% 30%, rgba(255,255,255,0.08) 0%, transparent 15%),
+                radial-gradient(ellipse at 40% 50%, rgba(255,255,255,0.06) 0%, transparent 18%),
+                /* Base blue color */
+                radial-gradient(ellipse at center, #23394e 0%, #1a2b3a 100%);
+            box-shadow: 
+                0 2px 5px rgba(0, 0, 0, 0.3),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .sticky-tab-scuffed::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 30px;
+            background: 
+                linear-gradient(90deg, transparent, rgba(255,255,255,0.2) 30%, transparent),
+                linear-gradient(-45deg, transparent 45%, rgba(0,0,0,0.1) 50%, transparent 55%);
+        }
+
+        .sticky-tab-scuffed::after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 15px 0 15px 8px;
+            border-color: transparent transparent transparent #1a2b3a;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 25px 0;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                margin-bottom: 20px;
+            }
+
+            .content-grid:nth-child(even) {
+                direction: ltr;
+            }
+
+            .proficiencies-panel {
+                padding: 40px 32px;
+                min-height: 250px;
+            }
+
+            .proficiencies-list {
+                padding-top: 60px;
+            }
+
+            .proficiencies-list li {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+        }
+
+        .features-left {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tech-features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .tech-feature-item {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-feature-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .tech-feature-item.active {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+            background: rgba(52, 73, 94, 0.05);
+            border-color: rgba(52, 73, 94, 0.2);
+        }
+
+        .tech-feature-item.active::after {
+            content: '';
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 8px;
+            height: 8px;
+            background: var(--m5m-orange);
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(221, 65, 36, 0.4);
+        }
+
+        .tech-feature-content h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .tech-feature-content p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .features-right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .platform-screenshot {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(135deg, var(--m5m-orange) 0%, #E74C3C 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .platform-screenshot::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        .portal-screenshot-img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+            transition: all 0.5s ease;
+        }
+
+        /* Hero Section from Home Page */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero {
+            background-image: url('/img/mach five marketing hero.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(
+                ellipse at center,
+                rgba(10, 10, 10, 0.1) 0%,
+                rgba(10, 10, 10, 0.4) 100%
+            );
+            z-index: 2;
+        }
+
+        .hero-inner {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: left;
+            z-index: 4;
+            position: relative;
+        }
+
+        .hero-content-box {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 0 auto;
+            max-width: 1000px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+            background-size: 50px 50px, 50px 50px;
+            mask-image: linear-gradient(90deg, 
+                transparent 0%, 
+                black 15%, 
+                black 85%, 
+                transparent 100%);
+            -webkit-mask-image: linear-gradient(90deg, 
+                transparent 0%, 
+                black 15%, 
+                black 85%, 
+                transparent 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero-content-box > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            font-weight: 200;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            color: var(--m5m-white);
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 span {
+            display: block;
+        }
+
+        .hero h1 strong {
+            font-weight: 400;
+            color: var(--m5m-blue);
+        }
+
+        #heroVerb {
+            color: #5DADE2 !important;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Comparison Content Styling for Hero Section */
+        .comparison-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .comparison-header h2 {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .comparison-header p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .comparison-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .comparison-card.lead-magnet {
+            border: 2px solid var(--m5m-orange);
+            position: relative;
+        }
+
+        .comparison-card.lead-magnet::before {
+            content: 'RECOMMENDED';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--m5m-orange);
+            color: white;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .comparison-card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .comparison-card-header h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .comparison-icon {
+            font-size: 32px;
+        }
+
+        .comparison-list {
+            list-style: none;
+        }
+
+        .comparison-list li {
+            padding: 8px 0;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .comparison-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--text-tertiary);
+        }
+
+        .comparison-card.lead-magnet .comparison-list li::before {
+            color: var(--m5m-orange);
+        }
+
+        .comparison-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .comparison-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .comparison-header h2 {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .comparison-header p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .comparison-card {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-light);
+        }
+
+        .comparison-card.lead-magnet {
+            border: 2px solid var(--m5m-orange);
+            position: relative;
+        }
+
+        .comparison-card.lead-magnet::before {
+            content: 'RECOMMENDED';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--m5m-orange);
+            color: white;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .comparison-card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .comparison-card-header h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .comparison-icon {
+            font-size: 32px;
+        }
+
+        .comparison-list {
+            list-style: none;
+        }
+
+        .comparison-list li {
+            padding: 8px 0;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .comparison-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--text-tertiary);
+        }
+
+        .comparison-card.lead-magnet .comparison-list li::before {
+            color: var(--m5m-orange);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .faq-header h2 {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .faq-header p {
+            font-size: 18px;
+            color: var(--text-secondary);
+        }
+
+        .faq-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 24px;
+            background: var(--bg-secondary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background-color 0.15s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--bg-tertiary);
+        }
+
+        .faq-question h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .faq-arrow {
+            font-size: 12px;
+            color: var(--text-secondary);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-arrow {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-answer p {
+            padding: 0 24px 24px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--bg-secondary);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 80px 24px 40px;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-light);
+        }
+
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr repeat(4, 1fr);
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand {
+            flex: 1 1 400px;
+        }
+
+        .footer-brand img {
+            height: 32px;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-size: 15px;
+        }
+
+        .footer-contact {
+            margin-top: 16px;
+        }
+
+        .footer-contact a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+            margin-bottom: 0.5rem;
+            font-size: 15px;
+        }
+
+        .footer-contact a:hover {
+            color: var(--m5m-blue);
+            transform: translateX(2px);
+        }
+
+        .footer-column h4 {
+            color: var(--m5m-blue);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            user-select: none;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.2s;
+            font-size: 15px;
+        }
+
+        .footer-links a:hover {
+            color: var(--m5m-blue);
+            transform: translateX(2px);
+        }
+
+        .footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid var(--border-light);
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-tertiary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu-button {
+                display: block;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .lead-magnet-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 16px;
+            }
+
+            .hero {
+                padding: 80px 0 60px;
+            }
+
+            .hero-container {
+                padding: 0 16px;
+            }
+
+            .mini-hero-content h1 {
+                font-size: 36px;
+            }
+
+            .mini-hero-content p {
+                font-size: 18px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .lead-magnet-section {
+                padding: 60px 0;
+            }
+
+            .lead-magnet-container {
+                padding: 0 16px;
+            }
+
+            .lead-magnet-header h2 {
+                font-size: 36px;
+            }
+
+            .platform-screenshot {
+                height: 300px;
+            }
+
+            .lead-magnet-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .tech-feature-content h4 {
+                font-size: 16px;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .comparison-header h2 {
+                font-size: 36px;
+            }
+
+            .faq-header h2 {
+                font-size: 36px;
+            }
+
+            .faq-question h3 {
+                font-size: 16px;
+            }
+
+            .cta-section {
+                padding: 60px 0;
+            }
+
+            .cta-section h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <p>We're transforming growth strategies.</p>
+        <a href="/blog">Learn more →</a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="/" class="nav-logo">
+                    <img src="/img/Logo_M5M Light Web.png" alt="Mach Five Marketing">
+                </a>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Services
+                            <span class="nav-arrow">▼</span>
+                        </a>
+                        <div class="nav-dropdown">
+                            <div class="dropdown-grid">
+                                <div class="dropdown-column">
+                                    <h4>I Need...</h4>
+                                    <div class="dropdown-links">
+                                        <a href="/services/strategy.html" class="dropdown-link">Strategy</a>
+                                        <a href="/services/market-traction.html" class="dropdown-link">Market Traction</a>
+                                        <a href="/services/tools-that-scale.html" class="dropdown-link">Tools That Scale</a>
+                                        <a href="/services/smarter-stack.html" class="dropdown-link">Smarter Stack</a>
+                                        <a href="/services/clear-way-forward.html" class="dropdown-link">Clear Way Forward</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Technology
+                            <span class="nav-arrow">▼</span>
+                        </a>
+                        <div class="nav-dropdown">
+                            <div class="dropdown-grid">
+                                <div class="dropdown-column">
+                                    <h4>Platform</h4>
+                                    <div class="dropdown-links">
+                                        <a href="/mach-five-portal/" class="dropdown-link">Mach Five Portal</a>
+                                        <a href="/lead-magnet" class="dropdown-link">Lead Magnet</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Industries Served
+                            <span class="nav-arrow">▼</span>
+                        </a>
+                        <div class="nav-dropdown">
+                            <div class="dropdown-grid">
+                                <div class="dropdown-column">
+                                    <h4>Industries</h4>
+                                    <div class="dropdown-links">
+                                        <a href="#" class="dropdown-link">Healthcare</a>
+                                        <a href="#" class="dropdown-link">Home Services</a>
+                                        <a href="#" class="dropdown-link">SaaS</a>
+                                        <a href="#" class="dropdown-link">Enterprise</a>
+                                        <a href="#" class="dropdown-link">Startups</a>
+                                        <a href="#" class="dropdown-link">Digital Agencies</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Company
+                            <span class="nav-arrow">▼</span>
+                        </a>
+                        <div class="nav-dropdown">
+                            <div class="dropdown-grid">
+                                <div class="dropdown-column">
+                                    <h4>About</h4>
+                                    <div class="dropdown-links">
+                                        <a href="#" class="dropdown-link">Our Story</a>
+                                        <a href="#" class="dropdown-link">Careers</a>
+                                        <a href="#" class="dropdown-link">Press</a>
+                                    </div>
+                                </div>
+                                <div class="dropdown-column">
+                                    <h4>Resources</h4>
+                                    <div class="dropdown-links">
+                                        <a href="#" class="dropdown-link">Knowledge Base</a>
+                                        <a href="#" class="dropdown-link">ROI Calculator</a>
+                                        <a href="#" class="dropdown-link">Marketing Guides</a>
+                                        <a href="#" class="dropdown-link">Contact Us</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <a href="/portal" class="nav-signin">Sign In</a>
+                <a href="#contact" class="nav-cta">Get Started</a>
+                <button class="mobile-menu-button" id="mobileMenuButton">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link" onclick="toggleMobileDropdown(event, 'services')">
+                    Services
+                    <span class="mobile-nav-arrow">▼</span>
+                </a>
+                                <div class="mobile-dropdown" id="services-dropdown">
+                    <a href="/services/strategy.html" class="mobile-dropdown-link">Strategy</a>
+                    <a href="/services/market-traction.html" class="mobile-dropdown-link">Market Traction</a>
+                    <a href="/services/tools-that-scale.html" class="mobile-dropdown-link">Tools That Scale</a>
+                    <a href="/services/smarter-stack.html" class="mobile-dropdown-link">Smarter Stack</a>
+                    <a href="/services/clear-way-forward.html" class="mobile-dropdown-link">Clear Way Forward</a>
+                </div>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link" onclick="toggleMobileDropdown(event, 'technology')">
+                    Technology
+                    <span class="mobile-nav-arrow">▼</span>
+                </a>
+                <div class="mobile-dropdown" id="technology-dropdown">
+                    <a href="/mach-five-portal/" class="mobile-dropdown-link">Mach Five Portal</a>
+                    <a href="/lead-magnet" class="mobile-dropdown-link">Lead Magnet</a>
+                </div>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link" onclick="toggleMobileDropdown(event, 'industries')">
+                    Industries Served
+                    <span class="mobile-nav-arrow">▼</span>
+                </a>
+                <div class="mobile-dropdown" id="industries-dropdown">
+                    <a href="#" class="mobile-dropdown-link">Healthcare</a>
+                    <a href="#" class="mobile-dropdown-link">Home Services</a>
+                    <a href="#" class="mobile-dropdown-link">SaaS</a>
+                    <a href="#" class="mobile-dropdown-link">Enterprise</a>
+                    <a href="#" class="mobile-dropdown-link">Startups</a>
+                    <a href="#" class="mobile-dropdown-link">Digital Agencies</a>
+                </div>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">Blog</a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link" onclick="toggleMobileDropdown(event, 'company')">
+                    Company
+                    <span class="mobile-nav-arrow">▼</span>
+                </a>
+                <div class="mobile-dropdown" id="company-dropdown">
+                    <a href="#" class="mobile-dropdown-link">Our Story</a>
+                    <a href="#" class="mobile-dropdown-link">Careers</a>
+                    <a href="#" class="mobile-dropdown-link">Press</a>
+                    <a href="#" class="mobile-dropdown-link">Knowledge Base</a>
+                    <a href="#" class="mobile-dropdown-link">Contact Us</a>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu-footer">
+            <a href="/portal" class="mobile-signin">Sign In</a>
+            <a href="#contact" class="mobile-cta">Get Started</a>
+        </div>
+    </div>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav">
+        <div class="breadcrumb-container">
+            <ol class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="/" class="breadcrumb-link">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="/" class="breadcrumb-link">Services</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <span class="breadcrumb-current">Strategy</span>
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Mini Hero Section -->
+    <section class="mini-hero">
+        <div class="mini-hero-container">
+            <div class="mini-hero-content">
+                <h1>Strategy</h1>
+                <p>We analyze your market position, competitive landscape, and growth opportunities to create a data-driven strategy that aligns with your business objectives.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategy Services Section -->
+    <section class="content-section">
+        <div class="content-container">
+            <div class="content-grid fade-in">
+                <div class="content-text">
+                    <h3>Strategic Foundation</h3>
+                    <p>
+                        We analyze your market position, competitive landscape, and growth opportunities to create a data-driven strategy that aligns with your business objectives.
+                    </p>
+                    <p>
+                        Our comprehensive approach combines market intelligence, customer insights, and performance optimization to build a strategic foundation that drives sustainable growth.
+                    </p>
+                </div>
+                <div class="proficiencies-panel fade-in">
+                    <div class="proficiencies-header">
+                        <div class="sticky-tab-scuffed">
+                            <div class="texture-noise"></div>
+                            Our Approach
+                        </div>
+                    </div>
+                    <ul class="proficiencies-list">
+                        <li>Market Analysis & Competitive Intelligence</li>
+                        <li>Customer Journey Mapping & Optimization</li>
+                        <li>Channel Strategy & Budget Allocation</li>
+                        <li>Performance Benchmarking & KPI Framework</li>
+                        <li>Data-Driven Decision Making</li>
+                        <li>Continuous Optimization & Testing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content-grid fade-in">
+                <div class="proficiencies-panel">
+                    <div class="proficiencies-header">
+                        <div class="sticky-tab-scuffed">
+                            <div class="texture-noise"></div>
+                            Deliverables
+                        </div>
+                    </div>
+                    <ul class="proficiencies-list">
+                        <li>Strategic Marketing Plan</li>
+                        <li>Customer Persona Development</li>
+                        <li>Channel Mix Recommendations</li>
+                        <li>Budget Allocation Strategy</li>
+                        <li>KPI & Measurement Framework</li>
+                        <li>Implementation Roadmap</li>
+                    </ul>
+                </div>
+                <div class="content-text">
+                    <h3>Data-Driven Decisions</h3>
+                    <p>
+                        From stakeholder interviews to comprehensive market research and performance analysis, we combine data and insights to shape a strategy that works in the real world.
+                    </p>
+                    <p>
+                        Whether you're scaling fast or rethinking your marketing approach, we audit what exists, uncover opportunities, and help prioritize your next move. With clarity comes confidence.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <neodigm-widget style="width: 40%;" data-n55-widget-config="{conf:'', ampm:'',mobile:''}" data-n55-widget-id="effect_two_word_rotate"></neodigm-widget>
+                    <p>Performance marketing and technology solutions for ambitious companies.</p>
+                    <p>Headquartered in Chicago. Supporting clients nationwide.</p>
+                    
+                </div>
+                <div class="footer-column">
+                    <h4>I Need...</h4>
+                    <ul class="footer-links">
+                        <li><a href="/services/strategy.html">Strategy</a></li>
+                        <li><a href="/services/market-traction.html">Market Traction</a></li>
+                        <li><a href="/services/tools-that-scale.html">Tools That Scale</a></li>
+                        <li><a href="/services/smarter-stack.html">Smarter Stack</a></li>
+                        <li><a href="/services/clear-way-forward.html">Clear Way Forward</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Technology</h4>
+                    <ul class="footer-links">
+                        <li><a href="/mach-five-portal/">Mach Five Portal</a></li>
+                        <li><a href="/lead-magnet.html">Lead Magnet</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Knowledge Base</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Mach Five</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://machvive.com">Mach Vive</a></li>
+                        <li><a href="https://machfivetech.com">Mach Five Tech</a></li>
+                        <li><a href="https://machfivegroup.com">Mach Five Group</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Mach Five Marketing. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const body = document.body;
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenuButton.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Mobile dropdown functionality
+        function toggleMobileDropdown(event, dropdownId) {
+            event.preventDefault();
+            const navItem = event.target.closest('.mobile-nav-item');
+            const wasExpanded = navItem.classList.contains('expanded');
+            
+            // Close all dropdowns
+            document.querySelectorAll('.mobile-nav-item').forEach(item => {
+                item.classList.remove('expanded');
+            });
+            
+            // Toggle current dropdown
+            if (!wasExpanded) {
+                navItem.classList.add('expanded');
+            }
+        }
+
+        // Close mobile menu when clicking a link without dropdown
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            if (!link.querySelector('.mobile-nav-arrow')) {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('active');
+                    mobileMenuButton.classList.remove('active');
+                    body.style.overflow = '';
+                });
+            }
+        });
+
+        // Close mobile menu on resize to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 1024) {
+                mobileMenu.classList.remove('active');
+                mobileMenuButton.classList.remove('active');
+                body.style.overflow = '';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const intersectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    intersectionObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            intersectionObserver.observe(el);
+        });
+
+    </script>
+</body>
+</html> 

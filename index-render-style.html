@@ -1,0 +1,2676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mach Five Marketing - Your fastest path to growth</title>
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://neodigm.github.io/" crossorigin>
+    <link rel="dns-prefetch" href="https://neodigm.github.io/" >
+    
+    <!-- Render-style font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Neodigm Scripts -->
+    <script>
+        let neodigmOptCustom = { CONSOLE_LOG_VER:true, W4S_VOLUME: .016 }
+        let neodigmOpt_launchCompleteCustom = {
+            CONSOLE_LOG_VER: false
+        }
+    </script>
+    <link rel="stylesheet" href="https://arcanus55.github.io/neodigm55/dist/neodigm55__v4_0.css">
+    <script src="https://arcanus55.github.io/neodigm55/dist/neodigm55__v4_0.js"></script>
+    <link rel="stylesheet" href="https://arcanus55.github.io/neodigm55/dist/neodigm55_v1_0_launchComplete.css">
+    <script src="https://arcanus55.github.io/neodigm55/dist/neodigm55_v1_0_launchComplete.js"></script>
+    
+    <style>
+        :root {
+            /* Render-inspired colors */
+            --text-primary: #000000;
+            --text-secondary: #6B7280;
+            --text-tertiary: #9CA3AF;
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #FAFAFA;
+            --bg-tertiary: #F3F4F6;
+            --border-light: #E5E7EB;
+            --border-default: #D1D5DB;
+            --purple-600: #5850EC;
+            --purple-700: #4C44DB;
+            --purple-50: #F5F4FF;
+            --grid-color: #F0F0F0;
+            
+            /* MachFive Brand Colors */
+            --m5m-blue: #34495E;
+            --m5m-blue-dark: #2C3E50;
+            --m5m-orange: #DD4124;
+            --m5m-black: #000000;
+        }
+
+        /* Neodigm widget overrides */
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] span:first-child,
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] .word-1,
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] [class*="word"]:first-child {
+            color: var(--m5m-black) !important;
+        }
+
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] span:nth-child(2),
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] .word-2,
+        neodigm-widget[data-n55-widget-id="effect_two_word_rotate"] [class*="word"]:nth-child(2) {
+            color: #5DADE2 !important;
+        }
+
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Top Banner */
+        .top-banner {
+            background: var(--m5m-blue);
+            color: white;
+            padding: 12px 0;
+            text-align: center;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .top-banner p {
+            margin: 0;
+            font-weight: 400;
+        }
+
+        .top-banner a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.15s ease;
+        }
+
+        .top-banner a:hover {
+            opacity: 0.8;
+        }
+
+        /* Grid Background Pattern */
+        .grid-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 1;
+            pointer-events: none;
+        }
+
+        /* Navigation */
+        .nav {
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-light);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            align-items: center;
+            height: 66px;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+            flex: 1;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .nav-logo img {
+            height: 48px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 8px 0;
+        }
+
+        .nav-link:hover {
+            color: var(--text-secondary);
+        }
+
+        .nav-link-arrow {
+            font-size: 10px;
+            transition: transform 0.2s;
+        }
+
+        .nav-item:hover .nav-link-arrow {
+            transform: rotate(180deg);
+        }
+
+        /* Dropdown Menu */
+        .nav-dropdown {
+            position: absolute;
+            top: 100%;
+            left: -20px;
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            padding: 24px;
+            min-width: 440px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.2s;
+            margin-top: 16px;
+        }
+
+        .nav-item:hover .nav-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .dropdown-column h4 {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-tertiary);
+            margin-bottom: 12px;
+        }
+
+        .dropdown-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .dropdown-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 14px;
+            padding: 6px 0;
+            transition: color 0.2s;
+            display: block;
+        }
+
+        .dropdown-link:hover {
+            color: var(--purple-600);
+        }
+
+        /* Right side navigation */
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-signin {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-signin:hover {
+            color: var(--text-secondary);
+        }
+
+        .nav-cta {
+            background: var(--m5m-blue);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.15s ease;
+            white-space: nowrap;
+            border: 1px solid var(--m5m-blue);
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .nav-cta:hover {
+            background: var(--m5m-blue-dark);
+            border-color: var(--m5m-blue-dark);
+            transform: translateY(-1px);
+        }
+
+        /* Mobile Navigation */
+        .mobile-menu-button {
+            display: none;
+            background: none;
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+            position: relative;
+            width: 40px;
+            height: 40px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hamburger {
+            position: relative;
+            width: 20px;
+            height: 14px;
+        }
+
+        .hamburger span {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .hamburger span:nth-child(1) {
+            top: 0;
+        }
+
+        .hamburger span:nth-child(2) {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .hamburger span:nth-child(3) {
+            bottom: 0;
+        }
+
+        .mobile-menu-button.active .hamburger span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-menu-button.active .hamburger span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-button.active .hamburger span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu {
+            position: fixed;
+            top: 66px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: white;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            overflow-y: auto;
+            z-index: 999;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-content {
+            padding: 24px;
+        }
+
+        .mobile-nav-item {
+            margin-bottom: 24px;
+        }
+
+        .mobile-nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .mobile-nav-arrow {
+            font-size: 12px;
+            transition: transform 0.2s;
+        }
+
+        .mobile-nav-item.expanded .mobile-nav-arrow {
+            transform: rotate(180deg);
+        }
+
+        .mobile-dropdown {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .mobile-nav-item.expanded .mobile-dropdown {
+            max-height: 500px;
+            margin-top: 12px;
+        }
+
+        .mobile-dropdown-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            padding: 8px 0 8px 16px;
+            display: block;
+            transition: color 0.2s;
+        }
+
+        .mobile-dropdown-link:hover {
+            color: var(--text-primary);
+        }
+
+        .mobile-menu-footer {
+            padding: 24px;
+            border-top: 1px solid var(--border-light);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .mobile-signin {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 12px;
+            text-align: center;
+            border: 1px solid var(--border-default);
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .mobile-signin:hover {
+            background: var(--bg-secondary);
+        }
+
+        .mobile-cta {
+            background: var(--m5m-blue);
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 12px;
+            text-align: center;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .mobile-cta:hover {
+            background: var(--m5m-blue-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero {
+            --parallax-offset: 0px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: -10%;
+            right: -10%;
+            bottom: -20%;
+            background-image: url('/img/mach five marketing hero.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.08;
+            z-index: -1;
+            will-change: transform;
+            transform: translateY(var(--parallax-offset));
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            text-align: left;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .hero h1 span {
+            display: block;
+        }
+
+        .hero h1 strong {
+            font-weight: 700;
+            color: var(--purple-600);
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Rotating text effect for heroVerb */
+        #heroVerb {
+            color: #5DADE2 !important; /* Light blue for better readability - same as main page */
+            display: inline-block;
+            min-width: 320px; /* Extra width to accommodate "Growth Story" with space */
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        /* Typing cursor animation */
+        #heroVerb::after {
+            content: '';
+            display: inline-block;
+            width: 3px;
+            height: 1em;
+            background: var(--m5m-orange);
+            margin-left: 2px;
+            animation: blink 1s ease infinite;
+            vertical-align: text-bottom;
+        }
+
+        @keyframes blink {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0; }
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            line-height: 1.6;
+            max-width: 480px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: flex-start;
+            margin-bottom: 48px;
+        }
+
+        .btn {
+            padding: 14px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.15s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            line-height: 1.25;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--m5m-blue);
+            color: #FFFFFF;
+            border: 1px solid var(--m5m-blue);
+        }
+
+        .btn-primary:hover {
+            background: var(--m5m-blue-dark);
+            border-color: var(--m5m-blue-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn-primary svg {
+            transition: transform 0.15s ease;
+        }
+
+        .btn-primary:hover svg {
+            transform: translateX(2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #000000;
+            border: 1px solid #E5E7EB;
+        }
+
+        .btn-secondary:hover {
+            background: #F9FAFB;
+            border-color: #D1D5DB;
+        }
+
+        /* Logo Grid */
+        .logo-grid {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 32px;
+            margin-top: 48px;
+            flex-wrap: wrap;
+        }
+
+        .logo-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            opacity: 1;
+        }
+
+        /* Hero Visual */
+        .hero-visual {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+            border-radius: 16px;
+            border: 1px solid var(--border-light);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-visual-content {
+            text-align: center;
+            padding: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-visual-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.3;
+        }
+
+        .hero-logo {
+            width: 80%;
+            max-width: 400px;
+            height: auto;
+        }
+
+        /* Trusted By Section */
+        .trusted-section {
+            padding: 48px 24px;
+            background: linear-gradient(180deg, #FAFBFC 0%, #F3F4F6 100%);
+            border-top: 1px solid var(--border-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trusted-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 120%;
+            height: 200%;
+            background: radial-gradient(ellipse at center, rgba(88, 80, 236, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .trusted-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .trusted-text {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            letter-spacing: 0.02em;
+        }
+
+        .industry-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 32px 48px;
+            align-items: center;
+        }
+
+        .industry-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            opacity: 0.8;
+            transition: opacity 0.2s ease;
+            filter: grayscale(100%);
+        }
+
+        .industry-item:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+        }
+
+        .industry-icon {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+        }
+
+        .industry-item:hover .industry-icon {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .industry-item span {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        /* Process Section */
+        .process-section {
+            padding: 100px 24px;
+            background: white;
+        }
+
+        .process-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .process-header h2 {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            line-height: 1.1;
+        }
+
+        .process-header p {
+            font-size: 20px;
+            color: var(--text-secondary);
+        }
+
+        .process-showcase {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .process-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            cursor: pointer;
+            padding: 24px 0;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .step-indicator {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-line {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 60px;
+            background: var(--border-light);
+            transition: all 0.3s ease;
+        }
+
+        .process-step:last-child .step-line {
+            display: none;
+        }
+
+        .process-step.active .step-number {
+            background: var(--purple-600);
+            color: white;
+            border-color: var(--purple-600);
+        }
+
+        .process-step.active .step-line {
+            background: var(--purple-600);
+        }
+
+
+
+        .step-info h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+            transition: color 0.3s ease;
+        }
+
+        .step-info p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .process-step:hover .step-info h3,
+        .process-step.active .step-info h3 {
+            color: var(--purple-600);
+        }
+
+        /* Visual Window */
+        .process-visual {
+            position: relative;
+        }
+
+        .visual-window {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-light);
+        }
+
+        .window-header {
+            background: var(--bg-secondary);
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .window-dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .window-dots span {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--border-default);
+        }
+
+        .window-dots span:nth-child(1) {
+            background: #FF5F57;
+        }
+
+        .window-dots span:nth-child(2) {
+            background: #FFBD2E;
+        }
+
+        .window-dots span:nth-child(3) {
+            background: #28CA42;
+        }
+
+        .window-title {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .window-content {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+            background: var(--bg-tertiary);
+        }
+
+        .process-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .process-image.active {
+            opacity: 1;
+        }
+
+        /* Process Section Responsive */
+        @media (max-width: 968px) {
+            .process-showcase {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .process-steps {
+                order: 2;
+            }
+
+            .process-visual {
+                order: 1;
+            }
+
+            .window-content {
+                height: 300px;
+            }
+
+            .process-header h2 {
+                font-size: 36px;
+            }
+
+            .process-header p {
+                font-size: 18px;
+            }
+
+            .process-section {
+                padding: 60px 24px;
+            }
+        }
+
+        /* Features Section */
+        .features {
+            padding: 120px 24px;
+            background: var(--bg-secondary);
+        }
+
+        .features-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .features-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .features-header h2 {
+            font-size: 48px;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 16px;
+        }
+
+        .features-header p {
+            font-size: 20px;
+            color: var(--text-secondary);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 32px;
+            border-radius: 8px;
+            border: 1px solid var(--border-light);
+            transition: all 0.2s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--purple-600);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--purple-50);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 120px 24px;
+            background: white;
+        }
+
+        .services-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .services-content h2 {
+            font-size: 48px;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 24px;
+        }
+
+        .services-content p {
+            font-size: 20px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            line-height: 1.5;
+        }
+
+        .services-list {
+            list-style: none;
+        }
+
+        .service-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .service-check {
+            width: 24px;
+            height: 24px;
+            background: var(--purple-50);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--purple-600);
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .service-text {
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+
+        .services-visual {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 48px;
+            text-align: center;
+            border: 1px solid var(--border-light);
+        }
+
+        /* Deploy Section */
+        .deploy-section {
+            padding: 120px 24px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 0.88),
+                rgba(248, 249, 250, 0.85) 20%,
+                rgba(248, 249, 250, 0.85) 80%,
+                rgba(255, 255, 255, 0.88)
+            ),
+            url('/img/mach five marketing hero.png');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .deploy-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .deploy-content-box {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 0 auto;
+            max-width: 1000px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .deploy-content-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+            background-size: 50px 50px, 50px 50px;
+            mask-image: linear-gradient(90deg, 
+                transparent 0%, 
+                black 15%, 
+                black 85%, 
+                transparent 100%);
+            -webkit-mask-image: linear-gradient(90deg, 
+                transparent 0%, 
+                black 15%, 
+                black 85%, 
+                transparent 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .deploy-content-box > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .deploy-header h2 {
+            font-size: 48px;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 24px;
+        }
+
+        .deploy-header p {
+            font-size: 20px;
+            color: var(--text-secondary);
+            margin-bottom: 48px;
+        }
+
+        .deploy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+
+        .deploy-item {
+            text-align: left;
+        }
+
+        .deploy-number {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--purple-600);
+            margin-bottom: 8px;
+        }
+
+        .deploy-item h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .deploy-item p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 120px 24px;
+            background: white;
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-size: 48px;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 24px;
+        }
+
+        .cta p {
+            font-size: 20px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+
+        /* More from Mach Five Section */
+        .more-section {
+            padding: 100px 24px;
+            background: var(--bg-secondary);
+        }
+
+        .more-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .more-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .more-header h2 {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .more-header p {
+            font-size: 20px;
+            color: var(--text-secondary);
+        }
+
+        .more-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .more-card {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 32px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.2s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .more-card:hover {
+            border-color: var(--m5m-blue);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .more-card.you-are-here {
+            border-color: var(--m5m-blue);
+            background: var(--bg-tertiary);
+        }
+
+        .more-card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .more-logo {
+            height: 32px;
+            width: auto;
+        }
+
+        .more-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0;
+            color: var(--text-primary);
+        }
+
+        .more-card p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            flex: 1;
+        }
+
+        .more-card-cta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--m5m-blue);
+        }
+
+        .more-card-cta svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--m5m-blue);
+            transition: transform 0.2s ease;
+        }
+
+        .more-card:hover .more-card-cta svg {
+            transform: translateX(4px);
+        }
+
+        .more-card.you-are-here .more-card-cta {
+            color: var(--text-secondary);
+        }
+
+        .more-card.you-are-here .more-card-cta svg {
+            stroke: var(--text-secondary);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 80px 24px 40px;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-light);
+        }
+
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr repeat(4, 1fr);
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand {
+            flex: 1 1 400px;
+        }
+
+        .footer-brand img {
+            height: 32px;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-size: 15px;
+        }
+
+        .footer-contact {
+            margin-top: 16px;
+        }
+
+        .footer-contact a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+            margin-bottom: 0.5rem;
+            font-size: 15px;
+        }
+
+        .footer-contact a:hover {
+            color: var(--m5m-blue);
+            transform: translateX(2px);
+        }
+
+        .footer-column h4 {
+            color: var(--m5m-blue);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            user-select: none;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.2s;
+            font-size: 15px;
+        }
+
+        .footer-links a:hover {
+            color: var(--m5m-blue);
+            transform: translateX(2px);
+        }
+
+        .footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid var(--border-light);
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-tertiary);
+        }
+
+
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-container {
+                height: 56px;
+            }
+
+            .nav-left {
+                gap: 0;
+            }
+
+            .nav-menu,
+            .nav-signin {
+                display: none;
+            }
+
+            .mobile-menu-button {
+                display: flex;
+            }
+
+            .nav-cta {
+                padding: 8px 20px;
+                font-size: 13px;
+            }
+
+            .mobile-menu {
+                top: 56px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .industry-grid {
+                gap: 24px 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .industry-grid {
+                gap: 16px 24px;
+            }
+
+            .industry-item {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+
+            .industry-icon {
+                width: 48px;
+                height: 48px;
+                font-size: 24px;
+            }
+
+            .industry-item span {
+                font-size: 13px;
+            }
+
+            .trusted-text {
+                font-size: 13px;
+                margin-bottom: 24px;
+            }
+
+            .trusted-section {
+                padding: 32px 16px;
+            }
+
+            .hero {
+                padding: 100px 0 60px;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+                text-align: center;
+            }
+
+            .hero h1 span {
+                display: block;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .logo-grid {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                height: 400px;
+            }
+
+            .features-grid,
+            .deploy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .more-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .more-header h2 {
+                font-size: 36px;
+            }
+
+            .more-header p {
+                font-size: 18px;
+            }
+
+            .more-section {
+                padding: 60px 24px;
+            }
+
+            /* Hide navigation step indicator on mobile */
+            .nav-step-indicator {
+                display: none !important;
+            }
+        }
+
+        /* Navigation Step Indicator */
+        .nav-step-indicator {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            transition: all 0.3s ease;
+            /* Rounded/beveled container */
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1.5rem 1rem;
+            border-radius: 25px;
+            box-shadow: 
+                inset 2px 2px 8px rgba(255, 255, 255, 0.8),
+                inset -2px -2px 8px rgba(0, 0, 0, 0.1),
+                0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+        }
+
+        .nav-step-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(52, 73, 94, 0.2);
+            border: 2px solid rgba(52, 73, 94, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            transform: scale(1);
+        }
+
+        .nav-step-dot:hover {
+            transform: scale(1.2);
+            background: rgba(52, 73, 94, 0.3);
+        }
+
+        .nav-step-dot.active {
+            background: var(--m5m-blue);
+            border-color: var(--m5m-blue);
+            transform: scale(1.3);
+            box-shadow: 0 0 10px rgba(52, 73, 94, 0.3);
+        }
+
+        .nav-step-dot.completed {
+            background: var(--m5m-orange);
+            border-color: var(--m5m-orange);
+        }
+
+        /* Scroll hint */
+        .scroll-hint {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1001;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            opacity: 0.7;
+            animation: bounce 2s infinite;
+            transition: opacity 0.3s ease;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        /* Fixed Contact Logo */
+        .fixed-contact-logo {
+            position: fixed;
+            left: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .fixed-contact-logo.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .contact-logo-inner {
+            background: var(--m5m-blue);
+            color: var(--m5m-white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(52, 73, 94, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            width: 100px;
+            height: 100px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-logo-inner:hover {
+            background: var(--m5m-orange);
+            transform: translateX(8px);
+            box-shadow: 0 12px 40px rgba(221, 65, 36, 0.3);
+        }
+
+        .contact-logo-inner img {
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+            filter: brightness(0) invert(1);
+        }
+
+        .contact-logo-inner:hover img {
+            transform: scale(1.1);
+        }
+
+        .contact-text {
+            font-weight: 600;
+            font-size: 0.875rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: white;
+        }
+
+        /* Mobile responsive - hide contact logo on mobile */
+        @media (max-width: 768px) {
+            .fixed-contact-logo {
+                display: none !important;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <p>We're transforming growth strategies.</p>
+        <a href="/blog">Learn more →</a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="/" class="nav-logo">
+                    <img src="/img/Logo_M5M Light Web.png" alt="Mach Five Marketing">
+                </a>
+                <div class="nav-menu">
+                    <div class="nav-item">
+                        <a href="#services" class="nav-link">
+                            Services
+                            <span class="nav-link-arrow">▼</span>
+                        </a>
+                        <div class="nav-dropdown">
+                            <div class="dropdown-grid">
+                                <div class="dropdown-column">
+                                    <h4>I Need...</h4>
+                                    <div class="dropdown-links">
+                                        <a href="/services/strategy.html" class="dropdown-link">Strategy</a>
+                                        <a href="/services/market-traction.html" class="dropdown-link">Market Traction</a>
+                                        <a href="/services/tools-that-scale.html" class="dropdown-link">Tools That Scale</a>
+                                        <a href="/services/smarter-stack.html" class="dropdown-link">Smarter Stack</a>
+                                        <a href="/services/clear-way-forward.html" class="dropdown-link">Clear Way Forward</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#" class="nav-link">
+                            Technology
+                            <span class="nav-link-arrow">▼</span>
+                        </a>
+                        <div class="nav-dropdown">
+                            <div class="dropdown-grid">
+                                <div class="dropdown-column">
+                                    <h4>Platform</h4>
+                                    <div class="dropdown-links">
+                                        <a href="/mach-five-portal/" class="dropdown-link">Mach Five Portal</a>
+                                        <a href="/lead-magnet.html" class="dropdown-link">Lead Magnet</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#" class="nav-link">
+                            Industries Served
+                            <span class="nav-link-arrow">▼</span>
+                        </a>
+                        <div class="nav-dropdown">
+                            <div class="dropdown-grid">
+                                <div class="dropdown-column">
+                                    <h4>Industries</h4>
+                                    <div class="dropdown-links">
+                                        <a href="#" class="dropdown-link">Healthcare</a>
+                                        <a href="#" class="dropdown-link">Home Services</a>
+                                        <a href="#" class="dropdown-link">SaaS</a>
+                                        <a href="#" class="dropdown-link">Enterprise</a>
+                                        <a href="#" class="dropdown-link">Startups</a>
+                                        <a href="#" class="dropdown-link">Digital Agencies</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#about" class="nav-link">
+                            Company
+                            <span class="nav-link-arrow">▼</span>
+                        </a>
+                        <div class="nav-dropdown">
+                            <div class="dropdown-grid">
+                                <div class="dropdown-column">
+                                    <h4>About</h4>
+                                    <div class="dropdown-links">
+                                        <a href="#" class="dropdown-link">Our Story</a>
+                                        <a href="#" class="dropdown-link">Careers</a>
+                                        <a href="#" class="dropdown-link">Press</a>
+                                    </div>
+                                </div>
+                                <div class="dropdown-column">
+                                    <h4>Resources</h4>
+                                    <div class="dropdown-links">
+                                        <a href="#" class="dropdown-link">Knowledge Base</a>
+                                        <a href="#" class="dropdown-link">ROI Calculator</a>
+                                        <a href="#" class="dropdown-link">Marketing Guides</a>
+                                        <a href="#" class="dropdown-link">Contact Us</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-right">
+                <a href="/portal" class="nav-signin">Sign In</a>
+                <a href="#contact" class="nav-cta">Get Started</a>
+                <button class="mobile-menu-button" id="mobileMenuButton">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link" onclick="toggleMobileDropdown(event, 'services')">
+                    Services
+                    <span class="mobile-nav-arrow">▼</span>
+                </a>
+                                <div class="mobile-dropdown" id="services-dropdown">
+                                            <a href="/services/strategy.html" class="mobile-dropdown-link">Strategy</a>
+                    <a href="/services/market-traction.html" class="mobile-dropdown-link">Market Traction</a>
+                    <a href="/services/tools-that-scale.html" class="mobile-dropdown-link">Tools That Scale</a>
+                    <a href="/services/smarter-stack.html" class="mobile-dropdown-link">Smarter Stack</a>
+                    <a href="/services/clear-way-forward.html" class="mobile-dropdown-link">Clear Way Forward</a>
+                </div>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link" onclick="toggleMobileDropdown(event, 'technology')">
+                    Technology
+                    <span class="mobile-nav-arrow">▼</span>
+                </a>
+                <div class="mobile-dropdown" id="technology-dropdown">
+                    <a href="/mach-five-portal/" class="mobile-dropdown-link">Mach Five Portal</a>
+                    <a href="/lead-magnet.html" class="mobile-dropdown-link">Lead Magnet</a>
+                </div>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link" onclick="toggleMobileDropdown(event, 'industries')">
+                    Industries Served
+                    <span class="mobile-nav-arrow">▼</span>
+                </a>
+                <div class="mobile-dropdown" id="industries-dropdown">
+                    <a href="#" class="mobile-dropdown-link">Healthcare</a>
+                    <a href="#" class="mobile-dropdown-link">Home Services</a>
+                    <a href="#" class="mobile-dropdown-link">SaaS</a>
+                    <a href="#" class="mobile-dropdown-link">Enterprise</a>
+                    <a href="#" class="mobile-dropdown-link">Startups</a>
+                    <a href="#" class="mobile-dropdown-link">Digital Agencies</a>
+                </div>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">Blog</a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link" onclick="toggleMobileDropdown(event, 'company')">
+                    Company
+                    <span class="mobile-nav-arrow">▼</span>
+                </a>
+                <div class="mobile-dropdown" id="company-dropdown">
+                    <a href="#" class="mobile-dropdown-link">Our Story</a>
+                    <a href="#" class="mobile-dropdown-link">Careers</a>
+                    <a href="#" class="mobile-dropdown-link">Press</a>
+                                                            <a href="#" class="mobile-dropdown-link">Knowledge Base</a>
+                    <a href="#" class="mobile-dropdown-link">Contact Us</a>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu-footer">
+            <a href="/portal" class="mobile-signin">Sign In</a>
+            <a href="#contact" class="mobile-cta">Get Started</a>
+        </div>
+    </div>
+
+    <!-- Navigation Step Indicator -->
+    <div class="nav-step-indicator" id="stepIndicator">
+        <div class="nav-step-dot" data-step="hero"></div>
+        <div class="nav-step-dot" data-step="trusted"></div>
+        <div class="nav-step-dot" data-step="process"></div>
+        <div class="nav-step-dot" data-step="features"></div>
+        <div class="nav-step-dot" data-step="services"></div>
+        <div class="nav-step-dot" data-step="deploy"></div>
+        <div class="nav-step-dot" data-step="more"></div>
+    </div>
+
+    <!-- Scroll Hint -->
+    <div class="scroll-hint" id="scrollHint">Scroll to continue</div>
+
+    <!-- Fixed Contact Logo -->
+    <div class="fixed-contact-logo" id="fixedContactLogo">
+        <div class="contact-logo-inner">
+            <img src="/img/Logo_M5M Light Web.png" alt="Mach Five Marketing" height="32">
+            <span class="contact-text">Contact</span>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" data-step="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>
+                    <span>Your <strong id="heroVerb">Growth Story</strong></span>
+                    <span>Powered by our</span>
+                    <span>People & Platform</span>
+                </h1>
+                <p class="hero-subtitle">
+                    <span style="color: #DD4124;">✓</span> <span style="color: #6B7280;">Real results.</span> 
+                    <span style="color: #DD4124;">✓</span> <span style="color: #6B7280;">Real ROI.</span> 
+                    <span style="color: #DD4124;">✓</span> <span style="color: #6B7280;">Real growth.</span>
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">
+                        Get Started
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        Contact Sales
+                    </a>
+                </div>
+
+            </div>
+            <div class="hero-visual">
+                <div class="hero-visual-grid"></div>
+                <div class="hero-visual-content">
+                    <img src="/img/Logo_M5T Light Print-16.png" alt="Mach Five Tech" class="hero-logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By Section -->
+    <section class="trusted-section" data-step="trusted">
+        <div class="trusted-container">
+            <p class="trusted-text">Trusted and embedded across industries</p>
+            <div class="industry-grid">
+                <div class="industry-item">
+                    <div class="industry-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">🏥</div>
+                    <span>Healthcare</span>
+                </div>
+                <div class="industry-item">
+                    <div class="industry-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">🏠</div>
+                    <span>Home Services</span>
+                </div>
+                <div class="industry-item">
+                    <div class="industry-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">💻</div>
+                    <span>SaaS</span>
+                </div>
+                <div class="industry-item">
+                    <div class="industry-icon" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">🏢</div>
+                    <span>Enterprise</span>
+                </div>
+                <div class="industry-item">
+                    <div class="industry-icon" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">🚀</div>
+                    <span>Startups</span>
+                </div>
+                <div class="industry-item">
+                    <div class="industry-icon" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">📱</div>
+                    <span>Digital Agencies</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Three Step Process Section -->
+    <section class="process-section" data-step="process">
+        <div class="process-container">
+            <div class="process-header">
+                <h2>Click, click, growth.</h2>
+                <p>Transform your marketing in three simple steps</p>
+            </div>
+            <div class="process-showcase">
+                <div class="process-steps">
+                    <div class="process-step active" data-step="1">
+                        <div class="step-indicator">
+                            <span class="step-number">1</span>
+                            <span class="step-line"></span>
+                        </div>
+                        <div class="step-info">
+                            <h3>Define your strategy</h3>
+                            <p>Connect your data sources and let our AI analyze your market opportunities</p>
+                        </div>
+                    </div>
+                    <div class="process-step" data-step="2">
+                        <div class="step-indicator">
+                            <span class="step-number">2</span>
+                            <span class="step-line"></span>
+                        </div>
+                        <div class="step-info">
+                            <h3>Deploy your platform</h3>
+                            <p>Launch campaigns, automations, and tracking with our integrated marketing stack</p>
+                        </div>
+                    </div>
+                    <div class="process-step" data-step="3">
+                        <div class="step-indicator">
+                            <span class="step-number">3</span>
+                        </div>
+                        <div class="step-info">
+                            <h3>Accelerate growth</h3>
+                            <p>Monitor real-time results and optimize performance with data-driven insights</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="process-visual">
+                    <div class="visual-window">
+                        <div class="window-header">
+                            <div class="window-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="window-title">Mach Five Marketing Platform</div>
+                        </div>
+                        <div class="window-content">
+                            <img src="/img/portal home.png" alt="Marketing Platform Dashboard" class="process-image active" data-step="1">
+                            <img src="/img/lead magnet.png" alt="Lead Generation Tools" class="process-image" data-step="2">
+                            <img src="/img/mach five marketing hero.png" alt="Growth Results" class="process-image" data-step="3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features" data-step="features">
+        <div class="features-container">
+            <div class="features-header">
+                <h2>Everything you need to grow</h2>
+                <p>All-in-one platform for modern marketing teams</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Analytics Dashboard</h3>
+                    <p>Real-time insights that show what's actually driving revenue, not just vanity metrics.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Lead Intelligence</h3>
+                    <p>Know who's on your site, what they want, and when they're ready to buy.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Automation</h3>
+                    <p>Set up campaigns that run themselves and scale with your business.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔗</div>
+                    <h3>CRM Integration</h3>
+                    <p>Connect your entire tech stack for seamless data flow.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Growth Tools</h3>
+                    <p>A/B testing, personalization, and optimization built-in.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Fast Deploy</h3>
+                    <p>Launch campaigns in minutes with our proven templates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services" data-step="services">
+        <div class="services-container">
+            <div class="services-grid">
+                <div class="services-content">
+                    <h2>Built for teams that ship</h2>
+                    <p>Stop managing spreadsheets and start growing your business.</p>
+                    <ul class="services-list">
+                        <li class="service-item">
+                            <div class="service-check">✓</div>
+                            <span class="service-text">Zero downtime deployments</span>
+                        </li>
+                        <li class="service-item">
+                            <div class="service-check">✓</div>
+                            <span class="service-text">Automatic scaling based on traffic</span>
+                        </li>
+                        <li class="service-item">
+                            <div class="service-check">✓</div>
+                            <span class="service-text">Built-in A/B testing framework</span>
+                        </li>
+                        <li class="service-item">
+                            <div class="service-check">✓</div>
+                            <span class="service-text">Real-time collaboration tools</span>
+                        </li>
+                        <li class="service-item">
+                            <div class="service-check">✓</div>
+                            <span class="service-text">Enterprise-grade security</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="services-visual">
+                    <div style="font-size: 64px; font-weight: 800; color: var(--purple-600); margin-bottom: 16px;">3.2x</div>
+                    <div style="font-size: 20px; font-weight: 600; margin-bottom: 8px;">Average ROI</div>
+                    <div style="font-size: 16px; color: var(--text-secondary);">Our clients see results in weeks, not months</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deploy Section -->
+    <section class="deploy-section" data-step="deploy">
+        <div class="deploy-container">
+            <div class="deploy-content-box">
+                <div class="deploy-header">
+                    <h2>From zero to growth in minutes</h2>
+                    <p>Get started with our proven three-step process</p>
+                </div>
+                <div class="deploy-grid">
+                    <div class="deploy-item">
+                        <div class="deploy-number">STEP 1</div>
+                        <h3>Connect your data</h3>
+                        <p>Link your website, CRM, and marketing tools in one click.</p>
+                    </div>
+                    <div class="deploy-item">
+                        <div class="deploy-number">STEP 2</div>
+                        <h3>Set your goals</h3>
+                        <p>Tell us what success looks like for your business.</p>
+                    </div>
+                    <div class="deploy-item">
+                        <div class="deploy-number">STEP 3</div>
+                        <h3>Watch it grow</h3>
+                        <p>Our AI optimizes campaigns 24/7 for maximum ROI.</p>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-primary">See it in action</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- More from Mach Five Section -->
+    <section class="more-section" id="more" data-step="more">
+        <div class="more-container">
+            <div class="more-header">
+                <h2>More from Mach Five</h2>
+                <p>Explore our family of companies built for ambitious growth</p>
+            </div>
+            
+            <div class="more-grid">
+                <div class="more-card you-are-here">
+                    <div class="more-card-header">
+                        <img src="/img/Logo_M5M Light Web.png" alt="Mach Five Marketing" class="more-logo">
+                        <h3>Mach Five Marketing</h3>
+                    </div>
+                    <p>Performance marketing and technology solutions for ambitious companies.</p>
+                    <div class="more-card-cta">
+                        <span>You're Here</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <a href="https://machfivegroup.com" class="more-card">
+                    <div class="more-card-header">
+                        <img src="/img/Logo_M5G Light Web.png" alt="Mach Five Group" class="more-logo">
+                        <h3>Mach Five Group</h3>
+                    </div>
+                    <p>Strategic consulting and business development for ambitious companies looking to scale.</p>
+                    <div class="more-card-cta">
+                        <span>Learn More</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14m0 0l-7-7m7 7l-7 7"/>
+                        </svg>
+                    </div>
+                </a>
+                
+                <a href="https://machfivetech.com" class="more-card">
+                    <div class="more-card-header">
+                        <img src="/img/Logo_M5T Light Web.png" alt="Mach Five Tech" class="more-logo">
+                        <h3>Mach Five Tech</h3>
+                    </div>
+                    <p>Custom software development and technology solutions built for performance and scale.</p>
+                    <div class="more-card-cta">
+                        <span>Learn More</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14m0 0l-7-7m7 7l-7 7"/>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <neodigm-widget style="width: 40%;" data-n55-widget-config="{conf:'', ampm:'',mobile:''}" data-n55-widget-id="effect_two_word_rotate"></neodigm-widget>
+                    <p>Performance marketing and technology solutions for ambitious companies.</p>
+                    <p>Headquartered in Chicago. Supporting clients nationwide.</p>
+                    
+                </div>
+                <div class="footer-column">
+                    <h4>I Need...</h4>
+                    <ul class="footer-links">
+                        <li><a href="/services/strategy.html">Strategy</a></li>
+                        <li><a href="/services/market-traction.html">Market Traction</a></li>
+                        <li><a href="/services/tools-that-scale.html">Tools That Scale</a></li>
+                        <li><a href="/services/smarter-stack.html">Smarter Stack</a></li>
+                        <li><a href="/services/clear-way-forward.html">Clear Way Forward</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Technology</h4>
+                    <ul class="footer-links">
+                        <li><a href="/mach-five-portal/">Mach Five Portal</a></li>
+                        <li><a href="/lead-magnet.html">Lead Magnet</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Knowledge Base</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Mach Five</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://machvive.com">Mach Vive</a></li>
+                        <li><a href="https://machfivetech.com">Mach Five Tech</a></li>
+                        <li><a href="https://machfivegroup.com">Mach Five Group</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Mach Five Marketing. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const body = document.body;
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenuButton.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Mobile dropdown functionality
+        function toggleMobileDropdown(event, dropdownId) {
+            event.preventDefault();
+            const navItem = event.target.closest('.mobile-nav-item');
+            const wasExpanded = navItem.classList.contains('expanded');
+            
+            // Close all dropdowns
+            document.querySelectorAll('.mobile-nav-item').forEach(item => {
+                item.classList.remove('expanded');
+            });
+            
+            // Toggle current dropdown
+            if (!wasExpanded) {
+                navItem.classList.add('expanded');
+            }
+        }
+
+        // Close mobile menu when clicking a link without dropdown
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            if (!link.querySelector('.mobile-nav-arrow')) {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('active');
+                    mobileMenuButton.classList.remove('active');
+                    body.style.overflow = '';
+                });
+            }
+        });
+
+        // Close mobile menu on resize to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 1024) {
+                mobileMenu.classList.remove('active');
+                mobileMenuButton.classList.remove('active');
+                body.style.overflow = '';
+            }
+        });
+        // Process Steps Interaction
+        const processSteps = document.querySelectorAll('.process-step');
+        const processImages = document.querySelectorAll('.process-image');
+
+        processSteps.forEach(step => {
+            step.addEventListener('click', () => {
+                const stepNum = step.getAttribute('data-step');
+                
+                // Update active step
+                processSteps.forEach(s => s.classList.remove('active'));
+                step.classList.add('active');
+                
+                // Update active image
+                processImages.forEach(img => {
+                    if (img.getAttribute('data-step') === stepNum) {
+                        img.classList.add('active');
+                    } else {
+                        img.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Parallax Effect
+        let ticking = false;
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+            const parallaxSpeed = 0.5;
+            const hero = document.querySelector('.hero');
+            const deploy = document.querySelector('.deploy-section');
+            
+            if (hero) {
+                hero.style.setProperty('--parallax-offset', `${scrolled * parallaxSpeed}px`);
+            }
+            
+            if (deploy) {
+                const deployRect = deploy.getBoundingClientRect();
+                const deployTop = deployRect.top + scrolled;
+                const deployOffset = (scrolled - deployTop) * 0.4;
+                deploy.style.setProperty('--parallax-offset', `${deployOffset}px`);
+            }
+            
+            ticking = false;
+        }
+
+        function requestTick() {
+            if (!ticking) {
+                window.requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', requestTick);
+
+        // Step Indicator Functionality
+        class StepIndicator {
+            constructor() {
+                this.currentStep = 0;
+                this.totalSteps = 7;
+                this.init();
+            }
+
+            init() {
+                this.stepIndicator = document.getElementById('stepIndicator');
+                this.scrollHint = document.getElementById('scrollHint');
+                this.dots = document.querySelectorAll('.nav-step-dot');
+                this.sections = document.querySelectorAll('section[data-step]');
+                
+
+                
+                this.setupEventListeners();
+                this.updateStepIndicator(0);
+                this.updateScrollHint();
+            }
+
+            setupEventListeners() {
+                // Store handlers for cleanup
+                this.scrollHandler = () => {
+                    const scrollY = window.pageYOffset;
+                    const windowHeight = window.innerHeight;
+                    
+                    // Check if we're near the footer to hide scroll hint
+                    const footer = document.querySelector('footer');
+                    if (footer) {
+                        const footerTop = footer.offsetTop;
+                        const scrollHintThreshold = footerTop - windowHeight + 200;
+                        
+                        if (scrollY > scrollHintThreshold) {
+                            this.scrollHint.style.opacity = '0';
+                            this.scrollHint.style.pointerEvents = 'none';
+                        } else {
+                            this.scrollHint.style.opacity = '0.7';
+                            this.scrollHint.style.pointerEvents = 'auto';
+                        }
+                    }
+                    
+                    // Find which step is most visible
+                    let currentVisibleIndex = 0;
+                    let maxVisibility = 0;
+                    
+                    this.sections.forEach((section, index) => {
+                        const rect = section.getBoundingClientRect();
+                        const sectionTop = rect.top;
+                        const sectionBottom = rect.bottom;
+                        const sectionHeight = rect.height;
+                        
+                        // Calculate how much of the section is visible
+                        const visibleTop = Math.max(0, Math.min(sectionHeight, windowHeight - sectionTop));
+                        const visibleBottom = Math.max(0, Math.min(sectionHeight, sectionBottom));
+                        const visibleHeight = Math.min(visibleTop, visibleBottom);
+                        const visibility = visibleHeight / sectionHeight;
+                        
+                        // If this section is more visible than the current best, update
+                        if (visibility > maxVisibility) {
+                            maxVisibility = visibility;
+                            currentVisibleIndex = index;
+                        }
+                        
+                        // Also check if we're at the very top of the page
+                        if (scrollY < 100 && index === 0) {
+                            currentVisibleIndex = 0;
+                        }
+                    });
+                    
+                    if (currentVisibleIndex !== this.currentStep) {
+                        this.currentStep = currentVisibleIndex;
+                        this.updateStepIndicator(currentVisibleIndex);
+                        this.updateScrollHint();
+                    }
+                };
+
+                this.keydownHandler = (e) => {
+                    if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ') {
+                        e.preventDefault();
+                        this.nextStep();
+                    } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+                        e.preventDefault();
+                        this.previousStep();
+                    }
+                };
+
+                // Simple scroll listener to detect which step is visible
+                window.addEventListener('scroll', this.scrollHandler);
+
+                // Step indicator clicks
+                this.dots.forEach((dot, index) => {
+                    const clickHandler = () => {
+                        this.goToStep(index);
+                    };
+                    dot.clickHandler = clickHandler;
+                    dot.addEventListener('click', clickHandler);
+                });
+
+                // Keyboard navigation
+                document.addEventListener('keydown', this.keydownHandler);
+            }
+
+            updateStepIndicator(stepNumber) {
+                this.dots.forEach((dot, index) => {
+                    dot.classList.remove('active', 'completed');
+                    if (index < stepNumber) {
+                        dot.classList.add('completed');
+                    } else if (index === stepNumber) {
+                        dot.classList.add('active');
+                    }
+                });
+            }
+
+            goToStep(stepNumber) {
+                const targetSection = this.sections[stepNumber];
+                if (targetSection) {
+                    const offset = 100; // Account for fixed navigation
+                    const targetPosition = targetSection.offsetTop - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+
+            nextStep() {
+                if (this.currentStep < this.totalSteps - 1) {
+                    this.goToStep(this.currentStep + 1);
+                }
+            }
+
+            previousStep() {
+                if (this.currentStep > 0) {
+                    this.goToStep(this.currentStep - 1);
+                }
+            }
+
+            updateScrollHint() {
+                if (this.currentStep === this.totalSteps - 1) {
+                    this.scrollHint.textContent = 'Get in touch';
+                } else {
+                    this.scrollHint.textContent = 'Scroll to continue';
+                }
+            }
+
+            destroy() {
+                // Remove event listeners
+                window.removeEventListener('scroll', this.scrollHandler);
+                document.removeEventListener('keydown', this.keydownHandler);
+                
+                // Remove step indicator click listeners
+                if (this.dots) {
+                    this.dots.forEach(dot => {
+                        dot.removeEventListener('click', dot.clickHandler);
+                    });
+                }
+            }
+        }
+
+        // Initialize step indicator when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            const stepIndicator = new StepIndicator();
+            window.stepIndicator = stepIndicator; // For debugging
+        });
+
+        // Custom rotating text effect to avoid Neodigm issues
+        function startVerbRotation() {
+            const words = ["Vision", "Strategy", "Growth Story", "Advantage", "Breakthrough", "Momentum", "Ambition"];
+            const heroVerb = document.getElementById('heroVerb');
+            if (!heroVerb) return;
+            
+            let currentIndex = 0;
+            let currentWord = '';
+            let isTyping = true;
+            
+            function typeWord() {
+                const targetWord = words[currentIndex];
+                let charIndex = 0;
+                
+                function typeChar() {
+                    if (charIndex < targetWord.length) {
+                        currentWord = targetWord.substring(0, charIndex + 1);
+                        heroVerb.textContent = currentWord;
+                        charIndex++;
+                        setTimeout(typeChar, 100);
+                    } else {
+                        // Word is complete, wait then start deleting
+                        setTimeout(deleteWord, 2000);
+                    }
+                }
+                
+                function deleteWord() {
+                    if (currentWord.length > 0) {
+                        currentWord = currentWord.substring(0, currentWord.length - 1);
+                        heroVerb.textContent = currentWord;
+                        setTimeout(deleteWord, 50);
+                    } else {
+                        // Word is deleted, move to next word
+                        currentIndex = (currentIndex + 1) % words.length;
+                        setTimeout(typeWord, 500);
+                    }
+                }
+                
+                typeChar();
+            }
+            
+            // Start the typing effect
+            setTimeout(typeWord, 1000);
+        }
+
+        // Start the rotating text effect when page loads
+        startVerbRotation();
+
+        // Fixed contact logo visibility control
+        const fixedContactLogo = document.getElementById('fixedContactLogo');
+        const hero = document.querySelector('.hero');
+        const footer = document.querySelector('.footer');
+
+        function updateContactLogoVisibility() {
+            if (!fixedContactLogo || !hero || !footer) return;
+
+            const scrollY = window.pageYOffset;
+            const heroBottom = hero.offsetTop + hero.offsetHeight;
+            const footerTop = footer.offsetTop;
+            const windowHeight = window.innerHeight;
+
+            // Show after hero, hide before footer
+            if (scrollY > heroBottom - windowHeight * 0.5 && scrollY < footerTop - windowHeight) {
+                fixedContactLogo.classList.add('visible');
+            } else {
+                fixedContactLogo.classList.remove('visible');
+            }
+        }
+
+        // Update on scroll
+        window.addEventListener('scroll', updateContactLogoVisibility);
+        
+        // Initial check
+        updateContactLogoVisibility();
+
+        // Contact logo click handler
+        fixedContactLogo.addEventListener('click', () => {
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                const offset = 120;
+                const targetPosition = contactSection.offsetTop - offset;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    </script>
+</body>
+</html>
